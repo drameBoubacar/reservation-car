@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-image: url(../img/back.jpeg);
+    background-size: cover;
+}
+
+.car_headlight {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+}
+
+.form-exemple {
+    display: flex;
+    flex-direction: column;
+}
+
+.car_headlight img {
+    filter: blur(0px) brightness(0.2);
+    transform: scale(1);
+    transition: ease-in-out;
+    animation-name: vitesse;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+
+@keyframes vitesse {
+    0% {
+        transform: scale(0.2);
+        filter: blur(4px) brightness(0.1);
+    }
+    100% {
+        transform: scale(1);
+        filter: blur(0px) brightness(0.2);
+    }
+}
+
+label {
+    color: azure;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+input {
+    width: 16%;
+}
