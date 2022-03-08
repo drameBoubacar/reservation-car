@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include_once './reservation-car/Login/connect.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,6 +39,7 @@ session_start();
             </form>
         </div>
         <div class="car_headlight" id="car_headlight">
+            <img src="../img/voiture_eteint.svg" alt="">
         </div>
     </div>
 </body>

@@ -18,8 +18,7 @@ drop table if exists USER;
 create table CARS
 (
    ID_CAR               int not null auto_increment,
-   ID_IMG               int,
-   ID_CATEGORY          varchar(50),
+   ID_CATEGORY          int,
    MODEL                varchar(100) not null,
    COLOR                longblob not null,
    KILOMETER            numeric(8,0) not null,
@@ -36,6 +35,7 @@ create table CARS
 create table CAR_IMAGE
 (
    ID_IMG               int not null auto_increment,
+   ID_CAR               int,
    IMG_DESCRIPTION      varchar(100),
    primary key (ID_IMG)
 );
@@ -43,7 +43,7 @@ create table CAR_IMAGE
 
 create table CATEGORY
 (
-   ID_CATEGORY          varchar(50) not null auto_increment,
+   ID_CATEGORY          int not null auto_increment,
    CATEGORY_CAR         varchar(50) not null,
    primary key (ID_CATEGORY)
 );
@@ -83,8 +83,8 @@ create table USER
    primary key (ID_USER)
 );
 
-alter table CARS add constraint FK_RELATION_1 foreign key (ID_IMG)
-      references CAR_IMAGE (ID_IMG) on delete restrict on update restrict;
+alter table CAR_IMAGE add constraint FK_RELATION_1 foreign key (ID_CAR)
+      references CARS (ID_CAR) on delete restrict on update restrict;
 
 alter table CARS add constraint FK_RELATION_3 foreign key (ID_CATEGORY)
       references CATEGORY (ID_CATEGORY) on delete restrict on update restrict;
