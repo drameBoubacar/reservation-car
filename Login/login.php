@@ -1,6 +1,15 @@
 <?php
 session_start();
 include_once './reservation-car/Login/connect.php';
+$email = "test@admin.fr";
+$password = "1234";
+$passErr = "";
+$emailErr = "";
+
+if (isset($_POST['submit']) && isset($email) && isset($password)) {
+    header('location: ../Html/index.html');
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,23 +27,15 @@ include_once './reservation-car/Login/connect.php';
         <div class="container_form">
             <form action="" method="POST" class="form">
                 <div class="form-example">
-                    <label for="name">Your name: </label>
-                    <input type="text" name="name" id="name" required>
-                </div>
-                <div class="form-example">
                     <label for="email">Your email: </label>
                     <input type="email" name="email" id="email" required>
                 </div>
                 <div class="form-example">
-                    <label for="tel">Your phone number: </label>
-                    <input type="tel" name="tel" id="tel" required>
+                    <label for="pass">Password: </label>
+                    <input type="password" name="pass" id="pass" required>
                 </div>
                 <div class="form-example">
-                    <label for="address">Your address: </label>
-                    <input type="text" name="address" id="address" required>
-                </div>
-                <div class="form-example">
-                    <input type="submit" value="Subscribe!">
+                    <input type="submit" name="submit" value="Login">
                 </div>
             </form>
         </div>
@@ -42,6 +43,7 @@ include_once './reservation-car/Login/connect.php';
             <img src="../img/voiture_eteint.svg" alt="">
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
