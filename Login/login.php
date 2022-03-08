@@ -39,7 +39,7 @@ session_start();
         </div>
 
         <div class="car_headlight" id="car_headlight">
-            <img src="./img/voiture_eteint.svg" alt="">
+            <img src="../img/voiture_eteint.svg" alt="">
         </div>
     </div>
 </body>
