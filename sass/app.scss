@@ -1,6 +1,9 @@
 @import 'variables';
 
-
+@font-face {
+    font-family: "Venti";
+    src: url("/font/VentiCF-DemiBold.otf");
+   }
 //Ecrivez vos premières ligne de SASS ici 
 //>>
 
@@ -9,8 +12,6 @@ html,body{
     padding: 0;
     box-sizing: border-box;
     background-color: $background-color;
-    color: $primary-color;
-    font-family: $font;
     width: 100%;
   }
   
@@ -26,10 +27,43 @@ html,body{
         justify-content: center;
         align-items: center;
 
-        .img_car img{
+        .text_section{
+            width: 60%;
+            color: $primary-color;
+            font-family: $font;
+            font-size: $h1-size;
+
+            input[type="button"] {
+                padding: 15px 20px 15px 20px;
+                border-radius: 20px;
+                background-color: transparent;
+                border: none;
+                color: $background-color;
+                font-family: 'Venti';
+                font-size: 30px;
+                box-shadow: $shadow;
+                transition: 0.3s ease-in;
+                filter: blur(7px);
+                cursor: pointer;
+            }
+
+            input[type="button"]:hover {
+                box-shadow: $shadow-hover;
+                filter: blur(7px);
+                transition: 0.3s ease-in;
+                transform: scale(1.05);
+            }
+        }
+
+        .img_car {
             width: 80%;
         }
     }
   }
   
-  
+
+
+
+
+
+
