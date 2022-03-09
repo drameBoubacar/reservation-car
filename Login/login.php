@@ -1,6 +1,12 @@
 <?php
-session_start();
-
+include_once 'connect.php';
+$username = $_POST['name'];
+$password = $_POST['password'];
+if(isset($_POST['submit']) && $username == 'test' && $password == 1234)
+{
+    sleep(5);
+    header('location:../Html/index.html');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +16,6 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="./script.js"></script>
     <title>Document</title>
 </head>
 
@@ -19,29 +24,41 @@ session_start();
     <div class="container">
         <div class="login-box">
             <h2>Login</h2>
-            <form>
+            <form id="form" method="POST">
                 <div class="user-box">
-                    <input type="text">
+                    <input type="text" name="name" required>
                     <label>Username</label>
                 </div>
                 <div class="user-box">
-                    <input type="password">
+                    <input type="password" name="password" required>
                     <label>Password</label>
                 </div>
-                <a href="#">
+                <script>
+                    function play() {
+                        const audio = document.getElementById('audioMusic');
+                        audio.play();
+                    }
+                </script>
+                <input type='submit' id="submit" name='submit' class="sub" onclick="play()">
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
                     Submit
-                </a>
+                </input>
+                <audio id="audioMusic">
+                    <source src="./car-engine-sound-effect.mp3">
+                </audio>
             </form>
         </div>
 
         <div class="car_headlight" id="car_headlight">
-            <img src="../img/voiture_eteint.svg" alt="">
+            <img src="../img/voiture_eteint.svg" alt="" id='carOff' class="voiture_eteint">
+            <img src="../img/voiotit.svg" alt="" id='carOn' class="voiture_allumer">
         </div>
     </div>
+    <script src="script.js">
+    </script>
 </body>
 
 </html>
