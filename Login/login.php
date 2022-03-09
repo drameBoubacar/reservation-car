@@ -1,6 +1,12 @@
 <?php
-session_start();
-include_once './reservation-car/Login/connect.php';
+include_once 'connect.php';
+$username = $_POST['name'];
+$password = $_POST['password'];
+if(isset($_POST['submit']) && $username == 'test' && $password == 1234)
+{
+    sleep(5);
+    header('location:../Html/index.html');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,34 +20,45 @@ include_once './reservation-car/Login/connect.php';
 </head>
 
 <body>
+
     <div class="container">
-        <div class="container_form">
-            <form action="" method="POST" class="form">
-                <div class="form-example">
-                    <label for="name">Your name: </label>
-                    <input type="text" name="name" id="name" required>
+        <div class="login-box">
+            <h2>Login</h2>
+            <form id="form" method="POST">
+                <div class="user-box">
+                    <input type="text" name="name" required>
+                    <label>Username</label>
                 </div>
-                <div class="form-example">
-                    <label for="email">Your email: </label>
-                    <input type="email" name="email" id="email" required>
+                <div class="user-box">
+                    <input type="password" name="password" required>
+                    <label>Password</label>
                 </div>
-                <div class="form-example">
-                    <label for="tel">Your phone number: </label>
-                    <input type="tel" name="tel" id="tel" required>
-                </div>
-                <div class="form-example">
-                    <label for="address">Your address: </label>
-                    <input type="text" name="address" id="address" required>
-                </div>
-                <div class="form-example">
-                    <input type="submit" value="Subscribe!">
-                </div>
+                <script>
+                    function play() {
+                        const audio = document.getElementById('audioMusic');
+                        audio.play();
+                    }
+                </script>
+                <input type='submit' id="submit" name='submit' class="sub" onclick="play()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Submit
+                </input>
+                <audio id="audioMusic">
+                    <source src="./car-engine-sound-effect.mp3">
+                </audio>
             </form>
         </div>
+
         <div class="car_headlight" id="car_headlight">
-            <img src="../img/voiture_eteint.svg" alt="">
+            <img src="../img/voiture_eteint.svg" alt="" id='carOff' class="voiture_eteint">
+            <img src="../img/voiotit.svg" alt="" id='carOn' class="voiture_allumer">
         </div>
     </div>
+    <script src="script.js">
+    </script>
 </body>
 
 </html>
