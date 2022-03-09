@@ -1,0 +1,27 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #070a13;
+  color: white;
+  font-family: Helvetica, sans-serif;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .content .img_car img {
+  width: 80%;
+}
+
+/*# sourceMappingURL=app.css.map */
