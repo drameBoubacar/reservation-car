@@ -1,6 +1,17 @@
 @font-face {
-  font-family: "Venti";
-  src: url("/font/VentiCF-DemiBold.otf");
+  font-family: "Circular pro";
+  src: url("/font/CircularStd-Bold.otf");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Circular pro";
+  src: url("/font/CircularStd-Medium.otf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Circular pro";
+  src: url("/font/CircularStd-Light.otf");
+  font-weight: 300;
 }
 html, body {
   margin: 0;
@@ -12,6 +23,11 @@ html, body {
   height: 100%;
 }
 
+span {
+  font-family: "Circular pro";
+  font-weight: 300;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -20,6 +36,10 @@ header {
   color: white;
   padding: 10px 200px 10px 200px;
   font-family: "Venti";
+}
+header h1 {
+  font-family: "Circular pro";
+  font-weight: 900;
 }
 header .connect_status {
   display: flex;
@@ -49,12 +69,20 @@ header .connect_status .light {
 }
 
 .user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 50px;
   height: 50px;
   background-color: transparent;
   border-radius: 100%;
-  filter: blur(3px);
-  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5), -8px -8px 20px rgba(255, 255, 255, 0.2);
+  box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.5), -1px -1px 2px 0px rgba(88, 102, 181, 0.2);
+}
+.user a.fa.fa-user-o {
+  list-style-type: none;
+  color: white;
+  font-size: 20px;
+  filter: drop-shadow(0 0 5px #a6d4ff) drop-shadow(0 0 10px #4990fa) drop-shadow(0 0 20px #00a2ff);
 }
 
 .container {
@@ -75,7 +103,7 @@ header .connect_status .light {
 .container .content .text_section {
   width: 50%;
   color: white;
-  font-family: "Venti";
+  font-family: "Circular pro";
   font-size: 30px;
 }
 .container .content .text_section input[type=button] {
@@ -86,7 +114,8 @@ header .connect_status .light {
   font-weight: 100;
   color: white;
   text-shadow: 0 0 2px #8ec6e11a, 0 0 10px #9ffdff, 0 0 20px #0047ff, 0 0 25px #8ec6e11a, 0 0 30px #9ffdff, 0 0 40px #0047ff;
-  font-family: "Venti";
+  font-family: "Circular pro";
+  font-weight: 900;
   font-size: 20px;
   box-shadow: 8px 8px 20px black, -2px -2px 7px 0px rgba(93, 147, 185, 0.2);
   transition: 1s ease-in;
@@ -105,6 +134,28 @@ header .connect_status .light {
 }
 .container .content .img_car img {
   max-height: 50vh;
+}
+
+@media (max-width: 800px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    color: white;
+    padding: 20px 50px 0px 50px;
+    font-family: "Venti";
+  }
+
+  .connect_status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .user {
+    transform: scale(0.9);
+  }
 }
 
 /*# sourceMappingURL=app.css.map */

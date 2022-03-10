@@ -1,9 +1,23 @@
 @import 'variables';
 
 @font-face {
-    font-family: "Venti";
-    src: url("/font/VentiCF-DemiBold.otf");
+    font-family: "Circular pro";
+    src: url("/font/CircularStd-Bold.otf");
+    font-weight: 900;
    }
+
+   @font-face {
+    font-family: "Circular pro";
+    src: url("/font/CircularStd-Medium.otf");
+    font-weight: 700;
+   }
+
+   @font-face {
+    font-family: "Circular pro";
+    src: url("/font/CircularStd-Light.otf");
+    font-weight: 300;
+   }
+
 //Ecrivez vos premières ligne de SASS ici 
 //>>
 
@@ -17,6 +31,10 @@ html,body{
     height: 100%;
   }
 
+  span{
+      font-family: "Circular pro";
+      font-weight: 300;
+  }
 
 
   header {
@@ -27,6 +45,11 @@ html,body{
     color: white;
     padding: 10px 200px 10px 200px;
     font-family: "Venti";
+
+  h1{
+        font-family: "Circular pro";
+        font-weight: 900;
+    }
 
     .connect_status{
         display: flex;
@@ -67,12 +90,21 @@ html,body{
 
 
 .user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 50px;
     height: 50px;
     background-color: transparent;
     border-radius: 100%;
-    filter: blur(3px);
-    box-shadow: $shadow;
+    box-shadow: 4px 4px 3px rgb(0 0 0 / 50%), -1px -1px 2px 0px rgb(88 102 181 / 20%);
+
+    a.fa.fa-user-o{
+        list-style-type: none;
+        color: white;
+        font-size: 20px;
+        filter: drop-shadow(0 0 5px rgb(166, 212, 255)) drop-shadow(0 0 10px rgb(73, 144, 250)) drop-shadow(0 0 20px rgb(0, 162, 255));
+    }
     
 }
 
@@ -110,7 +142,8 @@ html,body{
                 font-weight: 100;
                 color: white;
                 text-shadow: 0 0 2px #8ec6e11a, 0 0 10px #9ffdff, 0 0 20px #0047ff, 0 0 25px #8ec6e11a, 0 0 30px #9ffdff, 0 0 40px #0047ff;
-                font-family: "Venti";
+                font-family: "Circular pro";
+                font-weight: 900;
                 font-size: 20px;
                 box-shadow: 8px 8px 20px rgb(0 0 0), -2px -2px 7px 0px rgb(93 147 185 / 20%);
                 transition: 1s ease-in;
@@ -143,7 +176,32 @@ html,body{
        
     }
   }
-  
+
+  @media (max-width: 800px) 
+    {
+        header
+        {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            color: white;
+            padding: 20px 50px 0px 50px;
+            font-family: "Venti";
+        }
+        .connect_status
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .user{
+            transform: scale(0.9);
+        }
+
+        
+    }
 
 
 
