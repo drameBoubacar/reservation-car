@@ -13,7 +13,10 @@ html,body{
     box-sizing: border-box;
     background-color: $background-color;
     width: 100%;
+    height: 100%;
   }
+
+
 
   header {
     display: flex;
@@ -60,12 +63,15 @@ html,body{
 
   
 .container {
-    margin-top: -80px;
+    margin-top: -100px;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+
+
+
 
     .content{
         padding: 0px 200px 0px 200px;
@@ -74,35 +80,42 @@ html,body{
         align-items: center;
 
         .text_section{
-            width: 60%;
+            width: 50%;
             color: $primary-color;
             font-family: $font;
             font-size: $h1-size;
 
-            input[type="button"] {
-                padding: 15px 20px 15px 20px;
+            input[type=button] {
+                padding: 20px 30px 20px 30px;
                 border-radius: 20px;
                 background-color: transparent;
                 border: none;
-                color: $background-color;
-                font-family: 'Venti';
-                font-size: 30px;
-                box-shadow: $shadow;
-                transition: 0.3s ease-in;
-                filter: blur(7px);
+                font-weight: 100;
+                color: white;
+                text-shadow: 0 0 2px #8ec6e11a, 0 0 10px #9ffdff, 0 0 20px #0047ff, 0 0 25px #8ec6e11a, 0 0 30px #9ffdff, 0 0 40px #0047ff;
+                font-family: "Venti";
+                font-size: 20px;
+                box-shadow: 8px 8px 20px rgb(0 0 0), -2px -2px 7px 0px rgb(93 147 185 / 20%);
+                transition: 1s ease-in;
                 cursor: pointer;
             }
 
+            input[type="button"]:nth-child(1){
+                filter:none ;
+            }
+
+  
+
             input[type="button"]:hover {
-                box-shadow: $shadow-hover;
-                filter: blur(7px);
-                transition: 0.3s ease-in;
-                transform: scale(1.05);
+                box-shadow: inset 5px 5px 12px #030407, inset -5px -5px 12px #0d101d;
+                
+                transition: 1s ease-in;
+                transform: scale(0.95);
             }
         }
 
         .img_car {
-            width: 80%;
+            width: 50%;
 
         }
         .img_car img{
