@@ -1,10 +1,10 @@
 <?php
  require_once './Login/connect.php';
- $allCars = $con->query('SELECT * FROM cars');
+ $allCars = $con->query('SELECT * FROM cars ORDER BY id_car DESC');
  var_dump($allCars);
- if(isset($_GET['envoyer']) AND !empty($_GET['envoyer'])){
-     $recherche = htmlspecialchars($_GET['envoyer']);
-    $allCars = $con->query('SELECT MODEL FROM cars WHERE MODEL LIKE "%'.$recherche.'%"');
+ if(isset($_GET['search']) AND !empty($_GET['search'])){
+     $recherche = htmlspecialchars($_GET['search']);
+    $allCars = $con->query('SELECT MODEL FROM CARS WHERE MODEL LIKE "%'.$recherche.'%" ORDER BY id_car DESC');
  }
 ?>
 
@@ -14,13 +14,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <input type="submit" value="" name="envoyer">
     <title>Document</title>
 </head>
 <body>
     <form action="" method="get">
-    <input type="search" name="search" id="" placeholder="Recherche">
-    <input type="submit" value="" name="envoyer">
+    <input type="search" name="search" placeholder="Recherche une voiture" autocomplete="off">
+    <input type="submit" value="Envoyer" name="envoyer">
     </form>
+    <div>
+        <?php
+            if($allCars->rowCount() > 0){
+                while($car = $allCars->fetch()){
+                    ?>
+                    <p><?= $car['MODEL']; ?></p>
+                    <?php
+                }
+            }else {
+            ?>
+            <p>Aucune voiture trouvée</p>
+            <?php
+            }
+        ?>
+    </div>
 </body>
 </html>
