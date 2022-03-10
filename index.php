@@ -10,6 +10,20 @@
 </head>
 
 <body>
+    <header>
+        <div class="connect_status">
+            <div class="light"></div>
+            <span>Connected</span>
+        </div>
+
+        <div class="logo">
+            <h1>donkeycar.</h1>
+        </div>
+
+        <div class="user">
+            <img src="" alt="">
+        </div>
+    </header>
     <div class="container">
         <div class="content">
             <div class="text_section">
