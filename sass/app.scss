@@ -4,14 +4,13 @@
     src: url("/font/VentiCF-DemiBold.otf");
 }
 
-//Ecrivez vos premières ligne de SASS ici 
-//>>
 html,
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: $background-color;
+    background-image: url(/img/back.png);
+    background-size: 120%;
     width: 100%;
     height: 100%;
 }
@@ -36,6 +35,18 @@ header {
             background-color: #8cffd2;
             border-radius: 100%;
             box-shadow: 0 0 8px lime, 0 0 8px lime, 0 0 8px lime;
+            animation: animlight 3s infinite;
+        }
+        @keyframes animlight {
+            0% {
+                box-shadow: 0 0 8px lime, 0 0 8px lime, 0 0 8px lime;
+            }
+            50% {
+                box-shadow: 0 0 0px lime, 0 0 0px lime, 0 0 0px lime;
+            }
+            100% {
+                box-shadow: 0 0 8px lime, 0 0 8px lime, 0 0 8px lime;
+            }
         }
     }
 }
@@ -57,6 +68,7 @@ header {
     justify-content: center;
     align-items: center;
     .content {
+        overflow: hidden;
         padding: 0px 200px 0px 200px;
         display: flex;
         justify-content: center;
