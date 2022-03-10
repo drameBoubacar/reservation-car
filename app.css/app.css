@@ -136,4 +136,26 @@ header .connect_status .light {
   max-height: 50vh;
 }
 
+@media (max-width: 800px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    color: white;
+    padding: 20px 50px 0px 50px;
+    font-family: "Venti";
+  }
+
+  .connect_status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .user {
+    transform: scale(0.9);
+  }
+}
+
 /*# sourceMappingURL=app.css.map */
