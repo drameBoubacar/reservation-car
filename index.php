@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
     <header>
         <div class="connect_status">
             <div class="light"></div>
@@ -28,9 +29,10 @@
         <div class="content">
             <div class="text_section">
                 <h1>A new experience.<br>Reserve your car<br>Now.</h1>
-                
-            <input type="button" value="Démarrer">
-                
+    
+                <input type="button" value="Démarrer">
+              
+
             </div>
             <div class="img_car">
                 <img src="/img/car_home.png" alt="">
@@ -41,7 +43,8 @@
     </div>
 
 
-    div
 </body>
+
+<script src="./main.js"></script>
 
 </html>
