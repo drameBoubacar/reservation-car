@@ -28,17 +28,23 @@
     <div class="container">
         <div class="content">
             <div class="text_section">
-                <h1>A new experience.<br>Reserve your car<br>Now.</h1>
-    
-                <input type="button" value="Démarrer">
-              
-
+                <h1>A new experience.<br>Reserve your car<br>Now.</h1>   
+                <input type="button" id="btn1" value="Démarrer">
             </div>
             <div class="img_car">
                 <img src="/img/car_home.png" alt="">
             </div>
-
-
+        </div>
+    </div>
+    <div class="container2">
+        <div class="content">
+            <div class="text_section">
+                <h1>A new experience.<br>Reserve your car<br>Now.</h1>
+                <input type="button" value="Démarrer">
+            </div>
+            <div class="img_car">
+                <img src="/img/car_home.png" alt="">
+            </div>
         </div>
     </div>
 
