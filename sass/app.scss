@@ -1,6 +1,9 @@
 @import 'variables';
 
-
+@font-face {
+    font-family: "Venti";
+    src: url("/font/VentiCF-DemiBold.otf");
+   }
 //Ecrivez vos premières ligne de SASS ici 
 //>>
 
@@ -9,12 +12,55 @@ html,body{
     padding: 0;
     box-sizing: border-box;
     background-color: $background-color;
-    color: $primary-color;
-    font-family: $font;
     width: 100%;
   }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    color: white;
+    padding: 10px 200px 10px 200px;
+    font-family: "Venti";
+
+    .connect_status{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .light {
+            margin-right: 10px;
+            margin-bottom: 4px;
+            width: 6px;
+            height: 6px;
+            background-color: #8cffd2;
+            border-radius: 100%;
+            box-shadow: 0 0 8px lime, 0 0 8px lime, 0 0 8px lime;
+        }
+    }
+
+
+}
+
+
+
+
+
+.user{
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 100%;
+    filter: blur(3px);
+    box-shadow: $shadow;
+    
+}
+
+
   
-  .container{
+.container {
+    margin-top: -80px;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -22,14 +68,52 @@ html,body{
     align-items: center;
 
     .content{
+        padding: 0px 200px 0px 200px;
         display: flex;
         justify-content: center;
         align-items: center;
 
-        .img_car img{
+        .text_section{
+            width: 60%;
+            color: $primary-color;
+            font-family: $font;
+            font-size: $h1-size;
+
+            input[type="button"] {
+                padding: 15px 20px 15px 20px;
+                border-radius: 20px;
+                background-color: transparent;
+                border: none;
+                color: $background-color;
+                font-family: 'Venti';
+                font-size: 30px;
+                box-shadow: $shadow;
+                transition: 0.3s ease-in;
+                filter: blur(7px);
+                cursor: pointer;
+            }
+
+            input[type="button"]:hover {
+                box-shadow: $shadow-hover;
+                filter: blur(7px);
+                transition: 0.3s ease-in;
+                transform: scale(1.05);
+            }
+        }
+
+        .img_car {
             width: 80%;
+
+        }
+        .img_car img{
+            max-height: 50vh;
         }
     }
   }
   
-  
+
+
+
+
+
+
