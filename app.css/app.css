@@ -1,0 +1,110 @@
+@font-face {
+  font-family: "Venti";
+  src: url("/font/VentiCF-DemiBold.otf");
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url(/img/back.png);
+  background-size: 120%;
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  color: white;
+  padding: 10px 200px 10px 200px;
+  font-family: "Venti";
+}
+header .connect_status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .connect_status .light {
+  margin-right: 10px;
+  margin-bottom: 4px;
+  width: 6px;
+  height: 6px;
+  background-color: #8cffd2;
+  border-radius: 100%;
+  box-shadow: 0 0 8px lime, 0 0 8px lime, 0 0 8px lime;
+  animation: animlight 3s infinite;
+}
+@keyframes animlight {
+  0% {
+    box-shadow: 0 0 8px lime, 0 0 8px lime, 0 0 8px lime;
+  }
+  50% {
+    box-shadow: 0 0 0px lime, 0 0 0px lime, 0 0 0px lime;
+  }
+  100% {
+    box-shadow: 0 0 8px lime, 0 0 8px lime, 0 0 8px lime;
+  }
+}
+
+.user {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 100%;
+  filter: blur(3px);
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5), -8px -8px 20px rgba(255, 255, 255, 0.2);
+}
+
+.container {
+  margin-top: -100px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.container .content {
+  padding: 0px 200px 0px 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .content .text_section {
+  width: 50%;
+  color: white;
+  font-family: "Venti";
+  font-size: 30px;
+}
+.container .content .text_section input[type=button] {
+  padding: 20px 30px 20px 30px;
+  border-radius: 20px;
+  background-color: transparent;
+  border: none;
+  font-weight: 100;
+  color: white;
+  text-shadow: 0 0 2px #8ec6e11a, 0 0 10px #9ffdff, 0 0 20px #0047ff, 0 0 25px #8ec6e11a, 0 0 30px #9ffdff, 0 0 40px #0047ff;
+  font-family: "Venti";
+  font-size: 20px;
+  box-shadow: 8px 8px 20px black, -2px -2px 7px 0px rgba(93, 147, 185, 0.2);
+  transition: 1s ease-in;
+  cursor: pointer;
+}
+.container .content .text_section input[type=button]:nth-child(1) {
+  filter: none;
+}
+.container .content .text_section input[type=button]:hover {
+  box-shadow: inset 5px 5px 12px #030407, inset -5px -5px 12px #0d101d;
+  transition: 1s ease-in;
+  transform: scale(0.95);
+}
+.container .content .img_car {
+  width: 50%;
+}
+.container .content .img_car img {
+  max-height: 50vh;
+}
+
+/*# sourceMappingURL=app.css.map */

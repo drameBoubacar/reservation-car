@@ -1,5 +1,21 @@
 // VARIABLES COULEURS
 
 
+$font: "Venti" ;
+$h1-size:30px;
+
+$shadow:8px 8px 20px rgba(0, 0, 0, 0.5),
+-8px -8px 20px rgba(255, 255, 255, 0.2);
+
+$shadow-hover:8px 8px 20px rgba(0, 0, 0, 0.5),
+-8px -8px 20px rgba(255, 255, 255, 0.2), inset 8px 8px 20px rgba(0, 0, 0, 1),
+inset -8px -8px 20px rgba(255, 255, 255, 0.2);
+
+$background-color: #070a13;
+$primary-color:white;
+$secondary-color:linear-gradient(blue,cyan);
+
+
+
 //$primary: blue; 
 // $secondary: white;
