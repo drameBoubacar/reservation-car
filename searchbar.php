@@ -1,7 +1,6 @@
 <?php
  require_once './Login/connect.php';
  $allCars = $con->query('SELECT * FROM cars ORDER BY id_car DESC');
- var_dump($allCars);
  if(isset($_GET['search']) AND !empty($_GET['search'])){
      $recherche = htmlspecialchars($_GET['search']);
     $allCars = $con->query('SELECT MODEL FROM CARS WHERE MODEL LIKE "%'.$recherche.'%" ORDER BY id_car DESC');
