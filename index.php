@@ -1,3 +1,7 @@
+<?php
+include_once './Login/connect.php';
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +36,7 @@
           <li><a href='#'><i class="fa fa-inbox" aria-hidden="true"></i>Profile</a></li>
           <li><a href='#'><i class="fa fa-car" aria-hidden="true"></i>Reservations</a></li>
           <li><a href='#'><i class="fa fa-credit-card-alt" aria-hidden="true"></i>Transactions</a></li>
-          <li><a href='#'><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
+          <li><a href='./Disconnect/disconnect.php' name='logout'><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
       </ul>
   </li>
  

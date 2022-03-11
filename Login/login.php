@@ -1,8 +1,9 @@
 <?php
 include_once 'connect.php';
+session_start();
 $username = $_POST['name'];
 $password = $_POST['password'];
-$user = 'test';
+$user = "test";
 
 ?>
 
@@ -60,7 +61,23 @@ $user = 'test';
             <img src="../img/voiotit.svg" alt="" id='carOn' class="voiture_allumer">
         </div>
     </div>
-    <script src="script.js">
+    <script>
+        const voitureAllume = document.getElementById('carOn');
+        const voitureEteint = document.getElementById('carOff');
+        const submit = document.getElementById('submit');
+        const form = document.getElementById('form')
+        let user = '<?= $user ?>';
+
+
+        submit.addEventListener("click", function() {
+            if (isset(user)) {
+                voitureEteint.style.display = 'none';
+                voitureAllume.style.display = "flex";
+                voitureAllume.style.transition = "1s";
+                console.log('click');
+            }
+
+        });
     </script>
 </body>
 
