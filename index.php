@@ -11,7 +11,6 @@
 </head>
 
 <body>
-
     <header>
         <div class="connect_status">
             <div class="light"></div>
@@ -39,13 +38,13 @@
  
         
     </header>
-    <div class="container">
-        <div class="content">
+    <div class="container" id='s'>
+        <div class="content" id="slider1">
             <div class="text_section">
                 <h1><span class="heading">A new</span> <span>experience.</span><br>Reserve your car<br>Now.</h1>
 
                 <div class="btn">
-                <input type="button" value="Démarrer">
+                <input type="button" id="btn1" value="Démarrer">
                
                 </div>
 
@@ -53,14 +52,17 @@
             <div class="img_car">
                 <img src="/img/car_home.png" alt="">
             </div>
-
-
+        </div>
+        <div class="content" id='slider2'>
+            <div class="text_section">
+                <h1>Wsh bande de<br><br>BATARD.</h1>
+                <input type="button" id="btn2" value="retour">
+            </div>
+            <div class="img_car">
+                <img src="./img/car_home.png" alt="">
+            </div>
         </div>
     </div>
-
-
 </body>
-
-<script src="/main.js"></script>
-
+<script src="./main.js"></script>
 </html>

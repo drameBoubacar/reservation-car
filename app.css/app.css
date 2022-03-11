@@ -13,7 +13,8 @@
   src: url("/font/CircularStd-Light.otf");
   font-weight: 300;
 }
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -173,6 +174,9 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+}
+.container .content#slider2 {
+  display: none;
 }
 .container .content {
   padding: 0px 200px 0px 200px;

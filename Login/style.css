@@ -229,19 +229,44 @@ body {
     display: none;
 }
 
-@media (max-width: 810px) 
-{
-    .container
-    {
+header .connect_status {
+    display: flex;
+    justify-content: center;
+    color: white;
+    align-items: center;
+}
+
+header .connect_status .light {
+    margin-right: 10px;
+    margin-bottom: 4px;
+    width: 6px;
+    height: 6px;
+    background-color: #ff8c8c;
+    border-radius: 100%;
+    box-shadow: 0 0 8px rgb(255, 0, 0), 0 0 8px rgb(255, 0, 0), 0 0 8px rgb(255, 0, 0);
+    animation: animlight 3s infinite;
+}
+
+@keyframes animlight {
+    0% {
+        box-shadow: 0 0 8px rgb(255, 0, 0), 0 0 8px rgb(255, 0, 0), 0 0 8px rgb(255, 0, 0);
+    }
+    50% {
+        box-shadow: 0 0 2px rgb(255, 0, 0), 0 0 2px rgb(255, 0, 0)rgb(255, 0, 0)0 2px lime;
+    }
+    100% {
+        box-shadow: 0 0 8px rgb(255, 0, 0), 0 0 8px rgb(255, 0, 0), 0 0 8px rgb(255, 0, 0);
+    }
+}
+
+@media (max-width: 810px) {
+    .container {
         display: flex;
         align-items: center;
         flex-direction: column-reverse;
     }
-
-    .car_headlight 
-    {
+    .car_headlight {
         width: 60%;
         padding-right: 100px;
     }
-
 }
