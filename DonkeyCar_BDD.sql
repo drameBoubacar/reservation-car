@@ -58,12 +58,12 @@ create table RESERVATION
 create table USER
 (
    ID_USER              int not null auto_increment,
-   ADRESS               varchar(100) not null,
-   ACCOUNT_STATUS       bool not null,
-   CONTACT              numeric(10,0) not null,
-   USERNAME             varchar(50),
-   EMAIL                varchar(255) not null,
-   PASSWORD             varchar(255),
+   ADRESS               varchar(100),
+   ACCOUNT_STATUS       bool,
+   CONTACT              numeric(10,0),
+   USERNAME             varchar(50) not null,
+   EMAIL                varchar(255),
+   PASSWORD             varchar(255) not null,
    primary key (ID_USER)
 );
 alter table CAR_IMAGE add constraint FK_RELATION_1 foreign key (ID_CAR)
@@ -77,3 +77,5 @@ alter table RESERVATION add constraint FK_RELATION_4 foreign key (ID_PAYMENT)
 
 alter table RESERVATION add constraint foreign key (ID_CAR)
       references CARS (ID_CAR) on delete restrict on update restrict;
+
+insert into `user` (username, password) values ('user', 1234);
