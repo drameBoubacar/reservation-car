@@ -48,6 +48,7 @@ create table RESERVATION
    ID_RESERVATION       int not null auto_increment,
    ID_USER              int,
    ID_PAYMENT           int,
+   ID_CAR               int,
    RENTAL_DATE          date not null,
    RENTAL_TIME          time not null,
    RETURN_DATE          date not null,
@@ -73,3 +74,6 @@ alter table RESERVATION add constraint FK_RELATION_2 foreign key (ID_USER)
       references USER (ID_USER) on delete restrict on update restrict;
 alter table RESERVATION add constraint FK_RELATION_4 foreign key (ID_PAYMENT)
       references PAYMENT (ID_PAYMENT) on delete restrict on update restrict;
+
+alter table RESERVATION add constraint foreign key (ID_CAR)
+      references CARS (ID_CAR) on delete restrict on update restrict;
