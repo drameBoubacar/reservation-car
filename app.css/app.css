@@ -1,17 +1,244 @@
-/* Error: Undefined variable.
- *    ,
- * 78 |     color: $fmenu-color-base;
- *    |            ^^^^^^^^^^^^^^^^^
- *    '
- *   sass\app.scss 78:12  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a    \2577 \a 78 \2502      color: $fmenu-color-base;\d\a    \2502             ^^^^^^^^^^^^^^^^^\a    \2575 \a   sass\\app.scss 78:12  root stylesheet";
+@font-face {
+  font-family: "Circular pro";
+  src: url("/font/CircularStd-Bold.otf");
+  font-weight: 900;
 }
+@font-face {
+  font-family: "Circular pro";
+  src: url("/font/CircularStd-Medium.otf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Circular pro";
+  src: url("/font/CircularStd-Light.otf");
+  font-weight: 300;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url(/img/back.png);
+  background-size: 120%;
+  width: 100%;
+  height: 100%;
+}
+
+span {
+  font-family: "Circular pro";
+  font-weight: 300;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  color: white;
+  padding: 10px 200px 10px 200px;
+  font-family: "Venti";
+}
+header h1 {
+  font-family: "Circular pro";
+  font-weight: 900;
+}
+header .connect_status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .connect_status .light {
+  margin-right: 10px;
+  margin-bottom: 4px;
+  width: 6px;
+  height: 6px;
+  background-color: #8cffd2;
+  border-radius: 100%;
+  box-shadow: 0 0 8px lime, 0 0 8px lime, 0 0 8px lime;
+  animation: animlight 3s infinite;
+}
+@keyframes animlight {
+  0% {
+    box-shadow: 0 0 8px lime, 0 0 8px lime, 0 0 8px lime;
+  }
+  50% {
+    box-shadow: 0 0 2px lime, 0 0 2px lime, 0 0 2px lime;
+  }
+  100% {
+    box-shadow: 0 0 8px lime, 0 0 8px lime, 0 0 8px lime;
+  }
+}
+
+ul.fmenu {
+  color: #283661;
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+}
+ul.fmenu > li.fmenu-item {
+  display: inline-block;
+  margin-right: 1rem;
+  position: relative;
+}
+ul.fmenu .trigger-menu {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 3rem;
+  max-width: 3rem;
+  height: 3rem;
+  border-radius: 3rem;
+  overflow: hidden;
+  text-align: center;
+  background-color: #070a13;
+  box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.5), -1px -1px 2px 0px rgba(88, 102, 181, 0.2);
+  cursor: pointer;
+  transition: max-width ease 0.4s;
+}
+ul.fmenu .trigger-menu a.fa.fa-user-o::before {
+  list-style-type: none;
+  color: white;
+  font-size: 20px;
+  filter: drop-shadow(0 0 5px #a6d4ff) drop-shadow(0 0 10px #4990fa);
+  animation: 0.6s ease-in-out;
+}
+ul.fmenu .trigger-menu i {
+  display: block;
+  margin: 0 0.2925rem;
+  color: white;
+  font-size: 1.5rem;
+  transition: color ease 0.3s;
+}
+ul.fmenu .trigger-menu.expanded {
+  max-width: unset;
+}
+ul.fmenu .trigger-menu.open i {
+  color: #ffd53e;
+}
+ul.fmenu .trigger-menu:hover:not(.expanded) i {
+  color: #ffd53e;
+}
+ul.fmenu .floating-menu {
+  display: block;
+  position: absolute;
+  top: 3.75rem;
+  right: 0px;
+  min-width: 100%;
+  max-width: 250px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #080a13;
+  box-shadow: 1px 1px 13px black, -1px -1px 4px #283052;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  max-height: 0px;
+  z-index: 100;
+  opacity: 0;
+  transition: max-height ease 0.6s, opacity ease 0.3s;
+}
+ul.fmenu .floating-menu > li {
+  padding: 0 0.5rem;
+}
+ul.fmenu .floating-menu > li a {
+  color: white;
+  font-size: 0.85rem;
+  font-family: "Circular pro";
+  font-weight: 900;
+  text-decoration: none;
+  display: block;
+  padding: 0.75rem 0.5rem;
+}
+ul.fmenu .floating-menu > li a i {
+  margin-right: 1ch;
+}
+ul.fmenu .floating-menu > li a:hover {
+  color: white;
+  text-shadow: 0 0 5px #a6d4ff, 0 0 10px #4990fa, 0 0 20px #1362da;
+  transition: 0.3s ease-in-out;
+}
+ul.fmenu .floating-menu > li:not(:last-child) a {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.container {
+  margin-top: -100px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.container .content#slider2 {
+  display: none;
+}
+.container .content {
+  padding: 0px 200px 0px 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .content .text_section {
+  width: 50%;
+  color: white;
+  font-family: "Circular pro";
+  font-size: 30px;
+}
+.container .content .text_section input[type=button] {
+  padding: 20px 30px 20px 30px;
+  border-radius: 20px;
+  background-color: transparent;
+  border: none;
+  font-weight: 100;
+  color: white;
+  text-shadow: 0 0 2px #8ec6e11a, 0 0 10px #9ffdff, 0 0 20px #0047ff, 0 0 25px #8ec6e11a, 0 0 30px #9ffdff, 0 0 40px #0047ff;
+  font-family: "Circular pro";
+  font-weight: 900;
+  font-size: 20px;
+  box-shadow: 8px 8px 20px black, -2px -2px 7px 0px rgba(93, 147, 185, 0.2);
+  transition: 1s ease-in;
+  cursor: pointer;
+}
+.container .content .text_section input[type=button]:nth-child(1) {
+  filter: none;
+}
+.container .content .text_section input[type=button]:hover {
+  box-shadow: inset 5px 5px 12px #030407, inset -5px -5px 12px #0d101d;
+  transition: 1s ease-in;
+  transform: scale(0.95);
+}
+.container .content .img_car {
+  width: 50%;
+}
+.container .content .img_car img {
+  max-height: 50vh;
+}
+
+@media (max-width: 800px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    color: white;
+    padding: 20px 50px 0px 50px;
+    font-family: "Venti";
+  }
+
+  .connect_status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .user {
+    transform: scale(0.9);
+  }
+}
+
+/*# sourceMappingURL=app.css.map */

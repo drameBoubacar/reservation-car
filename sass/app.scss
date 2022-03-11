@@ -1,3 +1,4 @@
+@import 'variables';
 @font-face {
     font-family: "Circular pro";
     src: url("/font/CircularStd-Bold.otf");
@@ -187,6 +188,9 @@ ul.fmenu {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    .content#slider2 {
+        display: none;
+    }
     .content {
         padding: 0px 200px 0px 200px;
         display: flex;
