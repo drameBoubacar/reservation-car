@@ -2,12 +2,10 @@
 include_once 'connect.php';
 $username = $_POST['name'];
 $password = $_POST['password'];
-if(isset($_POST['submit']) && $username == 'test' && $password == 1234)
-{
-    sleep(5);
-    header('location:../Html/index.html');
-}
+$user = 'test';
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +18,13 @@ if(isset($_POST['submit']) && $username == 'test' && $password == 1234)
 </head>
 
 <body>
+    <header>
+        <div class="connect_status">
+            <div class="light"></div>
+            <span>Disconnected</span>
+        </div>
 
+    </header>
     <div class="container">
         <div class="login-box">
             <h2>Login</h2>
@@ -40,11 +44,10 @@ if(isset($_POST['submit']) && $username == 'test' && $password == 1234)
                     }
                 </script>
                 <input type='submit' id="submit" name='submit' class="sub" onclick="play()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    Submit
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
                 </input>
                 <audio id="audioMusic">
                     <source src="./car-engine-sound-effect.mp3">

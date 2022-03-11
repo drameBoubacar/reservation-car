@@ -44,7 +44,7 @@
                 <h1><span class="heading">A new</span> <span>experience.</span><br>Reserve your car<br>Now.</h1>
 
                 <div class="btn">
-                <input type="button" value="Démarrer">
+                <input type="button" id='btn1' value="Démarrer">
                
                 </div>
 
@@ -64,5 +64,5 @@
         </div>
     </div>
 </body>
-<script src="/main.js"></script>
+<script src="./main.js"></script>
 </html>

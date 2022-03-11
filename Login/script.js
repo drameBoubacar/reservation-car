@@ -10,3 +10,11 @@ submit.addEventListener("click", function() {
     voitureAllume.style.transition = "1s";
     console.log('click');
 });
+
+let requete = new XMLHttpRequest();
+requete.onload = function() {
+    //La variable à passer est alors contenue dans l'objet response et l'attribut responseText.
+    let username = this.responseText;
+};
+requete.open(get, login.php, true); //True pour que l'exécution du script continue pendant le chargement, false pour attendre.
+requete.send();
