@@ -64,7 +64,6 @@ html,body{
 
         .light {
             margin-right: 10px;
-            margin-bottom: 4px;
             width: 6px;
             height: 6px;
             background-color: #8cffd2;
@@ -110,8 +109,7 @@ ul.fmenu {
         
         $fmenu-item-icon-size : $fmenu-size * 0.5;
         $fmenu-item-padding : $fmenu-size * 0.3;
-        $fmenu-item-icon-margin : $fmenu-size * 0.195 / 2;
-        
+        $fmenu-item-icon-margin : $fmenu-size * 0.195 / 2;  
         display: flex;
         align-content: center;
         align-items: center;
@@ -274,7 +272,7 @@ ul.fmenu {
         }
 
         .img_car {
-            width: 50%;
+            width: 50%; 
 
         }
         .img_car img{
