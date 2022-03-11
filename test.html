@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+<ul class="fmenu" id="mymenu">
+  <li class="fmenu-item">
+      <div class="trigger-menu expanded">
+          <i class="fa-regular fa-circle-user"></i>
+          <span class="text">Hello, Lionel</span>
+      </div>
+      <ul class="floating-menu">
+          <li><a href='#'><i class="fa-regular fa-address-card"></i>Profile</a></li>
+          <li><a href='#'><i class="fa-regular fa-comment-dots"></i>Contact support</a></li>
+          <li><a href='#'><i class="fa-regular fa-money-bill-1"></i>Transactions</a></li>
+          <li><a href='#'><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+      </ul>
+  </li>
+ 
+       <style>
+
+ul.fmenu {
+    color: #fff;
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+}
+
+ul.fmenu > li.fmenu-item {
+    display: inline-block;
+    margin-right: 1rem;
+    position: relative;
+}
+
+ul.fmenu .trigger-menu {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    min-width: 3rem;
+    max-width: 3rem;
+    height: 3rem;
+    border: 0.45rem solid transparent;
+    border-radius: 3rem;
+    overflow: hidden;
+    text-align: center;
+    background-color: #505050;
+    cursor: pointer;
+    transition: max-width ease 0.4s;
+}
+
+ul.fmenu .floating-menu {
+    display: block;
+    position: absolute;
+    top: 3.75rem;
+    min-width: 100%;
+    max-width: 250px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #505050;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    max-height: 0px;
+    z-index: 100;
+    opacity: 0;
+    transition: max-height ease 0.6s, opacity ease 0.3s;
+}
+       </style>
+</body>
+</html>

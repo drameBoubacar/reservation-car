@@ -228,3 +228,20 @@ body {
 .voiture_allumer {
     display: none;
 }
+
+@media (max-width: 810px) 
+{
+    .container
+    {
+        display: flex;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+
+    .car_headlight 
+    {
+        width: 60%;
+        padding-right: 100px;
+    }
+
+}

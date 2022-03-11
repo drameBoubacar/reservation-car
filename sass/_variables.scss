@@ -1,7 +1,7 @@
 // VARIABLES COULEURS
 
 
-$font: "Venti" ;
+$font: "Circular pro" ;
 $h1-size:30px;
 
 $shadow:8px 8px 20px rgba(0, 0, 0, 0.5),
@@ -14,6 +14,24 @@ inset -8px -8px 20px rgba(255, 255, 255, 0.2);
 $background-color: #070a13;
 $primary-color:white;
 $secondary-color:linear-gradient(blue,cyan);
+
+
+$fmenu-size             : 3rem !default;
+$fmenu-bg               : #505050 !default;
+$fmenu-color-base       : #283661 !default;
+$fmenu-color-hover      : #ffd53e !default;
+$fmenu-item-space       : 1rem !default;
+$fmenu-item-label-size    : 1rem !default;
+$fmenu-item-expand-speed  : .4s !default;
+$fmenu-item-color-speed   : .3s !default;
+
+$fmenu-list-max-width   : 250px !default;
+$fmenu-list-font-size   : .85rem !default;
+$fmenu-list-border-sep  : 1px solid rgba(0,0,0,.15) !default;
+$fmenu-list-hover-color   : #ffd53e !default;
+
+$fmenu-list-expand-speed  : .6s !default;
+$fmenu-list-opacity-speed : .3s !default;
 
 
 
