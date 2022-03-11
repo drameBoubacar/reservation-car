@@ -44,7 +44,11 @@
                 <h1><span class="heading">A new</span> <span>experience.</span><br>Reserve your car<br>Now.</h1>
 
                 <div class="btn">
+<<<<<<< HEAD
                 <input type="button" id='btn1' value="Démarrer">
+=======
+                <input type="button" id="btn1" value="Démarrer">
+>>>>>>> 1bc118a62cc22598c3df072cfc5605e197b95850
                
                 </div>
 
