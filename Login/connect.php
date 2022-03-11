@@ -4,12 +4,12 @@ $db_name = "cars_reservation";
 $username = "root";
 $password = "";
 
-//Connexion à la base de donnée
 try {
-    $con = new PDO("mysql:host={$host};dbname={$db_name}", $username, $password);
-}
-
-catch(PDOException $exception){
-    echo "Connection error: " . $exception->getMessage();
+  $db = new PDO('mysql:host=localhost;dbname=YOUR_DATABASE_NAME;charset=utf8mb4', 'root', '');
+  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);  
+} catch (PDOException $e) {
+  echo "Connection failed : ". $e->getMessage();
 }
 ?>
+

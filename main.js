@@ -1,12 +1,26 @@
+let slider = document.getElementById('slider1');
+let boutton = document.getElementById('btn1');
+let slider2 = document.getElementById('slider2');
+let boutton2 = document.getElementById('btn2');
+
+
+boutton.addEventListener("click", function() {
+    slider.style.display = 'none';
+    slider2.style.display = 'flex';
+});
+boutton2.addEventListener("click", function() {
+    slider2.style.display = 'none';
+    slider.style.display = 'flex';
+});
 
 //The menu js class:
 class sikFloatingMenu {
     menuEl = null;
     constructor(_menu) {
         //The menu element:
-        this.menuEl = typeof _menu === 'string'
-                      ? document.querySelector(_menu)
-                      : _menu;
+        this.menuEl = typeof _menu === 'string' ?
+            document.querySelector(_menu) :
+            _menu;
         //Attach handlers:
         this.attachHandlers();
     }
@@ -59,9 +73,9 @@ class sikFloatingMenu {
         });
     }
     _getWidth(el, type) {
-        if (type === 'inner') 
+        if (type === 'inner')
             return el.clientWidth;
-        else if (type === 'outer') 
+        else if (type === 'outer')
             return el.offsetWidth;
         return 0;
     }
@@ -76,5 +90,3 @@ class sikFloatingMenu {
 
 //Intialize menu: 
 window.sik_menu = new sikFloatingMenu("#mymenu");
-
-
