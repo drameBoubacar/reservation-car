@@ -1,27 +1,26 @@
 @import 'variables';
-
 @font-face {
     font-family: "Circular pro";
     src: url("/font/CircularStd-Bold.otf");
     font-weight: 900;
-   }
+}
 
-   @font-face {
+@font-face {
     font-family: "Circular pro";
     src: url("/font/CircularStd-Medium.otf");
     font-weight: 700;
-   }
+}
 
-   @font-face {
+@font-face {
     font-family: "Circular pro";
     src: url("/font/CircularStd-Light.otf");
     font-weight: 300;
-   }
+}
 
 //Ecrivez vos premières ligne de SASS ici 
 //>>
-
-html,body{
+html,
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -29,15 +28,15 @@ html,body{
     background-size: 120%;
     width: 100%;
     height: 100%;
-  }
+    border-radius: 4rem;
+}
 
-  span{
-      font-family: "Circular pro";
-      font-weight: 300;
-  }
+span {
+    font-family: "Circular pro";
+    font-weight: 300;
+}
 
-
-  header {
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -45,23 +44,16 @@ html,body{
     color: white;
     padding: 10px 200px 10px 200px;
     font-family: "Venti";
-
- h1{
+    h1 {
         font-family: "Circular pro";
         font-weight: 900;
-        
     }
-
-    
-
-    .connect_status{
+    .connect_status {
         display: flex;
         justify-content: center;
         align-items: center;
-
         .light {
             margin-right: 10px;
-            margin-bottom: 4px;
             width: 6px;
             height: 6px;
             background-color: #8cffd2;
@@ -69,27 +61,19 @@ html,body{
             box-shadow: 0 0 8px lime, 0 0 8px lime, 0 0 8px lime;
             animation: animlight 3s infinite;
         }
-
-        @keyframes animlight{
-            0%{
+        @keyframes animlight {
+            0% {
                 box-shadow: 0 0 8px lime, 0 0 8px lime, 0 0 8px lime;
             }
-
-            50%{
+            50% {
                 box-shadow: 0 0 2px lime, 0 0 2px lime, 0 0 2px lime;
             }
-
-            100%{
+            100% {
                 box-shadow: 0 0 8px lime, 0 0 8px lime, 0 0 8px lime;
             }
         }
     }
-
-
 }
-
-
-
 
 ul.fmenu {
     color: $fmenu-color-base;
@@ -104,11 +88,9 @@ ul.fmenu {
         position: relative;
     }
     .trigger-menu {
-        
-        $fmenu-item-icon-size : $fmenu-size * 0.5;
-        $fmenu-item-padding : $fmenu-size * 0.3;
-        $fmenu-item-icon-margin : $fmenu-size * 0.195 / 2;
-        
+        $fmenu-item-icon-size: $fmenu-size * 0.5;
+        $fmenu-item-padding: $fmenu-size * 0.3;
+        $fmenu-item-icon-margin: $fmenu-size * 0.195 / 2;
         display: flex;
         align-content: center;
         align-items: center;
@@ -124,7 +106,6 @@ ul.fmenu {
         box-shadow: 4px 4px 3px rgb(0 0 0 / 50%), -1px -1px 2px 0px rgb(88 102 181 / 20%);
         cursor: pointer;
         transition: max-width ease $fmenu-item-expand-speed;
-
         a.fa.fa-user-o::before {
             list-style-type: none;
             color: white;
@@ -132,18 +113,15 @@ ul.fmenu {
             filter: drop-shadow(0 0 5px rgb(166, 212, 255)) drop-shadow(0 0 10px rgb(73, 144, 250));
             animation: 0.6s ease-in-out;
         }
-
-     
         i {
-            display:block;
+            display: block;
             margin: 0 $fmenu-item-icon-margin;
             color: white;
             font-size: $fmenu-item-icon-size;
             transition: color ease $fmenu-item-color-speed;
         }
-     
         &.expanded {
-            max-width: unset ;
+            max-width: unset;
         }
         &.open {
             i {
@@ -173,8 +151,7 @@ ul.fmenu {
         max-height: 0px;
         z-index: 100;
         opacity: 0;
-        transition: max-height ease $fmenu-list-expand-speed, 
-                    opacity ease $fmenu-list-opacity-speed;
+        transition: max-height ease $fmenu-list-expand-speed, opacity ease $fmenu-list-opacity-speed;
         >li {
             padding: 0 0.5rem;
             a {
@@ -186,11 +163,11 @@ ul.fmenu {
                 display: block;
                 padding: 0.75rem 0.5rem;
                 i {
-                    margin-right:1ch;
+                    margin-right: 1ch;
                 }
                 &:hover {
                     color: white;
-                    text-shadow: 0 0 5px rgb(166, 212, 255),0 0 10px rgb(73, 144, 250),0 0 20px rgb(19, 98, 218);
+                    text-shadow: 0 0 5px rgb(166, 212, 255), 0 0 10px rgb(73, 144, 250), 0 0 20px rgb(19, 98, 218);
                     transition: 0.3s ease-in-out;
                 }
             }
@@ -203,9 +180,6 @@ ul.fmenu {
     }
 }
 
-
-
-  
 .container {
     margin-top: -100px;
     width: 100%;
@@ -214,23 +188,26 @@ ul.fmenu {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-
-
-
-
-    .content{
+    .content#slider2 {
+        display: none;
+    }
+    .content {
         padding: 0px 200px 0px 200px;
         display: flex;
         justify-content: center;
         align-items: center;
-
-        .text_section{
+        .text_section {
             width: 50%;
             color: $primary-color;
             font-family: $font;
             font-size: $h1-size;
-
-            
+            span.heading {
+                font-weight: 900;
+                font-size: 100px;
+            }
+            .text_section h1 {
+                font-size: 60px;
+            }
             input[type=button] {
                 padding: 20px 30px 20px 30px;
                 border-radius: 20px;
@@ -246,69 +223,41 @@ ul.fmenu {
                 transition: 1s ease-in;
                 cursor: pointer;
             }
-
-            input[type="button"]:nth-child(1){
-                filter:none ;
+            input[type="button"]:nth-child(1) {
+                filter: none;
             }
-
-  
-
             input[type="button"]:hover {
                 box-shadow: inset 5px 5px 12px #030407, inset -5px -5px 12px #0d101d;
-                
                 transition: 1s ease-in;
                 transform: scale(0.95);
             }
         }
-
         .img_car {
-            width: 50%;
+            width: 50%; 
 
         }
-        .img_car img{
+        .img_car img {
             max-height: 50vh;
-          
         }
-
-       
     }
-  }
+}
 
-  @media (max-width: 800px) 
-    {
-        header
-        {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
-            color: white;
-            padding: 20px 50px 0px 50px;
-            font-family: "Venti";
-        }
-        .connect_status
-        {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .user{
-            transform: scale(0.9);
-        }
-
-        
+@media (max-width: 800px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        color: white;
+        padding: 20px 50px 0px 50px;
+        font-family: "Venti";
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
+    .connect_status {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .user {
+        transform: scale(0.9);
+    }
+}
