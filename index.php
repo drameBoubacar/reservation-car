@@ -42,7 +42,7 @@
     <div class="container">
         <div class="content">
             <div class="text_section">
-                <h1>A new <span>experience.</span><br>Reserve your car<br>Now.</h1>
+                <h1><span class="heading">A new</span> <span>experience.</span><br>Reserve your car<br>Now.</h1>
 
                 <div class="btn">
                 <input type="button" value="Démarrer">
