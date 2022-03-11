@@ -1,9 +1,40 @@
 <?php
 include_once 'connect.php';
 session_start();
-$username = $_POST['name'];
-$password = $_POST['password'];
-$user = "test";
+
+
+$msg = ""; 
+if(isset($_POST['submit'])) {
+  $username = trim($_POST['username']);
+  $password = trim($_POST['password']);
+  if($username != "" && $password != "") {
+    try {
+      $query = "select username, password from user where `username`=:username and password=:password";
+      $stmt = $db->prepare($query);
+      $stmt->bindParam('username', $username, PDO::PARAM_STR);
+      $stmt->bindValue('password', $password, PDO::PARAM_STR);
+      $stmt->execute();
+      $count = $stmt->rowCount();
+      $row   = $stmt->fetch(PDO::FETCH_ASSOC);
+      if($count == 1 && !empty($row)) {
+        /******************** Your code ***********************/
+        $_SESSION['sess_user_id']   = $row['id_user'];
+        $_SESSION['sess_user_name'] = $row['username'];
+
+       
+      } else {
+        $msg = "Invalid username and password!";
+      }
+    } catch (PDOException $e) {
+      echo "Error : ".$e->getMessage();
+    }
+  } else {
+    $msg = "Both fields are required!";
+  }
+}
+
+
+
 
 ?>
 
@@ -31,7 +62,7 @@ $user = "test";
             <h2>Login</h2>
             <form id="form" method="POST">
                 <div class="user-box">
-                    <input type="text" name="name" required>
+                    <input type="text" name="username" required>
                     <label>Username</label>
                 </div>
                 <div class="user-box">

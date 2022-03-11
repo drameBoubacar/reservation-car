@@ -54,7 +54,6 @@ header {
         align-items: center;
         .light {
             margin-right: 10px;
-            margin-bottom: 4px;
             width: 6px;
             height: 6px;
             background-color: #8cffd2;
@@ -234,7 +233,8 @@ ul.fmenu {
             }
         }
         .img_car {
-            width: 50%;
+            width: 50%; 
+
         }
         .img_car img {
             max-height: 50vh;
