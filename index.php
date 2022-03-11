@@ -22,18 +22,31 @@
             <h1>donkeycar.</h1>
         </div>
 
-        <div class="user">
-            <a href="#" class="fa fa-user-o" aria-hidden="true"></a>
-        </div>
+      
+        <ul class="fmenu" id="mymenu">
+  <li class="fmenu-item">
+      <div class="trigger-menu expanded">
+      <a href="#" class="fa fa-user-o" aria-hidden="true"></a>
+          
+      </div>
+      <ul class="floating-menu">
+          <li><a href='#'><i class="fa fa-inbox" aria-hidden="true"></i>Profile</a></li>
+          <li><a href='#'><i class="fa fa-car" aria-hidden="true"></i>Reservations</a></li>
+          <li><a href='#'><i class="fa fa-credit-card-alt" aria-hidden="true"></i>Transactions</a></li>
+          <li><a href='#'><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
+      </ul>
+  </li>
+ 
+        
     </header>
     <div class="container">
         <div class="content">
             <div class="text_section">
-                <h1>A new experience.<br>Reserve your car<br>Now.</h1>
+                <h1>A new <span>experience.</span><br>Reserve your car<br>Now.</h1>
 
                 <div class="btn">
                 <input type="button" value="Démarrer">
-                <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+               
                 </div>
 
             </div>
@@ -48,6 +61,6 @@
 
 </body>
 
-
+<script src="/main.js"></script>
 
 </html>
