@@ -1,9 +1,23 @@
-@import 'variables';
 @font-face {
-    font-family: "Venti";
-    src: url("/font/VentiCF-DemiBold.otf");
+    font-family: "Circular pro";
+    src: url("/font/CircularStd-Bold.otf");
+    font-weight: 900;
 }
 
+@font-face {
+    font-family: "Circular pro";
+    src: url("/font/CircularStd-Medium.otf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Circular pro";
+    src: url("/font/CircularStd-Light.otf");
+    font-weight: 300;
+}
+
+//Ecrivez vos premières ligne de SASS ici 
+//>>
 html,
 body {
     margin: 0;
@@ -15,6 +29,11 @@ body {
     height: 100%;
 }
 
+span {
+    font-family: "Circular pro";
+    font-weight: 300;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -23,6 +42,10 @@ header {
     color: white;
     padding: 10px 200px 10px 200px;
     font-family: "Venti";
+    h1 {
+        font-family: "Circular pro";
+        font-weight: 900;
+    }
     .connect_status {
         display: flex;
         justify-content: center;
@@ -42,7 +65,7 @@ header {
                 box-shadow: 0 0 8px lime, 0 0 8px lime, 0 0 8px lime;
             }
             50% {
-                box-shadow: 0 0 0px lime, 0 0 0px lime, 0 0 0px lime;
+                box-shadow: 0 0 2px lime, 0 0 2px lime, 0 0 2px lime;
             }
             100% {
                 box-shadow: 0 0 8px lime, 0 0 8px lime, 0 0 8px lime;
@@ -51,13 +74,109 @@ header {
     }
 }
 
-.user {
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    border-radius: 100%;
-    filter: blur(3px);
-    box-shadow: $shadow;
+ul.fmenu {
+    color: $fmenu-color-base;
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+    >li.fmenu-item {
+        display: inline-block;
+        margin-right: $fmenu-item-space;
+        position: relative;
+    }
+    .trigger-menu {
+        $fmenu-item-icon-size: $fmenu-size * 0.5;
+        $fmenu-item-padding: $fmenu-size * 0.3;
+        $fmenu-item-icon-margin: $fmenu-size * 0.195 / 2;
+        display: flex;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        min-width: $fmenu-size;
+        max-width: $fmenu-size;
+        height: $fmenu-size;
+        border-radius: $fmenu-size;
+        overflow: hidden;
+        text-align: center;
+        background-color: $background-color;
+        box-shadow: 4px 4px 3px rgb(0 0 0 / 50%), -1px -1px 2px 0px rgb(88 102 181 / 20%);
+        cursor: pointer;
+        transition: max-width ease $fmenu-item-expand-speed;
+        a.fa.fa-user-o::before {
+            list-style-type: none;
+            color: white;
+            font-size: 20px;
+            filter: drop-shadow(0 0 5px rgb(166, 212, 255)) drop-shadow(0 0 10px rgb(73, 144, 250));
+            animation: 0.6s ease-in-out;
+        }
+        i {
+            display: block;
+            margin: 0 $fmenu-item-icon-margin;
+            color: white;
+            font-size: $fmenu-item-icon-size;
+            transition: color ease $fmenu-item-color-speed;
+        }
+        &.expanded {
+            max-width: unset;
+        }
+        &.open {
+            i {
+                color: $fmenu-color-hover
+            }
+        }
+        &:hover:not(.expanded) {
+            i {
+                color: $fmenu-color-hover
+            }
+        }
+    }
+    .floating-menu {
+        display: block;
+        position: absolute;
+        top: $fmenu-size * 1.25;
+        right: 0px;
+        min-width: 100%;
+        max-width: $fmenu-list-max-width;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        background-color: #080a13;
+        box-shadow: 1px 1px 13px black, -1px -1px 4px #283052;
+        border-radius: 0.75rem;
+        overflow: hidden;
+        max-height: 0px;
+        z-index: 100;
+        opacity: 0;
+        transition: max-height ease $fmenu-list-expand-speed, opacity ease $fmenu-list-opacity-speed;
+        >li {
+            padding: 0 0.5rem;
+            a {
+                color: white;
+                font-size: $fmenu-list-font-size;
+                font-family: 'Circular pro';
+                font-weight: 900;
+                text-decoration: none;
+                display: block;
+                padding: 0.75rem 0.5rem;
+                i {
+                    margin-right: 1ch;
+                }
+                &:hover {
+                    color: white;
+                    text-shadow: 0 0 5px rgb(166, 212, 255), 0 0 10px rgb(73, 144, 250), 0 0 20px rgb(19, 98, 218);
+                    transition: 0.3s ease-in-out;
+                }
+            }
+        }
+        >li:not(:last-child) {
+            a {
+                border-bottom: $fmenu-list-border-sep;
+            }
+        }
+    }
 }
 
 .container {
@@ -67,37 +186,12 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    .content:last-child {
-        display: none;
-        transition: 2s;
-        animation: slider 2s;
-        @keyframes slider {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-    }
+    overflow: hidden;
     .content {
-        overflow: hidden;
         padding: 0px 200px 0px 200px;
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: 2s;
-        animation: slider2 2s;
-        @keyframes slider2 {
-            0% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-                transform: scale(0.5);
-            }
-        }
         .text_section {
             width: 50%;
             color: $primary-color;
@@ -111,7 +205,8 @@ header {
                 font-weight: 100;
                 color: white;
                 text-shadow: 0 0 2px #8ec6e11a, 0 0 10px #9ffdff, 0 0 20px #0047ff, 0 0 25px #8ec6e11a, 0 0 30px #9ffdff, 0 0 40px #0047ff;
-                font-family: "Venti";
+                font-family: "Circular pro";
+                font-weight: 900;
                 font-size: 20px;
                 box-shadow: 8px 8px 20px rgb(0 0 0), -2px -2px 7px 0px rgb(93 147 185 / 20%);
                 transition: 1s ease-in;
@@ -132,5 +227,25 @@ header {
         .img_car img {
             max-height: 50vh;
         }
+    }
+}
+
+@media (max-width: 800px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        color: white;
+        padding: 20px 50px 0px 50px;
+        font-family: "Venti";
+    }
+    .connect_status {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .user {
+        transform: scale(0.9);
     }
 }

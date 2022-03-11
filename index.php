@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./app.css/app.css">
+    <script src="https://use.fontawesome.com/3d02935bac.js"></script>
     <title>Document</title>
 </head>
 
@@ -20,15 +21,34 @@
             <h1>donkeycar.</h1>
         </div>
 
-        <div class="user">
-            <img src="" alt="">
-        </div>
+      
+        <ul class="fmenu" id="mymenu">
+  <li class="fmenu-item">
+      <div class="trigger-menu expanded">
+      <a href="#" class="fa fa-user-o" aria-hidden="true"></a>
+          
+      </div>
+      <ul class="floating-menu">
+          <li><a href='#'><i class="fa fa-inbox" aria-hidden="true"></i>Profile</a></li>
+          <li><a href='#'><i class="fa fa-car" aria-hidden="true"></i>Reservations</a></li>
+          <li><a href='#'><i class="fa fa-credit-card-alt" aria-hidden="true"></i>Transactions</a></li>
+          <li><a href='#'><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
+      </ul>
+  </li>
+ 
+        
     </header>
     <div class="container" id='s'>
         <div class="content" id="slider1">
             <div class="text_section">
-                <h1>A new experience.<br>Reserve your car<br>Now.</h1>
-                <input type="button" id="btn1" value="Démarrer">
+
+                <h1>A new <span>experience.</span><br>Reserve your car<br>Now.</h1>
+
+                <div class="btn">
+                <input type="button" value="Démarrer">
+               
+                </div>
+
             </div>
             <div class="img_car">
                 <img src="/img/car_home.png" alt="">
@@ -44,11 +64,6 @@
             </div>
         </div>
     </div>
-
-<script src="./main.js"></script>
-
 </body>
-
-
-
+<script src="/main.js"></script>
 </html>
