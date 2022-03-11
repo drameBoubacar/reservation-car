@@ -50,7 +50,6 @@ header .connect_status {
 }
 header .connect_status .light {
   margin-right: 10px;
-  margin-bottom: 4px;
   width: 6px;
   height: 6px;
   background-color: #8cffd2;
