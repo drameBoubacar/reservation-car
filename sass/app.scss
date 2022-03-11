@@ -67,61 +67,37 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    .content:last-child {
+        display: none;
+        transition: 2s;
+        animation: slider 2s;
+        @keyframes slider {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    }
     .content {
         overflow: hidden;
         padding: 0px 200px 0px 200px;
         display: flex;
         justify-content: center;
         align-items: center;
-        .text_section {
-            width: 50%;
-            color: $primary-color;
-            font-family: $font;
-            font-size: $h1-size;
-            input[type=button] {
-                padding: 20px 30px 20px 30px;
-                border-radius: 20px;
-                background-color: transparent;
-                border: none;
-                font-weight: 100;
-                color: white;
-                text-shadow: 0 0 2px #8ec6e11a, 0 0 10px #9ffdff, 0 0 20px #0047ff, 0 0 25px #8ec6e11a, 0 0 30px #9ffdff, 0 0 40px #0047ff;
-                font-family: "Venti";
-                font-size: 20px;
-                box-shadow: 8px 8px 20px rgb(0 0 0), -2px -2px 7px 0px rgb(93 147 185 / 20%);
-                transition: 1s ease-in;
-                cursor: pointer;
+        transition: 2s;
+        animation: slider2 2s;
+        @keyframes slider2 {
+            0% {
+                opacity: 1;
             }
-            input[type="button"]:nth-child(1) {
-                filter: none;
-            }
-            input[type="button"]:hover {
-                box-shadow: inset 5px 5px 12px #030407, inset -5px -5px 12px #0d101d;
-                transition: 1s ease-in;
-                transform: scale(0.95);
+            100% {
+                opacity: 0;
+                transform: scale(0.5);
             }
         }
-        .img_car {
-            width: 50%;
-        }
-        .img_car img {
-            max-height: 50vh;
-        }
-    }
-}
-
-.container2 {
-    margin-top: -100px;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    display: none;
-    .content {
-        padding: 0px 200px 0px 200px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         .text_section {
             width: 50%;
             color: $primary-color;
