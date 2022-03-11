@@ -1,10 +1,6 @@
 <?php
 include_once 'connect.php';
 session_start();
-$username = $_POST['name'];
-$password = $_POST['password'];
-$user = "test";
-
 ?>
 
 <!DOCTYPE html>
@@ -70,7 +66,7 @@ $user = "test";
 
 
         submit.addEventListener("click", function() {
-            if (isset(user)) {
+            if () {
                 voitureEteint.style.display = 'none';
                 voitureAllume.style.display = "flex";
                 voitureAllume.style.transition = "1s";
