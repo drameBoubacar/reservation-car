@@ -13,16 +13,6 @@ boutton2.addEventListener("click", function() {
     slider.style.display = 'flex';
 });
 
-boutton.addEventListener("click").animate([
-    // keyframes
-    { transform: 'translateY(0px)' },
-    { transform: 'translateY(-300px)' }
-  ], {
-    // timing options
-    duration: 1000,
-    iterations: Infinity
-  });
-
 //The menu js class:
 class sikFloatingMenu {
     menuEl = null;

@@ -49,10 +49,8 @@ create table RESERVATION
    ID_USER              int,
    ID_PAYMENT           int,
    ID_CAR               int,
-   RENTAL_DATE          date not null,
-   RENTAL_TIME          time not null,
-   RETURN_DATE          date not null,
-   RETURN_TIME          time not null,
+   RENTAL_DATE_TIME     DATETIME not null,
+   RETURN_DATE_TIME     DATETIME not null,
    primary key (ID_RESERVATION)
 );
 create table USER

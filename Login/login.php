@@ -1,15 +1,13 @@
 <?php
-include_once 'connect.php';
+include_once('./connect.php');
 session_start();
-
-
 $msg = ""; 
 if(isset($_POST['submit'])) {
   $username = trim($_POST['username']);
   $password = trim($_POST['password']);
   if($username != "" && $password != "") {
     try {
-      $query = "select username, password from user where `username`=:username and password=:password";
+      $query = "select username, password from `user` where `username`=:username and `password`=:password";
       $stmt = $db->prepare($query);
       $stmt->bindParam('username', $username, PDO::PARAM_STR);
       $stmt->bindValue('password', $password, PDO::PARAM_STR);
@@ -20,7 +18,8 @@ if(isset($_POST['submit'])) {
         /******************** Your code ***********************/
         $_SESSION['sess_user_id']   = $row['id_user'];
         $_SESSION['sess_user_name'] = $row['username'];
-
+        header('location:../index.php');
+        var_dump($row);
        
       } else {
         $msg = "Invalid username and password!";
@@ -32,84 +31,66 @@ if(isset($_POST['submit'])) {
     $msg = "Both fields are required!";
   }
 }
-
-
-
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
 </head>
 
 <body>
-    <header>
-        <div class="connect_status">
-            <div class="light"></div>
-            <span>Disconnected</span>
-        </div>
-
-    </header>
-    <div class="container">
-        <div class="login-box">
-            <h2>Login</h2>
-            <form id="form" method="POST">
-                <div class="user-box">
-                    <input type="text" name="username" required>
-                    <label>Username</label>
-                </div>
-                <div class="user-box">
-                    <input type="password" name="password" required>
-                    <label>Password</label>
-                </div>
-                <script>
-                    function play() {
-                        const audio = document.getElementById('audioMusic');
-                        audio.play();
-                    }
-                </script>
-                <input type='submit' id="submit" name='submit' class="sub" onclick="play()">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                </input>
-                <audio id="audioMusic">
-                    <source src="./car-engine-sound-effect.mp3">
-                </audio>
-            </form>
-        </div>
-
-        <div class="car_headlight" id="car_headlight">
-            <img src="../img/voiture_eteint.svg" alt="" id='carOff' class="voiture_eteint">
-            <img src="../img/voiotit.svg" alt="" id='carOn' class="voiture_allumer">
-        </div>
+  <header>
+    <div class="connect_status">
+      <div class="light"></div>
+      <span>Disconnected</span>
     </div>
-    <script>
-        const voitureAllume = document.getElementById('carOn');
-        const voitureEteint = document.getElementById('carOff');
-        const submit = document.getElementById('submit');
-        const form = document.getElementById('form')
-        let user = '<?= $user ?>';
 
+  </header>
+  <div class="container">
+    <div class="login-box">
+      <h2>Login</h2>
+      <form id="form" method="POST" >
+        <div class="user-box">
+          <input type="text" id='username' name="username">
+          <?php if (isset($_POST['submit']) && empty($_POST['username'])) echo 'Invalid username' ?>
+          <label>Username</label>
+        </div>
+        <div class="user-box">
+          <input type="password" id='password' name="password">
+          <label>Password</label>
+        </div>
+        <script>
+          function play() {
+            const audio = document.getElementById('audioMusic');
+            audio.play();
+          }
+        </script>
+        <input type="submit" id="submit" name='submit' class="sub" onclick="play()">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        </input>
+        <audio id="audioMusic">
+          <source src="./car-engine-sound-effect.mp3">
+        </audio>
+      </form>
+    </div>
 
-        submit.addEventListener("click", function() {
-            if (isset(user)) {
-                voitureEteint.style.display = 'none';
-                voitureAllume.style.display = "flex";
-                voitureAllume.style.transition = "1s";
-                console.log('click');
-            }
-
-        });
-    </script>
+    <div class="car_headlight" id="car_headlight">
+      <img src="../img/voiture_eteint.svg" alt="" id='carOff' class="voiture_eteint">
+      <img src="../img/voiotit.svg" alt="" id='carOn' class="voiture_allumer">
+      <img src="../img/voiture_erreur.svg" alt="" id='carErr' class="voiture_allumer">
+    </div>
+  </div>
+  <script src="script.js">
+  </script>
 </body>
 
 </html>
