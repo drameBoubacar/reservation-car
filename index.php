@@ -33,8 +33,8 @@ session_start();
             <li class="fmenu-item">
                 <div class="trigger-menu expanded">
                     <a href="#" class="fa fa-user-o" aria-hidden="true"></a>
-
                 </div>
+                
                 <ul class="floating-menu">
                     <li><a href='#'><i class="fa fa-inbox" aria-hidden="true"></i>Profile</a></li>
                     <li><a href='#'><i class="fa fa-car" aria-hidden="true"></i>Reservations</a></li>
@@ -42,20 +42,21 @@ session_start();
                     <li><a href='./Disconnect/disconnect.php' name='logout'><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
                 </ul>
             </li>
+        </ul>
 
 
     </header>
-    <div class="container" id='s'>
+    <d class="container" id='s'>
         <div class="content" id="slider1">
             <div class="text_section">
                 <h1><span class="heading">A new</span> <span>experience.</span><br>Reserve your car<br>Now.</h1>
 
                 <div class="btn">
                     <input type="button" id="btn1" value="Démarrer">
-                    
+
 
                 </div>
-               
+
             </div>
             <div class="img_car">
                 <img src="/img/car_home.png" alt="">
@@ -63,27 +64,27 @@ session_start();
         </div>
         <div class="content" id='slider2'>
 
-      
-                
-                <div id="pac-container">
 
-                    <input type="text" class="form-control" id="search_input" placeholder="Type address..." />
-                </div>
+
+            <div id="pac-container">
+
+                <input type="text" class="form-control" id="search_input" placeholder="Type address..." />
             </div>
-            <div id="map"></div>
-            <div id="infowindow-content">
-                <span id="place-name" class="title"></span><br />
-                <span id="place-address"></span>
-            </div>
-            <div class="text_section">
-                <input type="button" id="btn2" value="retour">
-            </div>
-            
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-            <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCUx06rB4M0_aqmVTME0oShUjGX1VNi8uI"></script>
         </div>
-    </div>
+        <div id="map"></div>
+        <div id="infowindow-content">
+            <span id="place-name" class="title"></span><br />
+            <span id="place-address"></span>
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCUx06rB4M0_aqmVTME0oShUjGX1VNi8uI"></script>
+        </div>
+        </div>
+        <input type="button" id="btn2" value="retour">
+        <script src="./main.js"></script>
+        
 </body>
-<script src="./main.js"></script>
+
 
 </html>
