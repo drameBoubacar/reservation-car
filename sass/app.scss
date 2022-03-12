@@ -189,9 +189,8 @@ ul.fmenu {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    .content#slider2 {
-        display: none;
-    }
+
+
     .content {
         padding: 0px 200px 0px 200px;
         display: flex;
@@ -241,6 +240,23 @@ ul.fmenu {
             max-height: 50vh;
         }
     }
+    
+    .section_adress{
+        position: absolute;
+        opacity: 0;
+
+        .text{
+            padding: 100px;
+            h1{
+                color: white;
+                font-family:"Circular pro";
+                font-size:70px;
+            }
+        }
+      }
+
+
+
 }
 
 @media (max-width: 800px) {
@@ -261,4 +277,6 @@ ul.fmenu {
     .user {
         transform: scale(0.9);
     }
+
 }
+
