@@ -13,6 +13,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./app.css/app.css">
     <script src="https://use.fontawesome.com/3d02935bac.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <title>Document</title>
 </head>
 
@@ -20,7 +21,7 @@ session_start();
     <header>
         <div class="connect_status">
             <div class="light"></div>
-            <span><?php echo $_SESSION['username']; ?>Connected</span>
+            <span>Connected</span>
         </div>
 
         <div class="logo">
@@ -51,22 +52,35 @@ session_start();
 
                 <div class="btn">
                     <input type="button" id="btn1" value="Démarrer">
+                    
 
                 </div>
-
+               
             </div>
             <div class="img_car">
                 <img src="/img/car_home.png" alt="">
             </div>
         </div>
         <div class="content" id='slider2'>
+
+      
+                
+                <div id="pac-container">
+
+                    <input type="text" class="form-control" id="search_input" placeholder="Type address..." />
+                </div>
+            </div>
+            <div id="map"></div>
+            <div id="infowindow-content">
+                <span id="place-name" class="title"></span><br />
+                <span id="place-address"></span>
+            </div>
             <div class="text_section">
-                <h1>Wsh bande de<br><br>BATARD.</h1>
                 <input type="button" id="btn2" value="retour">
             </div>
-            <div class="img_car">
-                <img src="./img/car_home.png" alt="">
-            </div>
+            
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCUx06rB4M0_aqmVTME0oShUjGX1VNi8uI"></script>
         </div>
     </div>
 </body>
