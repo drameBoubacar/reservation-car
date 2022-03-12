@@ -1,11 +1,7 @@
 <?php
-$host = "localhost";
-$db_name = "cars_reservation";
-$username = "root";
-$password = "";
 
 try {
-  $db = new PDO('mysql:host=$host;dbname=$db_name;charset=utf8mb4', 'root', '');
+  $db = new PDO('mysql:host=localhost;dbname=cars_reservation', 'root', '');
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);  
 } catch (PDOException $e) {
