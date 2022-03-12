@@ -42,7 +42,7 @@ session_start();
                     <li><a href='./Disconnect/disconnect.php' name='logout'><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
                 </ul>
             </li>
-
+        </ul>
 
     </header>
     <div class="container" id='s'>
@@ -51,39 +51,33 @@ session_start();
                 <h1><span class="heading">A new</span> <span>experience.</span><br>Reserve your car<br>Now.</h1>
                 <div class="btn">
                     <input type="button" id="btn1" value="Démarrer">
-                    
-
                 </div>
-               
             </div>
             <div class="img_car">
                 <img src="/img/car_home.png" alt="">
             </div>
         </div>
         <div class="content" id='slider2'>
-
-      
-                
-                <!-- <div id="pac-container">
-
-                    <input type="text" class="form-control" id="search_input" placeholder="Type address..." />
-                </div>
+            <div id="pac-container">
+                <input type="text" class="form-control" id="search_input" placeholder="Type address..." />
             </div>
-            <div id="map"></div>
-            <div id="infowindow-content">
-                <span id="place-name" class="title"></span><br />
-                <span id="place-address"></span>
-            </div>
-            <div class="text_section">
-                 -->
-            </div>
-            <input type="button" id="btn2" value="retour">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-            <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCUx06rB4M0_aqmVTME0oShUjGX1VNi8uI"></script>
         </div>
-    </div>
-    <script src="./main.js"></script>
-</body>
+        <div id="map"></div>
+        <div id="infowindow-content">
+            <span id="place-name" class="title"></span><br />
+            <span id="place-address"></span>
+        </div>
+        <div class="text_section">
 
+
+        </div>
+        <input type="button" id="btn2" value="retour">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCUx06rB4M0_aqmVTME0oShUjGX1VNi8uI"></script>
+    </div>
+    </div> -->
+
+</body>
+<script src="./main.js"></script>
 
 </html>

@@ -174,7 +174,7 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   align-items: center;
   overflow: hidden;
 }
-.container .content#slider2 {
+.container .content2 {
   display: none;
 }
 .container .content {
@@ -182,6 +182,9 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url(/img/map.png);
+  backdrop-filter: saturate(0) opacity(0.4);
+  background-size: contain;
 }
 .container .content .text_section {
   width: 50%;
