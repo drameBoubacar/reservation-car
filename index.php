@@ -57,16 +57,14 @@ session_start();
             </div>
         </div>
         <div class="content2" id='slider2'>
-            <div class="text_section2">
-                <h1>Wsh bande de<br><br>BATARD.</h1>
-                <input type="button" id="btn2" value="retour">
+            <div class="adresse">
+                <h1>Adresse</h1>
             </div>
-            <div class="img_car">
-                <img src="./img/car_home.png" alt="">
-            </div>
+            <input type="button" id="btn2" value="retour">
         </div>
     </div>
+    <script src="./main.js"></script>
 </body>
-<script src="./main.js"></script>
+
 
 </html>
