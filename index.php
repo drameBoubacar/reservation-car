@@ -53,7 +53,7 @@ session_start();
                 </div>
 
             </div>
-            <div class="img_car">
+            <div data-tilt class="img_car">
                 <img src="/img/car_home.png" alt="">
             </div>
         </div>
@@ -67,6 +67,8 @@ session_start();
             </div>
         </div>
     </div>
+
+    <script type="text/javascript" src="/vanilla/vanilla-tilt.js"></script>
 </body>
 <script src="./main.js"></script>
 </html>
