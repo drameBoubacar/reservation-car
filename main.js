@@ -87,5 +87,13 @@ class sikFloatingMenu {
     }
 }
 
-//Intialize menu: 
-window.sik_menu = new sikFloatingMenu("#mymenu");
+var searchInput = 'search_input';
+
+$(document).ready(function () {
+    var autocomplete;
+    autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
+        types: ['geocode'],
+    });
+	
+
+});
