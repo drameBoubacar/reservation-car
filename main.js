@@ -5,13 +5,33 @@ let boutton2 = document.getElementById('btn2');
 
 
 boutton.addEventListener("click", function() {
-    slider.style.display = 'none';
-    slider2.style.display = 'flex';
+    slider.style.opacity = '0';
+    slider.style.transition = '0.2s ease-in-out';
+    slider2.style.opacity = '1';
+    slider2.style.transition = '3s ease';
+
 });
 boutton2.addEventListener("click", function() {
-    slider2.style.display = 'none';
-    slider.style.display = 'flex';
+    slider2.style.opacity = '0';
+    slider2.style.transition = '0.2s ease-in-out';
+    slider.style.opacity = '1';
+    slider.style.transition = '3s ease';
 });
+
+$(document).ready(function(){
+    var boxWidth = $(".content").width();
+    $(".slide-left").click(function(){
+        $(".content").animate({
+            width: 0
+        });
+    });
+    $(".slide-right").click(function(){
+        $(".content").animate({
+            width: boxWidth
+        });
+    });
+});
+
 
 //The menu js class:
 class sikFloatingMenu {
