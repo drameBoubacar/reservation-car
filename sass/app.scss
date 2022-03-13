@@ -136,7 +136,7 @@ ul.fmenu {
         }
     }
     .floating-menu {
-        display: block;
+        display: none;
         position: absolute;
         top: $fmenu-size * 1.25;
         right: 0px;
@@ -148,10 +148,7 @@ ul.fmenu {
         background-color: #080a13;
         box-shadow: 1px 1px 13px black, -1px -1px 4px #283052;
         border-radius: 0.75rem;
-        overflow: hidden;
-        max-height: 0px;
         z-index: 100;
-        opacity: 0;
         transition: max-height ease $fmenu-list-expand-speed, opacity ease $fmenu-list-opacity-speed;
         >li {
             padding: 0 0.5rem;
@@ -189,11 +186,54 @@ ul.fmenu {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+<<<<<<< HEAD
+=======
+   
+
+
+    .account {
+        position: fixed;
+        width: 50%;
+        height: 50%;
+        background-color: #080a13db;
+        backdrop-filter: blur(12px);
+        z-index: 99999999;
+        border: 1px solid #ffffff1c;
+        border-radius: 19px;
+        color: white;
+        font-family: $font;
+        font-weight: 900;
+        font-size: 30px;
+        justify-content: center;
+        align-items: center;
+        transform: translate(250%);
+        transition: 0.3s ease-in-out;
+        transition-delay: 0.2s;
+        #close {
+            position: fixed;
+            right: 0;
+            top: 0;
+            padding: 20px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .navmenu {
+            display: none;
+        }
+
+
+        
+    }
+
+
+>>>>>>> 8bcb5df3cdcc21a5a487742cf08dbdd9d70da85e
     .content {
         padding: 0px 200px 0px 200px;
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: 0.5s ease-in-out;
         .text_section {
             width: 50%;
             color: $primary-color;
@@ -237,10 +277,18 @@ ul.fmenu {
             max-height: 50vh;
         }
     }
+<<<<<<< HEAD
     .section_adress {
         position: absolute;
         opacity: 0;
         .text {
+=======
+    
+    .section_adress{
+        display: none;
+
+        .text{
+>>>>>>> 8bcb5df3cdcc21a5a487742cf08dbdd9d70da85e
             padding: 100px;
             h1 {
                 color: white;
@@ -248,7 +296,88 @@ ul.fmenu {
                 font-size: 70px;
             }
         }
+<<<<<<< HEAD
     }
+=======
+      }
+
+      @import url('https://fonts.googleapis.com/css?family=Merriweather:300|Oswald');
+
+/* Form fields */ 
+
+
+/* Progress Bar */
+.progress-wrap {
+    margin: auto;
+    position: fixed;
+    top: 20%;
+    display: none;
+}
+.line-progress-bar {
+    display: flex;
+    margin: auto;
+    width: 100%;
+}
+.line {
+    height: 50px;
+    background-color: #060a13;
+    border-radius: 22px;
+    box-shadow: -3px -3px black, 1px 1px #ffffff1f, inset 1px 1px 4px black, inset -1px -1px 3px #547ce53b;
+    width: 270px;
+    position: absolute;
+    margin-top: -7px;
+    margin-left: -11px;
+    filter: blur(3px);
+}
+.progress-wrap div ul {
+    display: flex;
+    width: 250px;
+    list-style: none;
+    padding: 0px;
+    margin: initial;
+    justify-content: space-between;
+    z-index: 1;
+}
+.progressbar-dots {
+    display: inline-flex;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #080a13;
+    font-size: 20px;
+    margin-left: 0px;
+    color: #d4d4d4;
+    background: #080a13;
+    box-shadow: 2px 2px 2px 0px black, -1px -1px 2px #ffffff29;
+    filter: blur(2px);
+    
+}
+.progressbar-dots span {
+    font-size: 12px;
+    line-height: 12px;
+    position: absolute;
+    margin-top: 60px;
+    /* width: 75px; */
+    float: left;
+    margin-left: -30px;
+    display: none;
+}
+.progressbar-dots.active {
+    color: #fff;
+    border: 0px solid #26a386;
+    filter: none;
+}
+
+
+
+
+
+
+>>>>>>> 8bcb5df3cdcc21a5a487742cf08dbdd9d70da85e
 }
 
 @media (max-width: 800px) {
@@ -269,4 +398,20 @@ ul.fmenu {
     .user {
         transform: scale(0.9);
     }
+<<<<<<< HEAD
 }
+=======
+
+}
+
+
+
+span.error {
+    font-size: 12px;
+    font-family: "helvetica neue", arial, sans-serif;
+    color: #D6041D;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+  }
+>>>>>>> 8bcb5df3cdcc21a5a487742cf08dbdd9d70da85e
