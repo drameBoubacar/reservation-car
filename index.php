@@ -107,7 +107,7 @@ session_start();
                 </div>
                 <form id="reservation_form" action="" method="post">
                     <input name="adress" type="text" class="form-control" id="search_input" required>
-                    <input type="button" id="next2" value="Démarrer">
+                    <input type="button" id="next2" onclick='save()' value="Démarrer">
                 </form>
             </div>
         </div>

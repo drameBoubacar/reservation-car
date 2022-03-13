@@ -130,3 +130,16 @@ function updateLoader() {
     loadingNumber.innerHTML = load;
     loadingCircle.style.background = 'conic-gradient(from 0deg at 50% 50%, rgba(111, 123, 247, 1) 0%, rgba(155, 248, 244, 1) ' + load + '%, #101012 ' + load + '%)'
 }
+
+function save() {
+    var adress = $('#search_input').val();
+    $.ajax({
+        type: "POST",
+        url: "index.php?p=add_adress",
+        data: "adress=" + adress,
+        success: function(msg) {
+            alert('success');
+        }
+
+    })
+}
