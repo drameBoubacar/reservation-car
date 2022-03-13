@@ -1,24 +1,4 @@
-@import 'variables';
-@font-face {
-    font-family: "Circular pro";
-    src: url("/font/CircularStd-Bold.otf");
-    font-weight: 900;
-}
-
-@font-face {
-    font-family: "Circular pro";
-    src: url("/font/CircularStd-Medium.otf");
-    font-weight: 700;
-}
-
-@font-face {
-    font-family: "Circular pro";
-    src: url("/font/CircularStd-Light.otf");
-    font-weight: 300;
-}
-
-//Ecrivez vos premières ligne de SASS ici 
-//>>
+@import "variables";
 html,
 body {
     margin: 0;
@@ -37,6 +17,7 @@ span {
     font-weight: 300;
 }
 
+// --------HEADER----------  
 header {
     display: flex;
     justify-content: space-between;
@@ -44,7 +25,7 @@ header {
     height: 80px;
     color: white;
     padding: 10px 200px 10px 200px;
-    font-family: "Venti";
+    font-family: $roboto;
     h1 {
         font-family: "Circular pro";
         font-weight: 900;
@@ -126,12 +107,12 @@ ul.fmenu {
         }
         &.open {
             i {
-                color: $fmenu-color-hover
+                color: $fmenu-color-hover;
             }
         }
         &:hover:not(.expanded) {
             i {
-                color: $fmenu-color-hover
+                color: $fmenu-color-hover;
             }
         }
     }
@@ -155,7 +136,7 @@ ul.fmenu {
             a {
                 color: white;
                 font-size: $fmenu-list-font-size;
-                font-family: 'Circular pro';
+                font-family: "Circular pro";
                 font-weight: 900;
                 text-decoration: none;
                 display: block;
@@ -186,48 +167,80 @@ ul.fmenu {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-   
+    // --------PRELOADER BACKGROUND----------  
     .circlepop {
         height: 150%;
         width: 150%;
         position: absolute;
         display: flex;
         justify-content: center;
-        background: #080a13;
+        background-color: #080a13;
         align-items: center;
         display: flex;
         z-index: 9;
-        
-    
-
-
-    #lo{
-
-        fill: #8395a7;
-        filter: drop-shadow(10px 10px 10px 10px rgba(136, 165, 191, 0.1));
-        cursor: pointer;
-      }
-      
-      
-      .cir {
-        position: absolute;
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
-        box-shadow: 3px 3px 6px 0px #00000024 inset, inset -2px -2px 6px 0px #0c0f1b;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-
-        h1{
-            color: white;
-            font-family: $font;
-            font-size: 70px;
+        .cir {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            box-shadow: 3px 3px 6px 0px #00000024 inset, inset -2px -2px 6px 0px #0c0f1b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            .loading-box {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: #f0f8ff;
+            }
+            .loading-circle {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 180px;
+                height: 180px;
+                background: conic-gradient( from 0deg at 50% 50%, rgba(111, 123, 247, 1) 0%, rgba(155, 248, 244, 1) 0%, rgb(4, 8, 19) 100%);
+                border-radius: 100px;
+                box-shadow: 4px 4px 16px rgba(2, 6, 10, 0.75), -4px -4px 16px rgba(255, 255, 255, 0.1);
+                animation: spin 1s infinite linear;
+            }
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+            .loading-count {
+                content: " ";
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                top: 3px;
+                left: 3px;
+                width: 174px;
+                height: 174px;
+                border-radius: 100px;
+                background: #070a13;
+                box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.75) inset, -4px -4px 16px rgba(255, 255, 255, 0.1) inset;
+                animation: spin 1s infinite linear reverse;
+            }
+            .loading-count #loadingNumber {
+                font-size: 4em;
+            }
+            h1 {
+                color: white;
+                font-family: $font;
+                font-size: 70px;
+                letter-spacing: 15px;
+            }
         }
     }
-}
-
+    // --------POPUP MENU----------  
     .account {
         position: fixed;
         width: 50%;
@@ -254,16 +267,11 @@ ul.fmenu {
             cursor: pointer;
             display: none;
         }
-
         .navmenu {
             display: none;
         }
-
-
-        
     }
-
-
+    // --------Section HOME----------  
     .content {
         padding: 0px 200px 0px 200px;
         display: flex;
@@ -273,16 +281,16 @@ ul.fmenu {
         .text_section {
             width: 50%;
             color: $primary-color;
-            font-family: $font;
+            font-family: $roboto;
             font-size: $h1-size;
             span.heading {
                 font-weight: 900;
-                font-size: 100px;
+                font-size: 60px;
             }
             .text_section h1 {
                 font-size: 60px;
             }
-            input[type=button] {
+            input[type="button"] {
                 padding: 20px 30px 20px 30px;
                 border-radius: 20px;
                 background-color: transparent;
@@ -307,22 +315,19 @@ ul.fmenu {
             }
         }
         .img_car {
-            width: 50%; 
-
+            width: 50%;
         }
         .img_car img {
             max-height: 50vh;
         }
     }
-    
-    .section_adress{
+    // --------FIRST STEP ADRESS----------  
+    .section_adress {
         display: none;
         width: 100%;
         height: 100%;
         justify-content: center;
         align-items: center;
-       
-
         .adress {
             display: flex;
             flex-direction: column;
@@ -330,93 +335,80 @@ ul.fmenu {
             justify-content: center;
             align-items: center;
             align-content: center;
-        
-        .text{
-            padding: 100px;
-            h1{
-                color: white;
-                font-family:"Circular pro";
-                font-size:70px;
+            .text {
+                padding: 100px;
+                h1 {
+                    color: white;
+                    font-family: "Circular pro";
+                    font-size: 70px;
+                }
             }
         }
     }
-      }
-
-
-/* Form fields */ 
-
-
-/* Progress Bar */
-.progress-wrap {
-    margin: auto;
-    position: fixed;
-    top: 20%;
-    display: none;
-}
-.line-progress-bar {
-    display: flex;
-    margin: auto;
-    width: 100%;
-}
-.line {
-    height: 50px;
-    background-color: #060a13;
-    border-radius: 22px;
-    box-shadow: -3px -3px black, 1px 1px #ffffff1f, inset 1px 1px 4px black, inset -1px -1px 3px #547ce53b;
-    width: 270px;
-    position: absolute;
-    margin-top: -7px;
-    margin-left: -11px;
-    filter: blur(3px);
-}
-.progress-wrap div ul {
-    display: flex;
-    width: 250px;
-    list-style: none;
-    padding: 0px;
-    margin: initial;
-    justify-content: space-between;
-    z-index: 1;
-}
-.progressbar-dots {
-    display: inline-flex;
-    height: 35px;
-    width: 35px;
-    border-radius: 50%;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    color: #080a13;
-    font-size: 20px;
-    margin-left: 0px;
-    color: #d4d4d4;
-    background: #080a13;
-    box-shadow: 2px 2px 2px 0px black, -1px -1px 2px #ffffff29;
-    filter: blur(2px);
-    
-}
-.progressbar-dots span {
-    font-size: 12px;
-    line-height: 12px;
-    position: absolute;
-    margin-top: 60px;
-    /* width: 75px; */
-    float: left;
-    margin-left: -30px;
-    display: none;
-}
-.progressbar-dots.active {
-    color: #fff;
-    border: 0px solid #26a386;
-    filter: none;
-}
-
-
-
-
-
-
+    // --------PROGRESS BAR----------  
+    .progress-wrap {
+        margin: auto;
+        position: fixed;
+        top: 20%;
+        display: none;
+    }
+    .line-progress-bar {
+        display: flex;
+        margin: auto;
+        width: 100%;
+    }
+    .line {
+        height: 50px;
+        background-color: #060a13;
+        border-radius: 22px;
+        box-shadow: -3px -3px black, 1px 1px #ffffff1f, inset 1px 1px 4px black, inset -1px -1px 3px #547ce53b;
+        width: 270px;
+        position: absolute;
+        margin-top: -7px;
+        margin-left: -11px;
+        filter: blur(3px);
+    }
+    .progress-wrap div ul {
+        display: flex;
+        width: 250px;
+        list-style: none;
+        padding: 0px;
+        margin: initial;
+        justify-content: space-between;
+        z-index: 1;
+    }
+    .progressbar-dots {
+        display: inline-flex;
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        color: #080a13;
+        font-size: 20px;
+        margin-left: 0px;
+        color: #d4d4d4;
+        background: #080a13;
+        box-shadow: 2px 2px 2px 0px black, -1px -1px 2px #ffffff29;
+        filter: blur(2px);
+    }
+    .progressbar-dots span {
+        font-size: 12px;
+        line-height: 12px;
+        position: absolute;
+        margin-top: 60px;
+        /* width: 75px; */
+        float: left;
+        margin-left: -30px;
+        display: none;
+    }
+    .progressbar-dots.active {
+        color: #fff;
+        border: 0px solid #26a386;
+        filter: none;
+    }
 }
 
 @media (max-width: 800px) {
@@ -437,16 +429,16 @@ ul.fmenu {
     .user {
         transform: scale(0.9);
     }
-
 }
 
-
-
 span.error {
-    font-size: 12px;
-    font-family: "helvetica neue", arial, sans-serif;
-    color: #D6041D;
-    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: "Circular pro";
+    color: #ffffff;
+    text-align: center;
     display: block;
     margin-bottom: 10px;
-  }
+}
+
+// --------PRELOADER----------
