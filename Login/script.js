@@ -1,34 +1,26 @@
-var getHttpRequest = new XMLHttpRequest;
-var form = document.querySelector('#form')
-
-form.addEventListener('submit', function(e) {
-    e.preventDefault()
-    var data = new FormData(form)
-    var xhr = getHttpRequest
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4) {
-            var user = document.getElementById('username').value;
-            var pass = document.getElementById('password').value;
-            if (user != 'user' && pass != 1234) {
-                var voiture_erreur = document.getElementById('carErr');
-                const voitureEteint = document.getElementById('carOff');
-                voitureEteint.style.display = 'none';
-                voiture_erreur.style.display = 'flex';
-            } else {
-                const voitureAllume = document.getElementById('carOn');
-                const voitureEteint = document.getElementById('carOff');
-                var voiture_erreur = document.getElementById('carErr');
-                voiture_erreur.style.display = 'none';
-                voitureEteint.style.display = 'none';
-                voitureAllume.style.display = "flex";
-                voitureAllume.style.transition = "1s";
-                setTimeout("location.href = '../index.php';", 4000);
-            }
-
+$('document').ready(function() {
+    $('#submit').click(function() {
+        var username = $('#username').val().trim();
+        var password = $('#password').val().trim();
+        if (username != '' && password != '') {
+            $.ajax({
+                url: 'login.php',
+                type: 'POST',
+                data: { username: username, password: password },
+                success: function(resp) {
+                    var voitureA = $('#carOn');
+                    var voitureE = $('#carOff')
+                    voitureA.css({
+                        display: 'flex',
+                        transition: 'fadeIn(1000)'
+                    })
+                    if (voitureA) {
+                        voitureE.css({
+                            display: 'none',
+                        })
+                    }
+                }
+            })
         }
-
-    }
-    xhr.open('POST', form.getAttribute('action'), true)
-    xhr.setRequestHeader('X-Requested-With', 'xmlhttprequest')
-    xhr.send(data);
+    })
 })
