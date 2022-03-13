@@ -1,6 +1,5 @@
 @import "variables";
 
-
 html,
 body {
   margin: 0;
@@ -19,7 +18,7 @@ span {
   font-weight: 300;
 }
 
-// --------HEADER----------  
+// --------HEADER----------
 
 header {
   display: flex;
@@ -166,11 +165,6 @@ ul.fmenu {
   }
 }
 
-
-
-
-
-
 .container {
   margin-top: -100px;
   width: 100%;
@@ -180,8 +174,7 @@ ul.fmenu {
   align-items: center;
   overflow: hidden;
 
-// --------PRELOADER BACKGROUND----------  
-
+  // --------PRELOADER BACKGROUND----------
 
   .circlepop {
     height: 150%;
@@ -189,10 +182,69 @@ ul.fmenu {
     position: absolute;
     display: flex;
     justify-content: center;
-    background-color:#080a13;
+    background-color: #080a13;
     align-items: center;
     display: flex;
     z-index: 9;
+
+    // --------PRELOADER----------
+
+    .loading-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #f0f8ff;
+      position: absolute;
+    }
+
+    .loading-circle {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 180px;
+      height: 180px;
+      background: conic-gradient(
+        from 0deg at 50% 50%,
+        #6f7bf7 0%,
+        #9bf8f4 0%,
+        #040813 100%
+      );
+      border-radius: 100px;
+      box-shadow: 4px 4px 16px rgb(255 0 173 / 13%),
+        -4px -4px 16px rgb(0 243 255 / 10%);
+      animation: spin 1s infinite linear;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .loading-count {
+      content: " ";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 3px;
+      left: 3px;
+      width: 174px;
+      height: 174px;
+      border-radius: 100px;
+      background: #070a13;
+      box-shadow: 2px 2px 8px rgb(4 5 9) inset,
+        -2px -2px 5px rgb(112 184 230) inset;
+      animation: spin 1s infinite linear reverse;
+    }
+
+    .loading-count #loadingNumber {
+      font-size: 4em;
+    }
 
     .cir {
       position: absolute;
@@ -206,65 +258,6 @@ ul.fmenu {
       align-items: center;
       align-content: center;
 
-      .loading-box {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        color: #f0f8ff;
-      }
-      
-      
-      
-      .loading-circle {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 180px;
-        height: 180px;
-        background: conic-gradient(
-          from 0deg at 50% 50%,
-          rgba(111, 123, 247, 1) 0%,
-          rgba(155, 248, 244, 1) 0%,
-          rgb(4, 8, 19) 100%
-        );
-        border-radius: 100px;
-        box-shadow: 4px 4px 16px rgba(2, 6, 10, 0.75),
-          -4px -4px 16px rgba(255, 255, 255, 0.1);
-        animation: spin 1s infinite linear;
-      }
-      
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-      
-      .loading-count {
-        content: " ";
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        top: 3px;
-        left: 3px;
-        width: 174px;
-        height: 174px;
-        border-radius: 100px;
-        background: #070a13;
-        box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.75) inset,
-          -4px -4px 16px rgba(255, 255, 255, 0.1) inset;
-        animation: spin 1s infinite linear reverse;
-      }
-      
-      .loading-count #loadingNumber {
-        font-size: 4em;
-      }
-      
-
       h1 {
         color: white;
         font-family: $font;
@@ -274,10 +267,7 @@ ul.fmenu {
     }
   }
 
-
-
-// --------POPUP MENU----------  
-
+  // --------POPUP MENU----------
 
   .account {
     position: fixed;
@@ -311,9 +301,7 @@ ul.fmenu {
     }
   }
 
-
-
-  // --------Section HOME----------  
+  // --------Section HOME----------
 
   .content {
     padding: 0px 200px 0px 200px;
@@ -367,8 +355,7 @@ ul.fmenu {
     }
   }
 
-
-    // --------FIRST STEP ADRESS----------  
+  // --------FIRST STEP ADRESS----------
 
   .section_adress {
     display: none;
@@ -376,93 +363,203 @@ ul.fmenu {
     height: 100%;
     justify-content: center;
     align-items: center;
+    padding: 0px 200px 0px 200px;
 
-    .adress {
+    #output {
+      width: 50%;
+      margin-top: 60px;
+      border-radius: 100%;
+      color: #ffffff;
+      text-shadow: 0 0 20px #00c8ff;
+      font-family: "Inconsolata", monospace;
+      line-height: 0.55em;
+      text-rendering: optimizeSpeed;
+      will-change: contents;
+      white-space: pre;
+    }
+  }
+
+  .adress {
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+
+    .adress_text {
+      margin-bottom: 70px;
+
+      h1 {
+        color: white;
+        font-family: $font;
+        font-size: 70px;
+        margin: 0;
+        line-height: 80px;
+      }
+
+      p {
+        margin: 0;
+        color: rgb(138, 138, 138);
+        font-family: $font;
+        font-weight: 300;
+        font-size: 24px;
+      }
+    }
+
+    .box_adress {
       display: flex;
       flex-direction: column;
-      z-index: 9999;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
+      width: 60%;
+      background-color: transparent;
+      border-radius: 20px;
+      box-shadow: 4px 4px 15px black, -1px -1px 10px #1f2339;
 
-      .text {
-        padding: 100px;
+      .box_text {
+        color: white;
+        padding: 30px 30px 10px 30px;
+
         h1 {
           color: white;
+          text-align: left;
+          font-family: $font;
+          font-size: 20px;
+          font-weight: 900;
+        }
+      }
+
+      #reservation_form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 0;
+
+        #search_input {
+          background-color: transparent;
+          border: none;
+          padding: 10px;
+          margin-left: 30px;
+          border-radius: 10px;
+          margin-bottom: 30px;
+          width: 80%;
+          color: white;
+          box-shadow: inset 2px 2px 6px black, inset -2px -2px 4px #3a46794d;
+        }
+
+        #search_input:focus{
+          border: none;
+        }
+
+        #search_input::placeholder {
+          color: rgb(97, 97, 97);
+        }
+
+        #next2 {
+          width: 100%;
+          background: #e00045;
+          border-radius: 20px;
+          padding: 10px 50px 10px 50px;
+          color: white;
           font-family: "Circular pro";
-          font-size: 70px;
+          font-size: 18px;
+          font-weight: 900;
+          border: none;
+          box-shadow: 0px 40px 50px #e000454f, inset 0px 0px 9px 4px #ffffff45;
+          transition: 0.3s ease-in;
+          cursor: pointer;
+        }
+        #next2:hover {
+          transition: 0.3s ease-in;
+          box-shadow: 0px 40px 50px #e000454f, inset 2px 2px 9px 1px rgba(0, 0, 0, 0.473),
+            inset -1px -1px 2px 0px #f26590;
+          transform: scale(0.98);
         }
       }
     }
   }
+}
 
+// --------PROGRESS BAR----------
+.progress-wrap {
+  margin: auto;
+  position: fixed;
+  top: 15%;
+  display: none;
+}
+.line-progress-bar {
+  display: flex;
+  margin: auto;
+  width: 100%;
+}
+.line {
+  height: 50px;
+  background-color: #060a13;
+  border-radius: 22px;
+  box-shadow: -3px -3px black, 1px 1px #ffffff1f, inset 1px 1px 4px black,
+    inset -1px -1px 3px #547ce53b;
+  width: 270px;
+  position: absolute;
+  margin-top: -7px;
+  margin-left: -11px;
+  filter: blur(3px);
+}
+.progress-wrap div ul {
+  display: flex;
+  width: 250px;
+  list-style: none;
+  padding: 0px;
+  margin: initial;
+  justify-content: space-between;
+  z-index: 1;
+}
+.progressbar-dots {
+  display: inline-flex;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #080a13;
+  font-size: 20px;
+  margin-left: 0px;
+  color: #d4d4d4;
+  background: #080a13;
+  box-shadow: 2px 2px 2px 0px black, -1px -1px 2px #ffffff29;
+  filter: blur(2px);
+}
+.progressbar-dots span {
+  font-size: 12px;
+  line-height: 12px;
+  position: absolute;
+  display: none;
+}
+.progressbar-dots.active {
+  color: #fff;
+  background: radial-gradient(#e00045, #e00045);
+  border: none;
+  filter: blur(0px);
+  box-shadow: 0px 0px 10px #e00045, 0px -0px 10px #e00045;
+  animation: animdot 2s infinite ease-in-out;
+}
 
+@keyframes animdot {
+  0% {
+    box-shadow: 0 0 10px #e00045, 0 0 10px #e00045;
+  }
+  50% {
+    box-shadow: 0 0 5px #e00045, 0 0 5px #e00045;
+  }
+  100% {
+    box-shadow: 0 0 10px #e00045, 0 0 10px #e00045;
+  }
+}
 
-// --------PROGRESS BAR----------  
-  .progress-wrap {
-    margin: auto;
-    position: fixed;
-    top: 20%;
-    display: none;
-  }
-  .line-progress-bar {
-    display: flex;
-    margin: auto;
-    width: 100%;
-  }
-  .line {
-    height: 50px;
-    background-color: #060a13;
-    border-radius: 22px;
-    box-shadow: -3px -3px black, 1px 1px #ffffff1f, inset 1px 1px 4px black,
-      inset -1px -1px 3px #547ce53b;
-    width: 270px;
-    position: absolute;
-    margin-top: -7px;
-    margin-left: -11px;
-    filter: blur(3px);
-  }
-  .progress-wrap div ul {
-    display: flex;
-    width: 250px;
-    list-style: none;
-    padding: 0px;
-    margin: initial;
-    justify-content: space-between;
-    z-index: 1;
-  }
-  .progressbar-dots {
-    display: inline-flex;
-    height: 35px;
-    width: 35px;
-    border-radius: 50%;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    color: #080a13;
-    font-size: 20px;
-    margin-left: 0px;
-    color: #d4d4d4;
-    background: #080a13;
-    box-shadow: 2px 2px 2px 0px black, -1px -1px 2px #ffffff29;
-    filter: blur(2px);
-  }
-  .progressbar-dots span {
-    font-size: 12px;
-    line-height: 12px;
-    position: absolute;
-    margin-top: 60px;
-    /* width: 75px; */
-    float: left;
-    margin-left: -30px;
-    display: none;
-  }
-  .progressbar-dots.active {
-    color: #fff;
-    border: 0px solid #26a386;
-    filter: none;
-  }
+.progressbar-dots.active span {
+  font-size: 21px;
+  position: absolute;
+  float: left;
+  font-family: 'Circular pro';
+  font-weight: 900;
+  display: flex;
 }
 
 @media (max-width: 800px) {
@@ -489,11 +586,49 @@ span.error {
   font-size: 15px;
   font-weight: 700;
   font-family: "Circular pro";
-  color: #ffffff;
-  text-align: center;
+  color: #ff005e;
   display: block;
   margin-bottom: 10px;
+  text-align: left;
+  margin-left: 30px;
+}
+canvas {
+  display: none;
 }
 
-// --------PRELOADER----------  
+.pac-container {
+  background-color: #090a13;
+  position: absolute !important;
+  z-index: 1000;
+  border-radius: 0px 0px 20px 20px;
+  border-top: none;
+  font-family: "Circular pro";
+  box-shadow: 0 2px 6px rgb(0 0 0 / 30%);
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 99999;
+  color: white;
 
+  .pac-item {
+    cursor: default;
+    padding: 0 4px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: 30px;
+    text-align: left;
+    border-top: none;
+    font-size: 11px;
+    color: #959595;
+    .pac-item-query {
+      font-size: 13px;
+      padding-right: 3px;
+      color: #fff;
+    }
+    .pac-item:hover {
+      background-color: #0f1425;
+    }
+  }
+}

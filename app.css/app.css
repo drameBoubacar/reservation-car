@@ -184,25 +184,15 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   display: flex;
   z-index: 9;
 }
-.container .circlepop .cir {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  box-shadow: 3px 3px 6px 0px #00000024 inset, inset -2px -2px 6px 0px #0c0f1b;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-}
-.container .circlepop .cir .loading-box {
+.container .circlepop .loading-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: #f0f8ff;
+  position: absolute;
 }
-.container .circlepop .cir .loading-circle {
+.container .circlepop .loading-circle {
   position: relative;
   display: flex;
   justify-content: center;
@@ -211,7 +201,7 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   height: 180px;
   background: conic-gradient(from 0deg at 50% 50%, #6f7bf7 0%, #9bf8f4 0%, #040813 100%);
   border-radius: 100px;
-  box-shadow: 4px 4px 16px rgba(2, 6, 10, 0.75), -4px -4px 16px rgba(255, 255, 255, 0.1);
+  box-shadow: 4px 4px 16px rgba(255, 0, 173, 0.13), -4px -4px 16px rgba(0, 243, 255, 0.1);
   animation: spin 1s infinite linear;
 }
 @keyframes spin {
@@ -222,7 +212,7 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
     transform: rotate(360deg);
   }
 }
-.container .circlepop .cir .loading-count {
+.container .circlepop .loading-count {
   content: " ";
   display: flex;
   justify-content: center;
@@ -233,11 +223,22 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   height: 174px;
   border-radius: 100px;
   background: #070a13;
-  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.75) inset, -4px -4px 16px rgba(255, 255, 255, 0.1) inset;
+  box-shadow: 2px 2px 8px #040509 inset, -2px -2px 5px #70b8e6 inset;
   animation: spin 1s infinite linear reverse;
 }
-.container .circlepop .cir .loading-count #loadingNumber {
+.container .circlepop .loading-count #loadingNumber {
   font-size: 4em;
+}
+.container .circlepop .cir {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  box-shadow: 3px 3px 6px 0px #00000024 inset, inset -2px -2px 6px 0px #0c0f1b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 .container .circlepop .cir h1 {
   color: white;
@@ -330,35 +331,118 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   height: 100%;
   justify-content: center;
   align-items: center;
+  padding: 0px 200px 0px 200px;
 }
-.container .section_adress .adress {
+.container .section_adress #output {
+  width: 50%;
+  margin-top: 60px;
+  border-radius: 100%;
+  color: #ffffff;
+  text-shadow: 0 0 20px #00c8ff;
+  font-family: "Inconsolata", monospace;
+  line-height: 0.55em;
+  text-rendering: optimizeSpeed;
+  will-change: contents;
+  white-space: pre;
+}
+.container .adress {
   display: flex;
   flex-direction: column;
   z-index: 9999;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
 }
-.container .section_adress .adress .text {
-  padding: 100px;
+.container .adress .adress_text {
+  margin-bottom: 70px;
 }
-.container .section_adress .adress .text h1 {
+.container .adress .adress_text h1 {
   color: white;
   font-family: "Circular pro";
   font-size: 70px;
+  margin: 0;
+  line-height: 80px;
 }
-.container .progress-wrap {
+.container .adress .adress_text p {
+  margin: 0;
+  color: #8a8a8a;
+  font-family: "Circular pro";
+  font-weight: 300;
+  font-size: 24px;
+}
+.container .adress .box_adress {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  background-color: transparent;
+  border-radius: 20px;
+  box-shadow: 4px 4px 15px black, -1px -1px 10px #1f2339;
+}
+.container .adress .box_adress .box_text {
+  color: white;
+  padding: 30px 30px 10px 30px;
+}
+.container .adress .box_adress .box_text h1 {
+  color: white;
+  text-align: left;
+  font-family: "Circular pro";
+  font-size: 20px;
+  font-weight: 900;
+}
+.container .adress .box_adress #reservation_form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 0;
+}
+.container .adress .box_adress #reservation_form #search_input {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  margin-left: 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  width: 80%;
+  color: white;
+  box-shadow: inset 2px 2px 6px black, inset -2px -2px 4px #3a46794d;
+}
+.container .adress .box_adress #reservation_form #search_input:focus {
+  border: none;
+}
+.container .adress .box_adress #reservation_form #search_input::placeholder {
+  color: #616161;
+}
+.container .adress .box_adress #reservation_form #next2 {
+  width: 100%;
+  background: #e00045;
+  border-radius: 20px;
+  padding: 10px 50px 10px 50px;
+  color: white;
+  font-family: "Circular pro";
+  font-size: 18px;
+  font-weight: 900;
+  border: none;
+  box-shadow: 0px 40px 50px #e000454f, inset 0px 0px 9px 4px #ffffff45;
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+.container .adress .box_adress #reservation_form #next2:hover {
+  transition: 0.3s ease-in;
+  box-shadow: 0px 40px 50px #e000454f, inset 2px 2px 9px 1px rgba(0, 0, 0, 0.473), inset -1px -1px 2px 0px #f26590;
+  transform: scale(0.98);
+}
+
+.progress-wrap {
   margin: auto;
   position: fixed;
-  top: 20%;
+  top: 15%;
   display: none;
 }
-.container .line-progress-bar {
+
+.line-progress-bar {
   display: flex;
   margin: auto;
   width: 100%;
 }
-.container .line {
+
+.line {
   height: 50px;
   background-color: #060a13;
   border-radius: 22px;
@@ -369,7 +453,8 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   margin-left: -11px;
   filter: blur(3px);
 }
-.container .progress-wrap div ul {
+
+.progress-wrap div ul {
   display: flex;
   width: 250px;
   list-style: none;
@@ -378,7 +463,8 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   justify-content: space-between;
   z-index: 1;
 }
-.container .progressbar-dots {
+
+.progressbar-dots {
   display: inline-flex;
   height: 35px;
   width: 35px;
@@ -395,20 +481,41 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   box-shadow: 2px 2px 2px 0px black, -1px -1px 2px #ffffff29;
   filter: blur(2px);
 }
-.container .progressbar-dots span {
+
+.progressbar-dots span {
   font-size: 12px;
   line-height: 12px;
   position: absolute;
-  margin-top: 60px;
-  /* width: 75px; */
-  float: left;
-  margin-left: -30px;
   display: none;
 }
-.container .progressbar-dots.active {
+
+.progressbar-dots.active {
   color: #fff;
-  border: 0px solid #26a386;
-  filter: none;
+  background: radial-gradient(#e00045, #e00045);
+  border: none;
+  filter: blur(0px);
+  box-shadow: 0px 0px 10px #e00045, 0px 0px 10px #e00045;
+  animation: animdot 2s infinite ease-in-out;
+}
+
+@keyframes animdot {
+  0% {
+    box-shadow: 0 0 10px #e00045, 0 0 10px #e00045;
+  }
+  50% {
+    box-shadow: 0 0 5px #e00045, 0 0 5px #e00045;
+  }
+  100% {
+    box-shadow: 0 0 10px #e00045, 0 0 10px #e00045;
+  }
+}
+.progressbar-dots.active span {
+  font-size: 21px;
+  position: absolute;
+  float: left;
+  font-family: "Circular pro";
+  font-weight: 900;
+  display: flex;
 }
 
 @media (max-width: 800px) {
@@ -436,10 +543,51 @@ span.error {
   font-size: 15px;
   font-weight: 700;
   font-family: "Circular pro";
-  color: #ffffff;
-  text-align: center;
+  color: #ff005e;
   display: block;
   margin-bottom: 10px;
+  text-align: left;
+  margin-left: 30px;
+}
+
+canvas {
+  display: none;
+}
+
+.pac-container {
+  background-color: #090a13;
+  position: absolute !important;
+  z-index: 1000;
+  border-radius: 0px 0px 20px 20px;
+  border-top: none;
+  font-family: "Circular pro";
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 99999;
+  color: white;
+}
+.pac-container .pac-item {
+  cursor: default;
+  padding: 0 4px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 30px;
+  text-align: left;
+  border-top: none;
+  font-size: 11px;
+  color: #959595;
+}
+.pac-container .pac-item .pac-item-query {
+  font-size: 13px;
+  padding-right: 3px;
+  color: #fff;
+}
+.pac-container .pac-item .pac-item:hover {
+  background-color: #0f1425;
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -45,18 +45,23 @@ session_start();
 
 
     </header>
+
+
+
+
     <div class="container" id='s'>
         <div data-tilt class="circlepop" id="preloader">
+            <div class="loading-box">
+                <div class="loading-circle">
+                    <p class="loading-count"><span id="loadingNumber">0</span>%</p>
+                </div>
+            </div>
             <div class="cir"></div>
             <div class="cir"></div>
             <div class="cir"></div>
             <div class="cir"></div>
             <div class="cir">
-                <div class="loading-box">
-                    <div class="loading-circle">
-                        <p class="loading-count"><span id="loadingNumber">0</span>%</p>
-                    </div>
-                </div>
+
 
             </div>
         </div>
@@ -73,18 +78,16 @@ session_start();
             <div class="line-progress-bar">
                 <div class="line"></div>
                 <ul class="checkout-bar">
-                    <li class="progressbar-dots active"><span>step 1</span>
-                        <a class="fa fa-user-o" aria-hidden="true"></a>
-                    </li>
-                    <li class="progressbar-dots"><span>step 2</span>
-                        <a class="fa fa-user-o" aria-hidden="true"></a>
-                    </li>
-                    <li class="progressbar-dots"><span>Final step</span>
-                        <a class="fa fa-user-o" aria-hidden="true"></a>
-                    </li>
+                    <li class="progressbar-dots active"><span>1</span></li>
+                    <li class="progressbar-dots"><span>2</span></li>
+                    <li class="progressbar-dots"><span>3</span></li>
                 </ul>
             </div>
         </div>
+
+
+
+        <!--------------- SECTION HOME ------------------->
         <div class="content" id="">
             <div class="text_section">
                 <h1><span class="heading">A new</span> <span>experience.</span><br>Reserve your car<br>Now.</h1>
@@ -100,16 +103,31 @@ session_start();
                 <img src="/img/car_home.png" alt="">
             </div>
         </div>
+
+
+
+
+
+        <!--------------- SECTION ADRESSE (step 1) ------------------->
         <div class="section_adress" id='slider2'>
 
+            <div id="output"></div>
+
             <div class="adress">
-                <div class="text">
-                    <h1>Entre votre adresse</h1>
+                <div class="adress_text">
+                    <h1>Discover <br>our available car</h1>
+                    <p>Locate yourself to discover ours availables cars</p>
                 </div>
-                <form id="reservation_form" action="" method="post">
-                    <input name="adress" type="text" class="form-control" id="search_input" required>
-                    <input type="button" id="next2" value="Démarrer">
-                </form>
+
+                <div class="box_adress">
+                    <div class="box_text">
+                        <h1>Enter an adress</h1>
+                    </div>
+                    <form id="reservation_form" action="" method="post">
+                        <input name="adress" type="text" class="form-control" id="search_input" required>
+                        <input type="button" id="next2" value="Next">
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -123,6 +141,10 @@ session_start();
     <script src="./node_modules/jquery-validation/dist/jquery.validate.js"></script>
     <script src="/node_modules/gsap/dist/gsap.min.js"></script>
     <script src="./main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
+    <script src="/globe.js"></script>
+    <script type="text/javascript" src="https://daks2k3a4ib2z.cloudfront.net/5317d67d660658b254000454/js/webflow.js?2f83b8326cc4c8f7327b5dba30444a37"></script>
+
 
 </body>
 
