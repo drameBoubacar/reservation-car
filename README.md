@@ -1,3 +1,11 @@
+
+---------------------------REQUIS-----------------------------
+DANS LE TERMINAL, EXECUTE LES COMMANDES SUIVANTES :   
+
+ - npm i jquery-validation
+ - npm i dotted-map  
+
+
 ---------------------------AVANT TOUTE CHOSE-----------------------------
 1. TOUJOURS PULL votre branch et celle de la test avant n'importe qu'elle action sur le projet, pour être bien sur qu'il ne vous manque rien. (push...)
 2. VERIFER TOUJOURS les pull request en cours de validation.
