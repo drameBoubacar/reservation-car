@@ -1,22 +1,12 @@
+
+
+
 let slider = document.getElementById('slider1');
 let boutton = document.getElementById('btn1');
 let slider2 = document.getElementById('slider2');
 let boutton2 = document.getElementById('btn2');
 
 
-boutton.addEventListener("click", function() {
-    slider.style.opacity = '0';
-    slider.style.transition = '0.2s ease-in-out';
-    slider2.style.opacity = '1';
-    slider2.style.transition = '3s ease';
-
-});
-boutton2.addEventListener("click", function() {
-    slider2.style.opacity = '0';
-    slider2.style.transition = '0.2s ease-in-out';
-    slider.style.opacity = '1';
-    slider.style.transition = '3s ease';
-});
 
 $(document).ready(function(){
     var boxWidth = $(".content").width();
@@ -117,4 +107,34 @@ $(document).ready(function () {
     });
 	
 
+});
+
+var v = $("#reservation_form").validate({
+    rules: {
+      adress: {
+        required: true,
+      }
+
+    },
+    errorElement: "span",
+    errorClass: "error",
+    errorPlacement: function(error, element) {
+          error.insertBefore(element); 
+    }
+});
+
+
+$(".next").click(function() {
+      $(".content").hide();
+      $("#slider2").fadeIn(1000);
+      $('.progressbar-dots').removeClass('active');
+      $('.progressbar-dots:nth-child(2)').addClass('active');
+ });
+ $(".next2").click(function() {
+    if (v.form()) {
+      $(".section_adress").hide();
+      $("#step3").fadeIn(1000);
+      $('.progressbar-dots').removeClass('active');
+      $('.progressbar-dots:nth-child(3)').addClass('active');
+    }
 });

@@ -242,8 +242,7 @@ ul.fmenu {
     }
     
     .section_adress{
-        position: absolute;
-        opacity: 0;
+        display: none;
 
         .text{
             padding: 100px;
@@ -254,6 +253,80 @@ ul.fmenu {
             }
         }
       }
+
+      @import url('https://fonts.googleapis.com/css?family=Merriweather:300|Oswald');
+
+/* Form fields */ 
+
+
+/* Progress Bar */
+.progress-wrap {
+    margin: auto;
+    display: table;
+    position: fixed;
+    top: 20%;
+}
+.line-progress-bar {
+    display: flex;
+    margin: auto;
+    width: 100%;
+}
+.line {
+    height: 50px;
+    background-color: #060a13;
+    border-radius: 22px;
+    box-shadow: -3px -3px black, 1px 1px #ffffff1f, inset 1px 1px 4px black, inset -1px -1px 3px #547ce53b;
+    width: 270px;
+    position: absolute;
+    margin-top: -7px;
+    margin-left: -11px;
+    filter: blur(3px);
+}
+.progress-wrap div ul {
+    display: flex;
+    width: 250px;
+    list-style: none;
+    padding: 0px;
+    margin: initial;
+    justify-content: space-between;
+    z-index: 1;
+}
+.progressbar-dots {
+    display: inline-flex;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #d4d4d4;
+    font-size: 20px;
+    margin-left: 0px;
+    color: #d4d4d4;
+    background: #080a13;
+    box-shadow: 2px 2px 2px 0px black, -1px -1px 2px #ffffff29;
+    filter: blur(2px);
+}
+.progressbar-dots span {
+    font-size: 12px;
+    line-height: 12px;
+    position: absolute;
+    margin-top: 60px;
+    /* width: 75px; */
+    float: left;
+    margin-left: -30px;
+    display: none;
+}
+.progressbar-dots.active {
+    color: #fff;
+    border: 0px solid #26a386;
+    background: linear-gradient(45deg, #999999f7, #ffffff);
+    box-shadow: 0 0 5px white, 0 0 10px #68ffff, 0 0 20px #63e2ff;
+}
+
+
+
 
 
 
@@ -280,3 +353,13 @@ ul.fmenu {
 
 }
 
+
+
+span.error {
+    font-size: 12px;
+    font-family: "helvetica neue", arial, sans-serif;
+    color: #D6041D;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+  }
