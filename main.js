@@ -4,19 +4,6 @@ let slider2 = document.getElementById('slider2');
 let boutton2 = document.getElementById('btn2');
 
 
-boutton.addEventListener("click", function() {
-    slider.style.opacity = '0';
-    slider.style.transition = '0.2s ease-in-out';
-    slider2.style.opacity = '1';
-    slider2.style.transition = '3s ease';
-
-});
-boutton2.addEventListener("click", function() {
-    slider2.style.opacity = '0';
-    slider2.style.transition = '0.2s ease-in-out';
-    slider.style.opacity = '1';
-    slider.style.transition = '3s ease';
-});
 
 $(document).ready(function(){
     var boxWidth = $(".content").width();
@@ -33,80 +20,15 @@ $(document).ready(function(){
 });
 
 
-//The menu js class:
-class sikFloatingMenu {
-    menuEl = null;
-    constructor(_menu) {
-        //The menu element:
-        this.menuEl = typeof _menu === 'string' ?
-            document.querySelector(_menu) :
-            _menu;
-        //Attach handlers:
-        this.attachHandlers();
+function toggleMenu() {
+    var menuBox = document.getElementById("openmenu");    
+    if(menuBox.style.display == "block") { // if is menuBox displayed, hide it
+      menuBox.style.display = "none";
     }
-    attachHandlers() {
-        if (this.menuEl) {
-            this._on(this.menuEl, 'click', '.trigger-menu', this._handler.bind(this));
-        }
+    else { // if is menuBox hidden, display it
+      menuBox.style.display = "block";
     }
-    _open(item) {
-        let opened = item.closest('.fmenu').querySelectorAll('.trigger-menu.open');
-        for (const ele of opened) {
-            this._close(ele);
-        }
-        item.classList.add('open');
-        //expand:
-        let list = item.closest('li').querySelector(".floating-menu");
-        list.style.setProperty("max-height", this._measureExpandableList(list));
-        list.style.setProperty("opacity", "1");
-        item.style.setProperty("max-width", this._measureExpandableTrigger(item));
-    }
-    _close(item) {
-        let list = item.closest('li').querySelector(".floating-menu");
-        item.classList.remove('open');
-        //shrink:
-        list.style.removeProperty("max-height");
-        list.style.removeProperty("opacity");
-        item.style.removeProperty("max-width");
-    }
-    _measureExpandableList(list) {
-        const items = list.querySelectorAll('li');
-        return (items.length * this._getHeight(items[0], "outer") + 10) + 'px';
-    }
-    _measureExpandableTrigger(item) {
-        const textEle = item.querySelector('.text');
-        const sizeBase = this._getWidth(item, "outer");
-        const sizeExpandLabel = this._getWidth(textEle, "outer");
-        return (sizeBase + sizeExpandLabel + 6) + 'px';
-    }
-    _handler(el, ev) {
-        if (el.classList.contains('open')) {
-            this._close(el);
-        } else {
-            this._open(el);
-        }
-    }
-    _on(ele, type, selector, handler) {
-        ele.addEventListener(type, function(ev) {
-            let el = event.target.closest(selector);
-            if (el) handler.call(this, el, ev); //The element is bind to this
-        });
-    }
-    _getWidth(el, type) {
-        if (type === 'inner')
-            return el.clientWidth;
-        else if (type === 'outer')
-            return el.offsetWidth;
-        return 0;
-    }
-    _getHeight(el, type) {
-        if (type === 'inner')
-            return el.clientHeight;
-        else if (type === 'outer')
-            return el.offsetHeight;
-        return 0;
-    }
-}
+  }
 
 var searchInput = 'search_input';
 
@@ -117,4 +39,52 @@ $(document).ready(function () {
     });
 	
 
+});
+
+$(".trigger-menu expanded").click(function() {
+    $("#slider2").fadeIn(1000);
+    $(".progress-wrap").fadeIn(1000);
+});
+
+
+var v = $("#reservation_form").validate({
+    rules: {
+      adress: {
+        required: true,
+      }
+
+    },
+    errorElement: "span",
+    errorClass: "error",
+    errorPlacement: function(error, element) {
+          error.insertBefore(element); 
+    }
+});
+
+
+$(".reser").click(function() {
+    $(".account").css('transform','translateY(0%)');
+    $(".navmenu").fadeIn(1000);
+    $("#close").fadeIn(1000);
+    $(".info").hide();
+    $(".content").css('transform','translateX(-200%)');
+});
+
+$("#close").click(function() {
+    $(".account").css('transform','translateY(250%)');
+ 
+});
+
+$(".next").click(function() {
+      $(".content").hide();
+      $("#slider2").fadeIn(1000);
+      $(".progress-wrap").fadeIn(1000);
+ });
+ $("#next2").click(function() {
+    if (v.form()) {
+      $("#slider2").hide();
+      $("#step3").fadeIn(1000);
+      $('.progressbar-dots').removeClass('active');
+      $('.progressbar-dots:nth-child(2)').addClass('active');
+    }
 });
