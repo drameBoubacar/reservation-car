@@ -1,5 +1,3 @@
-
-
 let slider = document.getElementById('slider1');
 let boutton = document.getElementById('btn1');
 let slider2 = document.getElementById('slider2');
@@ -7,7 +5,7 @@ let boutton2 = document.getElementById('btn2');
 
 
 function hide() {
-  document.getElementById("preloader").style.display = "none";
+    document.getElementById("preloader").style.display = "none";
 }
 
 $(document).ready(function() {
@@ -65,17 +63,20 @@ var v = $("#reservation_form").validate({
     }
 });
 
+
+
+
 setTimeout(function() {
-  $('#preloader').fadeOut('4000');
-}, 4000); 
+    $('#preloader').fadeOut('4000');
+}, 4000);
 
 $(".next").click(function() {
-      $(".content").hide();
-      $("#slider2").fadeIn(1000);
-      $("#slider2").css('display','flex');
-      $(".progress-wrap").fadeIn(1000);
- });
- $("#next2").click(function() {
+    $(".content").hide();
+    $("#slider2").fadeIn(1000);
+    $("#slider2").css('display', 'flex');
+    $(".progress-wrap").fadeIn(1000);
+});
+$("#next2").click(function() {
     if (v.form()) {
         $("#slider2").hide();
         $("#step3").fadeIn(1000);
@@ -85,43 +86,35 @@ $(".next").click(function() {
 });
 
 $("#logo").on("click",
-            function(){
-  tl.restart();
-});
+    function() {
+        tl.restart();
+    });
 
 let tl = gsap.timeline();
 
-tl.set(".cir",{
-  scale: 0,
-  transformOrigin: "center"
-})
-.set("#logo",{
-  scale: 0.27,
-  transformOrigin: "center",
-  opacity: 0
-})
-.to(".cir",{
-      ease: "back.out(3)",
-  duration: 4,
-  scale: gsap.utils.distribute({
-    base: 1,
-    amount: 3,
-    from: "end",
-  }),
-  stagger: {
-    each: 0.4,
+tl.set(".cir", {
+        scale: 0,
+        transformOrigin: "center"
+    })
+    .set("#logo", {
+        scale: 0.27,
+        transformOrigin: "center",
+        opacity: 0
+    })
+    .to(".cir", {
+        ease: "back.out(3)",
+        duration: 4,
 
-  }
-})
-.to("#logo",{
-  scale: 0.3,
-  transformOrigin: "center",
-  opacity: 1,
-  duration: 3
-},"-=1.5") ;
-  
+        scale: gsap.utils.distribute({
+            base: 1,
+            amount: 3,
+            from: "end",
+        }),
+        stagger: {
+            each: 0.4,
 
-
+        }
+    })
 
 
 
@@ -133,9 +126,11 @@ setInterval(updateLoader, 40);
 
 
 function updateLoader() {
-  load += (load < 100);
-  loadingNumber.innerHTML = load;
-  loadingCircle.style.background = 'conic-gradient(from 0deg at 50% 50%, rgba(111, 123, 247, 1) 0%, rgba(155, 248, 244, 1) ' + load + '%, #101012 ' + load + '%)'
+    load += (load < 100);
+    loadingNumber.innerHTML = load;
+    loadingCircle.style.background = 'conic-gradient(from 0deg at 50% 50%, rgba(111, 123, 247, 1) 0%, rgba(155, 248, 244, 1) ' + load + '%, #101012 ' + load + '%)'
+}
+
 function save() {
     var adress = $('#search_input').val();
     $.ajax({
