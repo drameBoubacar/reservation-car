@@ -87,3 +87,16 @@ $("#next2").click(function() {
         $('.progressbar-dots:nth-child(2)').addClass('active');
     }
 });
+
+function save() {
+    var adress = $('#search_input').val();
+    $.ajax({
+        type: "POST",
+        url: "index.php?p=add_adress",
+        data: "adress=" + adress,
+        success: function(msg) {
+            alert('success');
+        }
+
+    })
+}
