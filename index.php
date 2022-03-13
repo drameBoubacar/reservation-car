@@ -52,7 +52,11 @@ session_start();
   <div class="cir"></div>  
   <div class="cir"></div>  
   <div  class="cir">
-      <h1>Welcome</h1>
+  <div class="loading-box">
+  <div class="loading-circle">
+    <p class="loading-count"><span id="loadingNumber">0</span>%</p>
+  </div>
+</div>
 
   </div>
   </div> 

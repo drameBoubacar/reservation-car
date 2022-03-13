@@ -17,6 +17,11 @@
     font-weight: 300;
 }
 
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+
+
+
 //Ecrivez vos premières ligne de SASS ici 
 //>>
 html,
@@ -44,7 +49,7 @@ header {
     height: 80px;
     color: white;
     padding: 10px 200px 10px 200px;
-    font-family: "Venti";
+    font-family: $roboto;
     h1 {
         font-family: "Circular pro";
         font-weight: 900;
@@ -193,7 +198,7 @@ ul.fmenu {
         position: absolute;
         display: flex;
         justify-content: center;
-        background: #080a13;
+        background-image: url(/img/back.png);
         align-items: center;
         display: flex;
         z-index: 9;
@@ -201,12 +206,6 @@ ul.fmenu {
     
 
 
-    #lo{
-
-        fill: #8395a7;
-        filter: drop-shadow(10px 10px 10px 10px rgba(136, 165, 191, 0.1));
-        cursor: pointer;
-      }
       
       
       .cir {
@@ -224,6 +223,7 @@ ul.fmenu {
             color: white;
             font-family: $font;
             font-size: 70px;
+            letter-spacing: 15px;
         }
     }
 }
@@ -273,11 +273,11 @@ ul.fmenu {
         .text_section {
             width: 50%;
             color: $primary-color;
-            font-family: $font;
+            font-family: $roboto;
             font-size: $h1-size;
             span.heading {
                 font-weight: 900;
-                font-size: 100px;
+                font-size: 60px;
             }
             .text_section h1 {
                 font-size: 60px;
@@ -443,10 +443,73 @@ ul.fmenu {
 
 
 span.error {
-    font-size: 12px;
-    font-family: "helvetica neue", arial, sans-serif;
-    color: #D6041D;
-    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'Circular pro';
+    color: #ffffff;
+    text-align: center;
     display: block;
     margin-bottom: 10px;
+}
+
+
+.loading-box {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #F0F8FF;
   }
+  
+  .loading-title {
+    font-size: 1.5em;
+    transform: translateY(-12px);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 300;
+  }
+  
+  .loading-circle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 180px;
+    background: conic-gradient(from 0deg at 50% 50%, rgba(111, 123, 247, 1) 0%, rgba(155, 248, 244, 1) 0%, rgb(4, 8, 19) 100%);
+    border-radius: 100px;
+    box-shadow: 4px 4px 16px rgba(2, 6, 10, 0.75), -4px -4px 16px rgba(255, 255, 255, 0.1);
+    animation: spin 1s infinite linear;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .loading-count {
+    content: ' ';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 3px;
+    left: 3px;
+    width: 174px;
+    height: 174px;
+    border-radius: 100px;
+    background: #070a13;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.75) inset, -4px -4px 16px rgba(255, 255, 255, 0.1) inset;
+    animation: spin 1s infinite linear reverse;
+  }
+  
+  .loading-count #loadingNumber {
+    font-size: 4em;
+  }
+
+
+
