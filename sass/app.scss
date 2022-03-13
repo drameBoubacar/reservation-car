@@ -194,9 +194,6 @@ ul.fmenu {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-image: url(/img/map.png);
-        backdrop-filter: saturate(0) opacity(0.4);
-        background-size: contain;
         .text_section {
             width: 50%;
             color: $primary-color;

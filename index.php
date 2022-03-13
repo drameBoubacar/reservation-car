@@ -62,9 +62,8 @@ session_start();
         <div class="section_adress" id='slider2'>
             <div class="text">
                 <h1>Entre votre adresse</h1>
-                <h1>SAKKKKKKKK</h1>
             </div>
-           <div class="form" action="" method="post">
+            <div class="form" action="" method="post">
                 <input type="text" class="form-control" id="search_input">
                 <input type="button" id="btn2" value="Démarrer">
             </div>
@@ -78,9 +77,7 @@ session_start();
 
 
         </div>
-        <input type="button" id="btn2" value="retour">
     </div>
-
     <script type="text/javascript" src="/vanilla/vanilla-tilt.js"></script>
     <script src="https://use.fontawesome.com/3d02935bac.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>

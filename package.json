@@ -19,6 +19,7 @@
   "homepage": "https://github.com/drameBoubacar/reservation-car#readme",
   "dependencies": {
     "node-sass": "^7.0.1",
+    "three": "^0.138.3",
     "vanilla-tilt": "^1.7.2"
   }
 }
