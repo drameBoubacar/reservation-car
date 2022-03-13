@@ -104,6 +104,7 @@ tl.set(".cir", {
     .to(".cir", {
         ease: "back.out(3)",
         duration: 4,
+
         scale: gsap.utils.distribute({
             base: 1,
             amount: 3,
@@ -114,9 +115,18 @@ tl.set(".cir", {
 
         }
     })
-    .to("#logo", {
-        scale: 0.3,
-        transformOrigin: "center",
-        opacity: 1,
-        duration: 3
-    }, "-=1.5");
+
+
+
+const loadingNumber = document.querySelector('#loadingNumber');
+const loadingCircle = document.querySelector('.loading-circle');
+let load = 0;
+
+setInterval(updateLoader, 40);
+
+
+function updateLoader() {
+    load += (load < 100);
+    loadingNumber.innerHTML = load;
+    loadingCircle.style.background = 'conic-gradient(from 0deg at 50% 50%, rgba(111, 123, 247, 1) 0%, rgba(155, 248, 244, 1) ' + load + '%, #101012 ' + load + '%)'
+}
