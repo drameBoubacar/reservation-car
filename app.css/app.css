@@ -124,7 +124,7 @@ ul.fmenu .trigger-menu:hover:not(.expanded) i {
   color: #ffd53e;
 }
 ul.fmenu .floating-menu {
-  display: block;
+  display: none;
   position: absolute;
   top: 3.75rem;
   right: 0px;
@@ -136,10 +136,7 @@ ul.fmenu .floating-menu {
   background-color: #080a13;
   box-shadow: 1px 1px 13px black, -1px -1px 4px #283052;
   border-radius: 0.75rem;
-  overflow: hidden;
-  max-height: 0px;
   z-index: 100;
-  opacity: 0;
   transition: max-height ease 0.6s, opacity ease 0.3s;
 }
 ul.fmenu .floating-menu > li {
@@ -178,11 +175,42 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   /* Form fields */
   /* Progress Bar */
 }
+.container .account {
+  position: fixed;
+  width: 50%;
+  height: 50%;
+  background-color: #080a13db;
+  backdrop-filter: blur(12px);
+  z-index: 99999999;
+  border: 1px solid #ffffff1c;
+  border-radius: 19px;
+  color: white;
+  font-family: "Circular pro";
+  font-weight: 900;
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+  transform: translate(250%);
+  transition: 0.3s ease-in-out;
+  transition-delay: 0.2s;
+}
+.container .account #close {
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding: 20px;
+  cursor: pointer;
+  display: none;
+}
+.container .account .navmenu {
+  display: none;
+}
 .container .content {
   padding: 0px 200px 0px 200px;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.5s ease-in-out;
 }
 .container .content .text_section {
   width: 50%;
@@ -239,9 +267,9 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
 }
 .container .progress-wrap {
   margin: auto;
-  display: table;
   position: fixed;
   top: 20%;
+  display: none;
 }
 .container .line-progress-bar {
   display: flex;
@@ -277,7 +305,7 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  color: #d4d4d4;
+  color: #080a13;
   font-size: 20px;
   margin-left: 0px;
   color: #d4d4d4;
@@ -298,8 +326,7 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
 .container .progressbar-dots.active {
   color: #fff;
   border: 0px solid #26a386;
-  background: linear-gradient(45deg, #999999f7, #ffffff);
-  box-shadow: 0 0 5px white, 0 0 10px #68ffff, 0 0 20px #63e2ff;
+  filter: none;
 }
 
 @media (max-width: 800px) {
