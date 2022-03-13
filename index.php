@@ -30,29 +30,42 @@ session_start();
 
         <ul class="fmenu" id="mymenu">
             <li class="fmenu-item">
-                <div class="trigger-menu expanded">
-                    <a href="" class="fa fa-user-o" aria-hidden="true"></a>
+                <div class="trigger-menu expanded" onclick="toggleMenu()" >
+                    <a class="fa fa-user-o" aria-hidden="true"></a>
 
                 </div>
-                <ul class="floating-menu">
+                <ul class="floating-menu" id="openmenu">
                     <li><a href='#'><i class="fa fa-inbox" aria-hidden="true"></i>Profile</a></li>
-                    <li><a href='#'><i class="fa fa-car" aria-hidden="true"></i>Reservations</a></li>
+                    <li class="reser"><a href='#'><i class="fa fa-car" aria-hidden="true"></i>Reservations</a></li>
                     <li><a href='#'><i class="fa fa-credit-card-alt" aria-hidden="true"></i>Transactions</a></li>
                     <li><a href='./Disconnect/disconnect.php' name='logout'><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
                 </ul>
             </li>
+        
 
 
     </header>
     <div class="container" id='s'>
+
+
+    <div class="account">
+    <a id="close" class="fa fa-times" aria-hidden="true"></a>
+        <div class="navmenu">
+        <div class="reservation">reservation</div>
+        <div class="info">information</div>
+        </div>
+    </div>
         
     <div class="progress-wrap">
 			<div class="line-progress-bar">
 				<div class="line"></div>
 				<ul class="checkout-bar">
-					<li class="progressbar-dots active"><span>step 1</span></li>
-					<li class="progressbar-dots"><span>step 2</span></li>
-					<li class="progressbar-dots"><span>Final step</span></li>
+					<li class="progressbar-dots active"><span>step 1</span>
+                    <a class="fa fa-user-o" aria-hidden="true"></a></li>
+					<li class="progressbar-dots"><span>step 2</span>
+                    <a class="fa fa-user-o" aria-hidden="true"></a></li>
+					<li class="progressbar-dots"><span>Final step</span>
+                    <a class="fa fa-user-o" aria-hidden="true"></a></li>
 				</ul>
 			</div>
 		</div>
