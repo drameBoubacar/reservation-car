@@ -23,6 +23,7 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 4rem;
+  overflow: hidden;
 }
 
 span {
@@ -174,9 +175,6 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   align-items: center;
   overflow: hidden;
 }
-.container .content#slider2 {
-  display: none;
-}
 .container .content {
   padding: 0px 200px 0px 200px;
   display: flex;
@@ -224,6 +222,52 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
 }
 .container .content .img_car img {
   max-height: 50vh;
+}
+.container .section_adress {
+  position: absolute;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+}
+.container .section_adress .text h1 {
+  color: white;
+  font-family: "Circular pro";
+  font-size: 70px;
+}
+.container .section_adress .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .section_adress .form .form-control {
+  width: 50%;
+  height: 25px;
+  border-radius: 10px;
+  background: transparent;
+  margin-bottom: 40px;
+}
+.container .section_adress .form input[type=button] {
+  padding: 20px 30px 20px 30px;
+  border-radius: 20px;
+  background-color: transparent;
+  border: none;
+  font-weight: 100;
+  color: white;
+  text-shadow: 0 0 2px #8ec6e11a, 0 0 10px #9ffdff, 0 0 20px #0047ff, 0 0 25px #8ec6e11a, 0 0 30px #9ffdff, 0 0 40px #0047ff;
+  font-family: "Circular pro";
+  font-weight: 900;
+  font-size: 20px;
+  box-shadow: 8px 8px 20px black, -2px -2px 7px 0px rgba(93, 147, 185, 0.2);
+  transition: 1s ease-in;
+  cursor: pointer;
+}
+.container .section_adress .form input[type=button]:nth-child(1) {
+  filter: none;
+}
+.container .section_adress .form input[type=button]:hover {
+  box-shadow: inset 5px 5px 12px #030407, inset -5px -5px 12px #0d101d;
+  transition: 1s ease-in;
+  transform: scale(0.95);
 }
 
 @media (max-width: 800px) {
