@@ -1,36 +1,6 @@
 <?php
 include_once('./connect.php');
 session_start();
-$msg = ""; 
-if(isset($_POST['submit'])) {
-  $username = trim($_POST['username']);
-  $password = trim($_POST['password']);
-  if($username != "" && $password != "") {
-    try {
-      $query = "select username, password from `user` where `username`=:username and `password`=:password";
-      $stmt = $db->prepare($query);
-      $stmt->bindParam('username', $username, PDO::PARAM_STR);
-      $stmt->bindValue('password', $password, PDO::PARAM_STR);
-      $stmt->execute();
-      $count = $stmt->rowCount();
-      $row   = $stmt->fetch(PDO::FETCH_ASSOC);
-      if($count == 1 && !empty($row)) {
-        /******************** Your code ***********************/
-        $_SESSION['sess_user_id']   = $row['id_user'];
-        $_SESSION['sess_user_name'] = $row['username'];
-        header('location:../index.php');
-        var_dump($row);
-       
-      } else {
-        $msg = "Invalid username and password!";
-      }
-    } catch (PDOException $e) {
-      echo "Error : ".$e->getMessage();
-    }
-  } else {
-    $msg = "Both fields are required!";
-  }
-}
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +25,7 @@ if(isset($_POST['submit'])) {
   <div class="container">
     <div class="login-box">
       <h2>Login</h2>
-      <form id="form" method="POST" >
+      <form id="form" method="POST">
         <div class="user-box">
           <input type="text" id='username' name="username">
           <?php if (isset($_POST['submit']) && empty($_POST['username'])) echo 'Invalid username' ?>
@@ -89,7 +59,14 @@ if(isset($_POST['submit'])) {
       <img src="../img/voiture_erreur.svg" alt="" id='carErr' class="voiture_allumer">
     </div>
   </div>
-  <script src="script.js">
+  <script type="text/javascript" src="/vanilla/vanilla-tilt.js"></script>
+    <script src="https://use.fontawesome.com/3d02935bac.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCUx06rB4M0_aqmVTME0oShUjGX1VNi8uI"></script>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/jquery-validation/dist/jquery.validate.js"></script>
+  <script src="./script.js">
   </script>
 </body>
 
