@@ -2,7 +2,6 @@
 
 include_once './Login/connect.php';
 session_start();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -130,8 +129,16 @@ session_start();
                 </div>
             </div>
         </div>
-    </div>
+        <div id="map"></div>
+        <div id="infowindow-content">
+            <span id="place-name" class="title"></span><br />
+            <span id="place-address"></span>
+        </div>
+        <div class="text_section">
 
+
+        </div>
+    </div>
     <script type="text/javascript" src="/vanilla/vanilla-tilt.js"></script>
     <script src="https://use.fontawesome.com/3d02935bac.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
