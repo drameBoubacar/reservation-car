@@ -64,6 +64,7 @@ var v = $("#reservation_form").validate({
 });
 
 
+// ----------PRELOADER----------------
 
 
 setTimeout(function() {
@@ -116,6 +117,9 @@ tl.set(".cir", {
         }
     })
 
+setTimeout(function() {
+  $('#preloader').fadeOut('4000');
+}, 4000); 
 
 
 const loadingNumber = document.querySelector('#loadingNumber');
