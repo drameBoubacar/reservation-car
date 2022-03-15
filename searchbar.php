@@ -1,9 +1,10 @@
 <?php
  require_once './Login/connect.php';
- $allCars = $con->query('SELECT * FROM cars ORDER BY id_car DESC');
+ $search = false;
  if(isset($_GET['search']) AND !empty($_GET['search'])){
+     $search = true;
      $recherche = htmlspecialchars($_GET['search']);
-    $allCars = $con->query('SELECT MODEL FROM CARS WHERE MODEL LIKE "%'.$recherche.'%" ORDER BY id_car DESC');
+    $allCars = $db->query('SELECT BRAND FROM CARS WHERE BRAND LIKE "%'.$recherche.'%" ORDER BY id_car DESC');
  }
 ?>
 
@@ -22,15 +23,16 @@
     </form>
     <div>
         <?php
-            if($allCars->rowCount() > 0){
+            if($search && $allCars->rowCount() > 0){
                 while($car = $allCars->fetch()){
                     ?>
-                    <p><?= $car['MODEL']; ?></p>
+                    <p><?= $car['BRAND']; ?></p>
                     <?php
                 }
             }else {
             ?>
-            <p>Aucune voiture trouvée</p>
+            <!-- <p>Aucune voiture trouvée</p> -->
+            <?php echo "aucune voiture trouvé ! "?>
             <?php
             }
         ?>

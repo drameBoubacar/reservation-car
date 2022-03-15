@@ -92,7 +92,7 @@ session_start();
                 <h1><span class="heading">A new</span> <span>experience.</span><br>Reserve your car<br>Now.</h1>
                 <div class="errorTxt"></div>
                 <div class="btn">
-                    <input class="next" type="button" id="btn1" value="Démarrer">
+                    <input class="next" type="button" id="btn1" value="Reserve to drive">
 
 
                 </div>
