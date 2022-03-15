@@ -40,7 +40,7 @@ session_start();
             audio.play();
           }
         </script>
-        <input type="submit" id="submit" name='submit' class="sub" onclick="play()">
+        <input type="submit"  id="submit" name='submit' class="sub" onclick="play()">
         <span></span>
         <span></span>
         <span></span>

@@ -1,5 +1,5 @@
 $('document').ready(function() {
-    $('#submit').click(function() {
+    $('#submit').click(function log() {
         var username = $('#username').val().trim();
         var password = $('#password').val().trim();
         $.ajax({
@@ -13,6 +13,11 @@ $('document').ready(function() {
                     display: 'flex',
                     transition: 'fadeIn(1000)'
                 })
+                if (voitureA) {
+                    voitureE.css({
+                        display: 'none',
+                    })
+                }
 
             }
 

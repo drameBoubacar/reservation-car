@@ -244,6 +244,26 @@ ul.fmenu {
             }
         }
     }
+    // --------HORLOGE----------
+    .section_date {
+        display: none;
+        transition: 1s ease;
+        .clock {
+            position: absolute;
+            top: 50%;
+            left: 25%;
+            transform: translateX(-50%) translateY(-50%);
+            color: #17D4FE;
+            font-size: 60px;
+            font-family: $orbitron;
+            letter-spacing: 7px;
+        }
+        .form_date {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+    }
     // --------POPUP MENU----------
     .account {
         position: fixed;
