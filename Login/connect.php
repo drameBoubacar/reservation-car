@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 <?php
 
 $db = new PDO('mysql:host=127.0.0.1;dbname=cars_reservation;charset=utf8mb4', 'root', '');
@@ -28,3 +30,4 @@ if($page == 'add_adress'){
   }
 
 }
+>>>>>>> 777c953581cff142221c4cb7fc640e5707fb7d66
