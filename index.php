@@ -92,7 +92,7 @@ session_start();
                 <h1><span class="heading">A new</span> <span>experience.</span><br>Reserve your car<br>Now.</h1>
                 <div class="errorTxt"></div>
                 <div class="btn">
-                    <input class="next" type="button" id="btn1" value="Reserve to drive">
+                    <input class="next" type="button" id="btn1" value="Choisir mon véhicule">
 
 
                 </div>
@@ -124,7 +124,7 @@ session_start();
                     </div>
                     <form id="reservation_form" action="" method="post">
                         <input name="adress" type="text" class="form-control" id="search_input" placeholder="" required>
-                        <input type="button" id="next2" value="Next">
+                        <input type="button" id="next2" onclick="save()" value="Next">
                     </form>
                 </div>
             </div>
@@ -149,7 +149,6 @@ session_start();
     <script src="/node_modules/gsap/dist/gsap.min.js"></script>
     <script src="./main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
-    <script src="/globe.js"></script>
     <script type="text/javascript" src="https://daks2k3a4ib2z.cloudfront.net/5317d67d660658b254000454/js/webflow.js?2f83b8326cc4c8f7327b5dba30444a37"></script>
 
 

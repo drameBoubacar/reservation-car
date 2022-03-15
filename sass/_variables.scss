@@ -47,5 +47,11 @@ $fmenu-list-expand-speed: .6s !default;
 $fmenu-list-opacity-speed: .3s !default;
 
 $roboto: 'Roboto', sans-serif;
-//$primary: blue; 
-// $secondary: white;
+//Responsive
+
+
+$breakpoints: (
+  'small':  ( min-width:  767px ),
+  'medium': ( min-width:  992px ),
+  'large':  ( min-width: 1200px )
+) !default;
