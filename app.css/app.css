@@ -19,12 +19,10 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-image: url(/img/back.png);
-  background-size: 120%;
   width: 100%;
   height: 100%;
-  border-radius: 4rem;
   overflow: hidden;
+  background-color: #080a13;
 }
 
 span {
@@ -96,7 +94,7 @@ ul.fmenu .trigger-menu {
   border-radius: 3rem;
   overflow: hidden;
   text-align: center;
-  background-color: #070a13;
+  background-color: #080a13;
   box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.5), -1px -1px 2px 0px rgba(88, 102, 181, 0.2);
   cursor: pointer;
   transition: max-width ease 0.4s;
@@ -105,8 +103,11 @@ ul.fmenu .trigger-menu a.fa.fa-user-o::before {
   list-style-type: none;
   color: white;
   font-size: 20px;
+  transition: 0.3s ease-in-out;
+}
+ul.fmenu .trigger-menu a.fa.fa-user-o:hover {
+  transition: 0.3s ease-in-out;
   filter: drop-shadow(0 0 5px #a6d4ff) drop-shadow(0 0 10px #4990fa);
-  animation: 0.6s ease-in-out;
 }
 ul.fmenu .trigger-menu i {
   display: block;
@@ -172,6 +173,7 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  background-image: url(/img/gradientback.png);
 }
 .container .circlepop {
   height: 150%;
@@ -303,12 +305,11 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   border: none;
   font-weight: 100;
   color: white;
-  text-shadow: 0 0 2px #8ec6e11a, 0 0 10px #9ffdff, 0 0 20px #0047ff, 0 0 25px #8ec6e11a, 0 0 30px #9ffdff, 0 0 40px #0047ff;
   font-family: "Circular pro";
   font-weight: 900;
   font-size: 20px;
   box-shadow: 8px 8px 20px black, -2px -2px 7px 0px rgba(93, 147, 185, 0.2);
-  transition: 1s ease-in;
+  transition: 0.3s ease-in;
   cursor: pointer;
 }
 .container .content .text_section input[type=button]:nth-child(1) {
@@ -316,8 +317,9 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
 }
 .container .content .text_section input[type=button]:hover {
   box-shadow: inset 5px 5px 12px #030407, inset -5px -5px 12px #0d101d;
-  transition: 1s ease-in;
+  transition: 0.3s ease-in;
   transform: scale(0.95);
+  text-shadow: 0 0 2px #8ec6e11a, 0 0 10px #9ffdff, 0 0 20px #0047ff, 0 0 25px #8ec6e11a, 0 0 30px #9ffdff, 0 0 40px #0047ff;
 }
 .container .content .img_car {
   width: 50%;
@@ -326,12 +328,13 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   max-height: 50vh;
 }
 .container .section_adress {
-  display: none;
   width: 100%;
   height: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
   padding: 0px 200px 0px 200px;
+  display: none;
 }
 .container .section_adress #output {
   width: 50%;
@@ -428,21 +431,18 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   box-shadow: 0px 40px 50px #e000454f, inset 2px 2px 9px 1px rgba(0, 0, 0, 0.473), inset -1px -1px 2px 0px #f26590;
   transform: scale(0.98);
 }
-
-.progress-wrap {
+.container .progress-wrap {
   margin: auto;
   position: fixed;
   top: 15%;
   display: none;
 }
-
-.line-progress-bar {
+.container .line-progress-bar {
   display: flex;
   margin: auto;
   width: 100%;
 }
-
-.line {
+.container .line {
   height: 50px;
   background-color: #060a13;
   border-radius: 22px;
@@ -453,8 +453,7 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   margin-left: -11px;
   filter: blur(3px);
 }
-
-.progress-wrap div ul {
+.container .progress-wrap div ul {
   display: flex;
   width: 250px;
   list-style: none;
@@ -463,8 +462,7 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   justify-content: space-between;
   z-index: 1;
 }
-
-.progressbar-dots {
+.container .progressbar-dots {
   display: inline-flex;
   height: 35px;
   width: 35px;
@@ -481,15 +479,13 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   box-shadow: 2px 2px 2px 0px black, -1px -1px 2px #ffffff29;
   filter: blur(2px);
 }
-
-.progressbar-dots span {
+.container .progressbar-dots span {
   font-size: 12px;
   line-height: 12px;
   position: absolute;
   display: none;
 }
-
-.progressbar-dots.active {
+.container .progressbar-dots.active {
   color: #fff;
   background: radial-gradient(#e00045, #e00045);
   border: none;
@@ -497,7 +493,6 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   box-shadow: 0px 0px 10px #e00045, 0px 0px 10px #e00045;
   animation: animdot 2s infinite ease-in-out;
 }
-
 @keyframes animdot {
   0% {
     box-shadow: 0 0 10px #e00045, 0 0 10px #e00045;
@@ -509,7 +504,7 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
     box-shadow: 0 0 10px #e00045, 0 0 10px #e00045;
   }
 }
-.progressbar-dots.active span {
+.container .progressbar-dots.active span {
   font-size: 21px;
   position: absolute;
   float: left;
@@ -517,9 +512,8 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   font-weight: 900;
   display: flex;
 }
-
 @media (max-width: 800px) {
-  header {
+  .container header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -528,18 +522,16 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
     padding: 20px 50px 0px 50px;
     font-family: "Venti";
   }
-
-  .connect_status {
+  .container .connect_status {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-
-  .user {
+  .container .user {
     transform: scale(0.9);
   }
 }
-span.error {
+.container span.error {
   font-size: 15px;
   font-weight: 700;
   font-family: "Circular pro";
@@ -549,12 +541,10 @@ span.error {
   text-align: left;
   margin-left: 30px;
 }
-
-canvas {
+.container canvas {
   display: none;
 }
-
-.pac-container {
+.container .pac-container {
   background-color: #090a13;
   position: absolute !important;
   z-index: 1000;
@@ -569,7 +559,7 @@ canvas {
   z-index: 99999;
   color: white;
 }
-.pac-container .pac-item {
+.container .pac-container .pac-item {
   cursor: default;
   padding: 0 4px;
   text-overflow: ellipsis;
@@ -581,12 +571,12 @@ canvas {
   font-size: 11px;
   color: #959595;
 }
-.pac-container .pac-item .pac-item-query {
+.container .pac-container .pac-item .pac-item-query {
   font-size: 13px;
   padding-right: 3px;
   color: #fff;
 }
-.pac-container .pac-item .pac-item:hover {
+.container .pac-container .pac-item .pac-item:hover {
   background-color: #0f1425;
 }
 

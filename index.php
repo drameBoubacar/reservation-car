@@ -92,7 +92,7 @@ session_start();
                 <h1><span class="heading">A new</span> <span>experience.</span><br>Reserve your car<br>Now.</h1>
                 <div class="errorTxt"></div>
                 <div class="btn">
-                    <input class="next" type="button" id="btn1" value="Démarrer">
+                    <input class="next" type="button" id="btn1" value="Reserve to drive">
 
 
                 </div>
@@ -123,7 +123,7 @@ session_start();
                         <h1>Enter an adress</h1>
                     </div>
                     <form id="reservation_form" action="" method="post">
-                        <input name="adress" type="text" class="form-control" id="search_input" required>
+                        <input name="adress" type="text" class="form-control" id="search_input" placeholder="" required>
                         <input type="button" id="next2" value="Next">
                     </form>
                 </div>
