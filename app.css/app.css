@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+@import url(https://fonts.googleapis.com/css2?family=Orbitron&display=swap);
 @font-face {
   font-family: "Circular pro";
   src: url("/font/CircularStd-Bold.otf");
@@ -248,6 +249,25 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   font-size: 70px;
   letter-spacing: 15px;
 }
+.container .section_date {
+  display: none;
+  transition: 1s ease;
+}
+.container .section_date .clock {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translateX(-50%) translateY(-50%);
+  color: #17D4FE;
+  font-size: 60px;
+  font-family: "Orbitron";
+  letter-spacing: 7px;
+}
+.container .section_date .form_date {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 .container .account {
   position: fixed;
   width: 50%;
@@ -330,7 +350,6 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
 .container .section_adress {
   width: 100%;
   height: 100%;
-  display: flex;
   justify-content: center;
   align-items: center;
   padding: 0px 200px 0px 200px;
