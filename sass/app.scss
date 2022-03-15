@@ -630,5 +630,20 @@ canvas {
       background-color: #0f1425;
     }
   }
-
 }}
+
+
+// PAGE RESERVATIONS
+
+h1 {
+  color: $primary-color;
+  font-size: $h1-size;
+  text-align: center;
+  font-family: $font;
+}
+
+.container-rentals {
+  display: flex;
+  justify-content: space-around;
+  background-color: blue;
+}
