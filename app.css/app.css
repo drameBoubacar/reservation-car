@@ -326,13 +326,12 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   max-height: 50vh;
 }
 .container .section_adress {
-  display: none;
   width: 100%;
   height: 100%;
-  display: flex;
   justify-content: center;
   align-items: center;
   padding: 0px 200px 0px 200px;
+  display: none;
 }
 .container .section_adress #output {
   width: 50%;

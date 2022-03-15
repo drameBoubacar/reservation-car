@@ -93,8 +93,6 @@ session_start();
                 <div class="errorTxt"></div>
                 <div class="btn">
                     <input class="next" type="button" id="btn1" value="Démarrer">
-
-
                 </div>
 
             </div>
@@ -109,16 +107,6 @@ session_start();
 
         <!--------------- SECTION ADRESSE (step 1) ------------------->
         <div class="section_adress" id='slider2'>
-<<<<<<< HEAD
-            <div class="content_card">
-                <div class="adress">
-                    <div class="text">
-                        <h1>Entre votre adresse</h1>
-                    </div>
-                    <form id="reservation_form" action="" method="post">
-                        <input name="adress" type="text" class="form-control" id="search_input" required placeholder="Your Adress">
-                        <input type="button" id="next2" onclick='save()' value="Démarrer">
-=======
 
             <div id="output"></div>
 
@@ -135,7 +123,6 @@ session_start();
                     <form id="reservation_form" action="" method="post">
                         <input name="adress" type="text" class="form-control" id="search_input" required>
                         <input type="button" id="next2" value="Next">
->>>>>>> bc85ec2f9f393f5143e8e6dfe9ba8771b4470503
                     </form>
                 </div>
             </div>
