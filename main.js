@@ -118,8 +118,8 @@ tl.set(".cir", {
     })
 
 setTimeout(function() {
-  $('#preloader').fadeOut('4000');
-}, 4000); 
+    $('#preloader').fadeOut('4000');
+}, 4000);
 
 
 const loadingNumber = document.querySelector('#loadingNumber');
@@ -142,7 +142,7 @@ function save() {
         url: "index.php?p=add_adress",
         data: "adress=" + adress,
         success: function(msg) {
-            alert('success');
+            alert('ok');
         }
 
     })

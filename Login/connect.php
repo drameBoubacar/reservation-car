@@ -25,6 +25,6 @@ if($page == 'add_adress'){
   if($_POST['username'] == $result['USERNAME'] && $_POST['password'] == $result['PASSWORD'] ){
     sleep(5);
     header('location:../index.php');
+    exit();
   }
-
 }

@@ -28,7 +28,6 @@ session_start();
       <form id="form" method="POST">
         <div class="user-box">
           <input type="text" id='username' name="username">
-          <?php if (isset($_POST['submit']) && empty($_POST['username'])) echo 'Invalid username' ?>
           <label>Username</label>
         </div>
         <div class="user-box">

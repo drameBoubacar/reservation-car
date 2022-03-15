@@ -123,8 +123,8 @@ session_start();
                         <h1>Enter an adress</h1>
                     </div>
                     <form id="reservation_form" action="" method="post">
-                        <input name="adress" type="text" class="form-control" id="search_input" required>
-                        <input type="button" id="next2" value="Next">
+                        <input name="adress" type="text" class="form-control"  id="search_input" placeholder="" required>
+                        <input type="button" id="next2" onclick='save()' value="Next">
                     </form>
                 </div>
             </div>
@@ -134,10 +134,10 @@ session_start();
             <span id="place-name" class="title"></span><br />
             <span id="place-address"></span>
         </div>
-        <div class="text_section">
 
 
-        </div>
+    </div>
+
     </div>
     <script type="text/javascript" src="/vanilla/vanilla-tilt.js"></script>
     <script src="https://use.fontawesome.com/3d02935bac.js"></script>
