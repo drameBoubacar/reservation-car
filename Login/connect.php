@@ -43,7 +43,7 @@ if($page == 'add_adress'){
   }
 }
 
-  }
 
-}
+
+
 
