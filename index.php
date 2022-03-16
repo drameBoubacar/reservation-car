@@ -14,6 +14,7 @@ session_start();
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <title>Document</title>
 </head>
+
 <body>
     <header>
         <div class="connect_status">
@@ -105,16 +106,36 @@ session_start();
             <span id="place-name" class="title"></span><br />
             <span id="place-address"></span>
         </div>
-         <!--------------- SECTION A (step 2) -TIME----------------->
-        <div class="section_date">
-            <div id="MyClockDisplay" class="clock" id="clock" onload="showTime()"></div>
-            <div class="form-date"> 
-                <input type="datetime-local" name="rental_date" id="rental_date">
-                <input type="datetime-local" name='return_date' id="return_date">
-                <input type="submit" id='date_ok' value="Start" onclick="saveDate()">
+        <!--------------- SECTION A (step 2) -TIME----------------->
+        <div class="section_date" id='slider3'>
+            <div class="date">
+                <div class="date_text">
+                    <h1>Choose <br>your date reservation</h1>
+                    <p>Locate yourself to discover ours availables cars</p>
+                </div>
+                <div class="box_date">
+                    <div class="box_text">
+                        <h1>Choose your date</h1>
+                    </div>
+                    <div class="form_date">
+                        <div class="input_form">
+                            <input type="datetime-local" name="rental_date" id="rental_date">
+                            <input type="datetime-local" name='return_date' id="return_date" value="2017-06-01T08:30">
+                        </div>
+                        <input type="submit" id='date_ok' value="Start" onclick="saveDate()">
+                    </div>
+                </div>
+            </div>
+            <div class="clock">
+                <div class="hour"></div>
+                <div class="min"></div>
+                <div class="sec"></div>
+            </div>
+            <div class="switch-cont">
+                <button class="switch-btn"> Light </button>
             </div>
         </div>
-        
+
     </div>
     <script type="text/javascript" src="/vanilla/vanilla-tilt.js"></script>
     <script src="https://use.fontawesome.com/3d02935bac.js"></script>
@@ -124,18 +145,17 @@ session_start();
     <!-- <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDGsvz48NCZH1Dk_cq04rh0RfLbdfKE-sY&region=GB">
     </script> -->
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUx06rB4M0_aqmVTME0oShUjGX1VNi8uI&callback=initMap&libraries=places&v=weekly&channel=2"
-      async
-    ></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUx06rB4M0_aqmVTME0oShUjGX1VNi8uI&callback=initMap&libraries=places&v=weekly&channel=2" async></script>
     <script src="./node_modules/jquery/dist/jquery.js"></script>
     <script src="./node_modules/jquery-validation/dist/jquery.validate.js"></script>
     <script src="/node_modules/gsap/dist/gsap.min.js"></script>
-    <script src="./main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
-    <script src="/globe.js"></script>
+    <script src="https://unpkg.com/@reactivex/rxjs@5.5.11/dist/global/Rx.min.js"></script>
+    <script src="https://unpkg.com/rxcss@0.6.0/dist/rxcss.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
     <script type="text/javascript" src="https://daks2k3a4ib2z.cloudfront.net/5317d67d660658b254000454/js/webflow.js?2f83b8326cc4c8f7327b5dba30444a37"></script>
-
+    <script src="/globe.js"></script>
+    <script src="./main.js"></script>
 
 </body>
 

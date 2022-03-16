@@ -15,6 +15,26 @@
   src: url("/font/CircularStd-Light.otf");
   font-weight: 300;
 }
+:root {
+  --mouse-x: 0;
+  --mouse-y: 0;
+}
+
+:root {
+  --main-bg-color: #fff;
+  --main-text-color: #888888;
+}
+
+[data-theme=dark] {
+  --main-bg-color: #1e1f26;
+  --main-text-color: #ccc;
+}
+
+* {
+  box-sizing: border-box;
+  /* 		transition: all ease 0.2s; */
+}
+
 html,
 body {
   margin: 0;
@@ -251,21 +271,175 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
 }
 .container .section_date {
   display: none;
-  transition: 1s ease;
+  width: 100%;
+  height: 100%;
+  padding: 0px 200px 0px 200px;
+  justify-content: center;
+  align-items: center;
+  /* Style for theme switch btn */
+}
+.container .section_date .page-header {
+  font-size: 2rem;
+  color: var(--main-text-color);
+  padding: 2rem 0;
+  font-family: monospace;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  transition: all ease 0.2s;
 }
 .container .section_date .clock {
-  position: absolute;
-  top: 50%;
-  left: 25%;
-  transform: translateX(-50%) translateY(-50%);
-  color: #17D4FE;
-  font-size: 60px;
-  font-family: "Orbitron";
-  letter-spacing: 7px;
+  min-height: 18em;
+  min-width: 18em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-bg-color);
+  background-image: url("https://imvpn22.github.io/analog-clock/clock.png");
+  background-position: center center;
+  background-size: cover;
+  border-radius: 50%;
+  border: 4px solid var(--main-bg-color);
+  box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05), inset 0 -15px 15px rgba(255, 255, 255, 0.05), 0 15px 15px rgba(0, 0, 0, 0.3), inset 0 15px 15px rgba(0, 0, 0, 0.3);
+  transition: all ease 0.2s;
 }
-.container .section_date .form_date {
+.container .section_date .clock:before {
+  content: "";
+  height: 0.75rem;
+  width: 0.75rem;
+  background-color: var(--main-text-color);
+  border: 2px solid var(--main-bg-color);
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1000;
+  transition: all ease 0.2s;
+}
+.container .section_date .clock .hour,
+.container .section_date .clock .min,
+.container .section_date .clock .sec {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+}
+.container .section_date .clock .hour {
+  height: 10em;
+  width: 10em;
+}
+.container .section_date .clock .hour:before {
+  content: "";
+  position: absolute;
+  height: 50%;
+  width: 6px;
+  background-color: var(--main-text-color);
+  border-radius: 6px;
+}
+.container .section_date .clock .min {
+  height: 12em;
+  width: 12em;
+}
+.container .section_date .clock .min:before {
+  content: "";
+  height: 50%;
+  width: 4px;
+  background-color: var(--main-text-color);
+  border-radius: 4px;
+}
+.container .section_date .clock .sec {
+  height: 13em;
+  width: 13em;
+}
+.container .section_date .clock .sec:before {
+  content: "";
+  height: 60%;
+  width: 2px;
+  background-color: #f00;
+  border-radius: 2px;
+}
+.container .section_date .switch-cont {
+  margin: 2em auto;
+  /* position: absolute; */
+  bottom: 0;
+}
+.container .section_date .switch-cont .switch-btn {
+  font-family: monospace;
+  text-transform: uppercase;
+  outline: none;
+  padding: 0.5rem 1rem;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  border: 1px solid var(--main-text-color);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+.container .section_date .date {
   display: flex;
   flex-direction: column;
+  z-index: 99999;
+}
+.container .section_date .date .date_text {
+  margin-bottom: 70px;
+}
+.container .section_date .date .date_text h1 {
+  color: white;
+  font-family: "Circular pro";
+  font-size: 70px;
+  margin: 0;
+  line-height: 80px;
+}
+.container .section_date .date .date_text p {
+  margin: 0;
+  font-family: "Circular pro";
+  color: #8a8a8a;
+  font-size: 24px;
+  font-weight: 300;
+}
+.container .section_date .date .box_date {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  background-color: transparent;
+  border-radius: 20px;
+  box-shadow: 4px 4px 15px black, -1px -1px 10px #1f2339;
+}
+.container .section_date .date .box_date .box_text {
+  color: white;
+  padding: 30px 30px 10px 30px;
+}
+.container .section_date .date .box_date .box_text h1 {
+  color: white;
+  text-align: left;
+  font-family: "Circular pro";
+  font-size: 20px;
+  font-weight: 900;
+}
+.container .section_date .date .box_date .form_date .input_form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.container .section_date .date .box_date .form_date .input_form #rental_date {
+  width: 45%;
+  background-color: transparent;
+  color: white;
+  border: none;
+  outline: none;
+}
+.container .section_date .date .box_date .form_date .input_form #rental_date::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+.container .section_date .date .box_date .form_date .input_form #return_date {
+  width: 45%;
+  background-color: transparent;
+  color: white;
+  border: none;
+  outline: none;
+}
+.container .section_date .date .box_date .form_date .input_form #return_date::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+.container .section_date .date .box_date .form_date #date_ok {
   width: 100%;
 }
 .container .account {
@@ -315,7 +489,7 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   font-weight: 900;
   font-size: 60px;
 }
-.container .content .text_section .text_section h1 {
+.container .content .text_section h1 {
   font-size: 60px;
 }
 .container .content .text_section input[type=button] {
@@ -597,19 +771,6 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
 }
 .container .pac-container .pac-item .pac-item:hover {
   background-color: #0f1425;
-}
-
-h1 {
-  color: white;
-  font-size: 30px;
-  text-align: center;
-  font-family: "Circular pro";
-}
-
-.container-rentals {
-  display: flex;
-  justify-content: space-around;
-  background-color: blue;
 }
 
 /*# sourceMappingURL=app.css.map */
