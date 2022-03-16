@@ -14,6 +14,7 @@ session_start();
 
     <title>Document</title>
 </head>
+
 <body>
     <header>
         <div class="connect_status">
@@ -105,16 +106,25 @@ session_start();
             <span id="place-name" class="title"></span><br />
             <span id="place-address"></span>
         </div>
-         <!--------------- SECTION A (step 2) -TIME----------------->
-        <div class="section_date">
-            <div id="MyClockDisplay" class="clock" id="clock" onload="showTime()"></div>
-            <div class="form-date"> 
-                <input type="datetime-local" name="rental_date" id="rental_date">
-                <input type="datetime-local" name='return_date' id="return_date">
-                <input type="submit" id='date_ok' value="Start" onclick="saveDate()">
+        <!--------------- SECTION A (step 2) -TIME----------------->
+        <div class="section_date" id='slider3'>
+            <div class="date">
+                <div class="date_text">
+                    <h1>Choose <br>your date reservation</h1>
+                    <p>Locate yourself to discover ours availables cars</p>
+                </div>
+                <div class="box_date">
+                    <div class="box_text">
+                        <h1>Choose your date</h1>
+                    </div>
+                    <div class="form_date">
+                        <input type="datetime-local" name="rental_date" id="rental_date">
+                        <input type="datetime-local" name='return_date' id="return_date">
+                        <input type="submit" id='date_ok' value="Start" onclick="saveDate()">
+                    </div>
+                </div>
             </div>
         </div>
-        
     </div>
     <script type="text/javascript" src="/vanilla/vanilla-tilt.js"></script>
     <script src="https://use.fontawesome.com/3d02935bac.js"></script>
