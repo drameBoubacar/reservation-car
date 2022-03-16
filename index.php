@@ -11,7 +11,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./app.css/app.css">
-
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <title>Document</title>
 </head>
 <body>
@@ -120,7 +120,14 @@ session_start();
     <script src="https://use.fontawesome.com/3d02935bac.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCUx06rB4M0_aqmVTME0oShUjGX1VNi8uI"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCUx06rB4M0_aqmVTME0oShUjGX1VNi8uI"></script>  -->
+    <!-- <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDGsvz48NCZH1Dk_cq04rh0RfLbdfKE-sY&region=GB">
+    </script> -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUx06rB4M0_aqmVTME0oShUjGX1VNi8uI&callback=initMap&libraries=places&v=weekly&channel=2"
+      async
+    ></script>
     <script src="./node_modules/jquery/dist/jquery.js"></script>
     <script src="./node_modules/jquery-validation/dist/jquery.validate.js"></script>
     <script src="/node_modules/gsap/dist/gsap.min.js"></script>
