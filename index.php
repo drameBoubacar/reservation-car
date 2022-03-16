@@ -14,7 +14,6 @@ session_start();
 
     <title>Document</title>
 </head>
-
 <body>
     <header>
         <div class="connect_status">
@@ -25,13 +24,10 @@ session_start();
         <div class="logo">
             <h1>donkeycar.</h1>
         </div>
-
-
         <ul class="fmenu" id="mymenu">
             <li class="fmenu-item">
                 <div class="trigger-menu expanded" onclick="toggleMenu()">
                     <a class="fa fa-user-o" aria-hidden="true"></a>
-
                 </div>
                 <ul class="floating-menu" id="openmenu">
                     <li><a href='#'><i class="fa fa-inbox" aria-hidden="true"></i>Profile</a></li>
@@ -40,14 +36,20 @@ session_start();
                     <li><a href='./Disconnect/disconnect.php' name='logout'><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
                 </ul>
             </li>
-
-
-
     </header>
-
-
-
-
+    <div class="submenu">
+        <div class="progress-wrap">
+            <input type="button" value="Retour">
+            <div class="line-progress-bar">
+                <div class="line"></div>
+                <ul class="checkout-bar">
+                    <li class="progressbar-dots active"><span>1</span></li>
+                    <li class="progressbar-dots"><span>2</span></li>
+                    <li class="progressbar-dots"><span>3</span></li>
+                </ul>
+            </div>
+        </div>
+        </div>
     <div class="container" id='s'>
         <div data-tilt class="circlepop" id="preloader">
             <div class="loading-box">
@@ -60,11 +62,8 @@ session_start();
             <div class="cir"></div>
             <div class="cir"></div>
             <div class="cir">
-
-
             </div>
         </div>
-
         <div class="account">
             <a id="close" class="fa fa-times" aria-hidden="true"></a>
             <div class="navmenu">
@@ -72,20 +71,7 @@ session_start();
                 <div class="info">information</div>
             </div>
         </div>
-
-        <div class="progress-wrap">
-            <div class="line-progress-bar">
-                <div class="line"></div>
-                <ul class="checkout-bar">
-                    <li class="progressbar-dots active"><span>1</span></li>
-                    <li class="progressbar-dots"><span>2</span></li>
-                    <li class="progressbar-dots"><span>3</span></li>
-                </ul>
-            </div>
-        </div>
-
-
-
+       
         <!--------------- SECTION HOME ------------------->
         <div class="content" id="">
             <div class="text_section">
@@ -96,28 +82,20 @@ session_start();
 
 
                 </div>
-
             </div>
             <div class="img_car">
                 <img src="/img/car_home.png" alt="">
             </div>
         </div>
-
-
-
-
-
         <!--------------- SECTION ADRESSE (step 1) ------------------->
+
         <div class="section_adress" id='slider2'>
-
             <div id="output"></div>
-
             <div class="adress">
                 <div class="adress_text">
                     <h1>Discover <br>our available car</h1>
                     <p>Locate yourself to discover ours availables cars</p>
                 </div>
-
                 <div class="box_adress">
                     <div class="box_text">
                         <h1>Enter an adress</h1>
@@ -134,10 +112,23 @@ session_start();
             <span id="place-name" class="title"></span><br />
             <span id="place-address"></span>
         </div>
-        <div class="text_section">
-
-
+         <!--------------- SECTION A (step 2) -TIME----------------->
+        <div class="section_date">
+            <div id="MyClockDisplay" class="clock" id="clock" onload="showTime()"></div>
+            <div class="form-date"> 
+                <input type="datetime-local" name="rental_date" id="rental_date">
+                <input type="datetime-local" name='return_date' id="return_date">
+                <input type="button" id='date_ok' value="Start" onclick="saveDate()">
+            </div>
         </div>
+        
+             <!--------------- SELECT LOGO ----------------->
+             <div class="section_date">
+                <input type="button" id="next2"  value="Next">
+            </div>
+        </div>
+        
+
     </div>
     <script type="text/javascript" src="/vanilla/vanilla-tilt.js"></script>
     <script src="https://use.fontawesome.com/3d02935bac.js"></script>
@@ -150,6 +141,7 @@ session_start();
     <script src="./main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
     <script type="text/javascript" src="https://daks2k3a4ib2z.cloudfront.net/5317d67d660658b254000454/js/webflow.js?2f83b8326cc4c8f7327b5dba30444a37"></script>
+    <script src="./globe.js"></script>
 
 
 </body>

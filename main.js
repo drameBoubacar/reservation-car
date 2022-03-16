@@ -76,6 +76,7 @@ $(".next").click(function() {
     $("#slider2").fadeIn(1000);
     $("#slider2").css('display', 'flex');
     $(".progress-wrap").fadeIn(1000);
+
 });
 $("#next2").click(function() {
     if (v.form()) {
@@ -83,7 +84,12 @@ $("#next2").click(function() {
         $("#step3").fadeIn(1000);
         $('.progressbar-dots').removeClass('active');
         $('.progressbar-dots:nth-child(2)').addClass('active');
+        $('.section_date').css('display', 'flex');
+        $('.section_date').fadeIn(1000);
+        $('#clock').fadeIn(1000);
+        $('#clock').css('display', 'flex');
     }
+
 });
 
 $("#logo").on("click",
@@ -118,8 +124,8 @@ tl.set(".cir", {
     })
 
 setTimeout(function() {
-  $('#preloader').fadeOut('4000');
-}, 4000); 
+    $('#preloader').fadeOut('4000');
+}, 4000);
 
 
 const loadingNumber = document.querySelector('#loadingNumber');
@@ -142,10 +148,52 @@ function save() {
         url: "index.php?p=add_adress",
         data: "adress=" + adress,
         success: function(msg) {
-            alert('success');
+            alert('ok');
         }
 
     })
 }
 
+function saveDate() {
+    var rentalDate = $('#rental_date').val();
+    var returnDate = $('#return_date').val();
+    $.ajax({
+        type: "POST",
+        url: "index.php?p=add_date",
+        data: "rental_date=" + rentalDate + "return_date=" + returnDate,
+        success: function(msg) {
+            alert('ok');
+        }
 
+    })
+}
+
+function showTime() {
+    var date = new Date();
+    var h = date.getHours(); // 0 - 23
+    var m = date.getMinutes(); // 0 - 59
+    var s = date.getSeconds(); // 0 - 59
+    var session = "AM";
+
+    if (h == 0) {
+        h = 12;
+    }
+
+    if (h > 12) {
+        h = h - 12;
+        session = "PM";
+    }
+
+    h = (h < 10) ? "0" + h : h;
+    m = (m < 10) ? "0" + m : m;
+    s = (s < 10) ? "0" + s : s;
+
+    var time = h + ":" + m + ":" + s + " " + session;
+    document.getElementById("MyClockDisplay").innerText = time;
+    document.getElementById("MyClockDisplay").textContent = time;
+
+    setTimeout(showTime, 1000);
+
+}
+
+showTime();

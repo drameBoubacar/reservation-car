@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+@import url(https://fonts.googleapis.com/css2?family=Orbitron&display=swap);
 @font-face {
   font-family: "Circular pro";
   src: url("/font/CircularStd-Bold.otf");
@@ -247,6 +248,25 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   font-size: 70px;
   letter-spacing: 15px;
 }
+.container .section_date {
+  display: none;
+  transition: 1s ease;
+}
+.container .section_date .clock {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translateX(-50%) translateY(-50%);
+  color: #17D4FE;
+  font-size: 60px;
+  font-family: "Orbitron";
+  letter-spacing: 7px;
+}
+.container .section_date .form_date {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 .container .account {
   position: fixed;
   width: 50%;
@@ -435,12 +455,23 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   top: 15%;
   display: none;
 }
-.container .line-progress-bar {
+.container .progress-wrap div ul {
+  display: flex;
+  width: 250px;
+  list-style: none;
+  padding: 0px;
+  margin: initial;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.line-progress-bar {
   display: flex;
   margin: auto;
   width: 100%;
 }
-.container .line {
+
+.line {
   height: 50px;
   background-color: #060a13;
   border-radius: 22px;
@@ -451,16 +482,8 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   margin-left: -11px;
   filter: blur(3px);
 }
-.container .progress-wrap div ul {
-  display: flex;
-  width: 250px;
-  list-style: none;
-  padding: 0px;
-  margin: initial;
-  justify-content: space-between;
-  z-index: 1;
-}
-.container .progressbar-dots {
+
+.progressbar-dots {
   display: inline-flex;
   height: 35px;
   width: 35px;
@@ -477,13 +500,14 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   box-shadow: 2px 2px 2px 0px black, -1px -1px 2px #ffffff29;
   filter: blur(2px);
 }
-.container .progressbar-dots span {
+.progressbar-dots span {
   font-size: 12px;
   line-height: 12px;
   position: absolute;
   display: none;
 }
-.container .progressbar-dots.active {
+
+.progressbar-dots.active {
   color: #fff;
   background: radial-gradient(#e00045, #e00045);
   border: none;
@@ -491,6 +515,15 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   box-shadow: 0px 0px 10px #e00045, 0px 0px 10px #e00045;
   animation: animdot 2s infinite ease-in-out;
 }
+.progressbar-dots.active span {
+  font-size: 21px;
+  position: absolute;
+  float: left;
+  font-family: "Circular pro";
+  font-weight: 900;
+  display: flex;
+}
+
 @keyframes animdot {
   0% {
     box-shadow: 0 0 10px #e00045, 0 0 10px #e00045;
@@ -502,79 +535,6 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
     box-shadow: 0 0 10px #e00045, 0 0 10px #e00045;
   }
 }
-.container .progressbar-dots.active span {
-  font-size: 21px;
-  position: absolute;
-  float: left;
-  font-family: "Circular pro";
-  font-weight: 900;
-  display: flex;
-}
-@media (max-width: 800px) {
-  .container header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 70px;
-    color: white;
-    padding: 20px 50px 0px 50px;
-    font-family: "Venti";
-  }
-  .container .connect_status {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .container .user {
-    transform: scale(0.9);
-  }
-}
-.container span.error {
-  font-size: 15px;
-  font-weight: 700;
-  font-family: "Circular pro";
-  color: #ff005e;
-  display: block;
-  margin-bottom: 10px;
-  text-align: left;
-  margin-left: 30px;
-}
-.container .pac-container {
-  background-color: #090a13;
-  position: absolute !important;
-  z-index: 1000;
-  border-radius: 0px 0px 20px 20px;
-  border-top: none;
-  font-family: "Circular pro";
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  overflow: hidden;
-  z-index: 99999;
-  color: white;
-}
-.container .pac-container .pac-item {
-  cursor: default;
-  padding: 0 4px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  line-height: 30px;
-  text-align: left;
-  border-top: none;
-  font-size: 11px;
-  color: #959595;
-}
-.container .pac-container .pac-item .pac-item-query {
-  font-size: 13px;
-  padding-right: 3px;
-  color: #fff;
-}
-.container .pac-container .pac-item .pac-item:hover {
-  background-color: #0f1425;
-}
-
 @media (max-width: 599px) {
   header {
     padding: 10px 50px;
