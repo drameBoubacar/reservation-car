@@ -16,7 +16,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./app.css/app.css">
-
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <title>Document</title>
 </head>
 
@@ -153,6 +153,32 @@ session_start();
                     <div class="stat">Stats3</div>
                     <div class="stat">Stats4</div>
                 </div>
+        <div class="section_date" id='slider3'>
+            <div class="date">
+                <div class="date_text">
+                    <h1>Choose <br>your date reservation</h1>
+                    <p>Locate yourself to discover ours availables cars</p>
+                </div>
+                <div class="box_date">
+                    <div class="box_text">
+                        <h1>Choose your date</h1>
+                    </div>
+                    <div class="form_date">
+                        <div class="input_form">
+                            <input type="datetime-local" name="rental_date" id="rental_date">
+                            <input type="datetime-local" name='return_date' id="return_date" value="2017-06-01T08:30">
+                        </div>
+                        <input type="submit" id='date_ok' value="Start" onclick="saveDate()">
+                    </div>
+                </div>
+            </div>
+            <div class="clock">
+                <div class="hour"></div>
+                <div class="min"></div>
+                <div class="sec"></div>
+            </div>
+            <div class="switch-cont">
+                <button class="switch-btn"> Light </button>
             </div>
 
             <div class="car_tab"></div>
@@ -176,11 +202,14 @@ session_start();
     <script src="https://use.fontawesome.com/3d02935bac.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCUx06rB4M0_aqmVTME0oShUjGX1VNi8uI"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCUx06rB4M0_aqmVTME0oShUjGX1VNi8uI"></script>  -->
+    <!-- <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDGsvz48NCZH1Dk_cq04rh0RfLbdfKE-sY&region=GB">
+    </script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUx06rB4M0_aqmVTME0oShUjGX1VNi8uI&callback=initMap&libraries=places&v=weekly&channel=2" async></script>
     <script src="./node_modules/jquery/dist/jquery.js"></script>
     <script src="./node_modules/jquery-validation/dist/jquery.validate.js"></script>
     <script src="/node_modules/gsap/dist/gsap.min.js"></script>
-    <script src="./main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
     <script type="text/javascript" src="https://daks2k3a4ib2z.cloudfront.net/5317d67d660658b254000454/js/webflow.js?2f83b8326cc4c8f7327b5dba30444a37"></script>
     <script src="./globe.js"></script>
