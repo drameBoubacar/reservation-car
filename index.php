@@ -1,6 +1,11 @@
 <?php
-
 include_once './Login/connect.php';
+$sqlRentals = $db->query('SELECT * FROM user');
+
+$rentals = $sqlRentals->fetchAll(PDO::FETCH_ASSOC);
+
+
+
 session_start();
 ?>
 <!DOCTYPE html>
@@ -14,6 +19,7 @@ session_start();
 
     <title>Document</title>
 </head>
+
 <body>
     <header>
         <div class="connect_status">
@@ -37,8 +43,8 @@ session_start();
                 </ul>
             </li>
     </header>
-       
-        
+
+
     <div class="container" id='s'>
         <div data-tilt class="circlepop" id="preloader">
             <div class="loading-box">
@@ -73,7 +79,7 @@ session_start();
                 <div class="info">information</div>
             </div>
         </div>
-       
+
         <!--------------- SECTION HOME ------------------->
         <div class="content" id="">
             <div class="text_section">
@@ -81,6 +87,8 @@ session_start();
                 <div class="errorTxt"></div>
                 <div class="btn">
                     <input class="next" type="button" id="btn1" value="Choisir mon véhicule">
+                    <input type="button" onclick="switchTheme('green')" value="Green theme">
+                    <input type="button" onclick="switchTheme('red')" value="red theme">
 
 
                 </div>
@@ -114,17 +122,54 @@ session_start();
             <span id="place-name" class="title"></span><br />
             <span id="place-address"></span>
         </div>
-         <!--------------- SECTION A (step 2) -TIME----------------->
-        <div class="section_date">
-            <div id="MyClockDisplay" class="clock" id="clock" onload="showTime()"></div>
-            <div class="form-date"> 
-                <input type="datetime-local" name="rental_date" id="rental_date">
-                <input type="datetime-local" name='return_date' id="return_date">
-                <input type="button" id='date_ok' value="Start" onclick="saveDate()">
+        <!--------------- SECTION A (step 2) -TIME----------------->
+
+        <div class="car_select">
+
+            <div class="car_info">
+                <div class="car_name">
+                    <h1>
+
+                        <?php
+                        foreach ($rentals as $rental) {
+                        ?>
+
+                            <h1><?= $rental['USERNAME']; ?></h1>
+
+
+                        <?php
+                        }
+                        ?>
+                    </h1>
+                    <p>GT63s amg</p>
+                </div>
+                <div class="car_img">
+                    <img src="/img/merco.png" alt="" srcset="">
+                </div>
+
+                <div class="car_stat">
+                    <div class="stat">Stats1</div>
+                    <div class="stat">Stats2</div>
+                    <div class="stat">Stats3</div>
+                    <div class="stat">Stats4</div>
+                </div>
             </div>
+
+            <div class="car_tab"></div>
+
+            <div class="car_selection"></div>
         </div>
-        
-      
+
+
+
+
+
+
+
+
+
+
+
 
     </div>
     <script type="text/javascript" src="/vanilla/vanilla-tilt.js"></script>
@@ -139,6 +184,9 @@ session_start();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
     <script type="text/javascript" src="https://daks2k3a4ib2z.cloudfront.net/5317d67d660658b254000454/js/webflow.js?2f83b8326cc4c8f7327b5dba30444a37"></script>
     <script src="./globe.js"></script>
+
+
+
 
 
 </body>

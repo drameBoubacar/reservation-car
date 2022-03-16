@@ -24,6 +24,7 @@
     "jquery-validation": "^1.19.3",
     "node-sass": "^7.0.1",
     "three": "^0.138.3",
-    "vanilla-tilt": "^1.7.2"
+    "vanilla-tilt": "^1.7.2",
+    "vue": "^3.2.31"
   }
 }

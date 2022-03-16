@@ -15,6 +15,21 @@
   src: url("/font/CircularStd-Light.otf");
   font-weight: 300;
 }
+:root[data-theme=theme-original] {
+  --text-color: #e3f5fc;
+  --bg-color: #080a13;
+}
+
+:root[data-theme=theme-green] {
+  --bg-color: #185427;
+  --text-color: #e3f5fc;
+}
+
+:root[data-theme=theme-red] {
+  --text-color: #e3f5fc;
+  --bg-color: rgb(124, 0, 0);
+}
+
 html,
 body {
   margin: 0;
@@ -22,12 +37,14 @@ body {
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  background-color: #080a13;
+  background-color: var(--bg-color);
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
 }
 
 span {
   font-family: "Circular pro";
-  font-weight: 300;
+  font-weight: 900;
 }
 
 header {
@@ -45,8 +62,9 @@ header h1 {
 }
 header .connect_status {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
+  width: 25%;
 }
 header .connect_status .light {
   margin-right: 10px;
@@ -69,13 +87,20 @@ header .connect_status .light {
   }
 }
 
+.logo {
+  width: 50%;
+  text-align: center;
+}
+
 ul.fmenu {
   color: #283661;
-  display: inline-block;
+  display: flex;
   list-style: none;
   padding: 0;
   margin: 0;
   white-space: nowrap;
+  width: 25%;
+  justify-content: flex-end;
 }
 ul.fmenu > li.fmenu-item {
   display: inline-block;
@@ -94,7 +119,7 @@ ul.fmenu .trigger-menu {
   border-radius: 3rem;
   overflow: hidden;
   text-align: center;
-  background-color: #080a13;
+  background-color: var(--bg-color);
   box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.5), -1px -1px 2px 0px rgba(88, 102, 181, 0.2);
   cursor: pointer;
   transition: max-width ease 0.4s;
@@ -173,7 +198,6 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background-image: url(/img/gradientback.png);
 }
 .container .circlepop {
   height: 150%;
@@ -314,7 +338,7 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   font-weight: 900;
   font-size: 60px;
 }
-.container .content .text_section .text_section h1 {
+.container .content .text_section h1 {
   font-size: 60px;
 }
 .container .content .text_section input[type=button] {
@@ -449,10 +473,58 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   box-shadow: 0px 40px 50px #e000454f, inset 2px 2px 9px 1px rgba(0, 0, 0, 0.473), inset -1px -1px 2px 0px #f26590;
   transform: scale(0.98);
 }
+.container .car_select {
+  display: none;
+  width: 100%;
+  margin-top: -170px;
+}
+.container .car_select .car_info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 0px 200px;
+}
+.container .car_select .car_info .car_name {
+  width: 15%;
+  margin: 50px px;
+}
+.container .car_select .car_info .car_name h1 {
+  color: white;
+  font-family: "Circular pro";
+  font-weight: 900;
+  font-size: 60px;
+  margin: 0;
+}
+.container .car_select .car_info .car_name p {
+  color: #a1a1a1;
+  font-family: "Circular pro";
+  font-size: 24px;
+  margin: 0;
+}
+.container .car_select .car_info .car_img {
+  width: 70%;
+  margin: 50px;
+}
+.container .car_select .car_info img {
+  width: 100%;
+}
+.container .car_select .car_stat {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  margin: 50px;
+}
+.container .car_select .car_stat .stat {
+  color: white;
+  font-size: 30px;
+  font-family: "Circular pro";
+  font-weight: 900;
+}
 .container .progress-wrap {
   margin: auto;
   position: fixed;
-  top: 15%;
+  bottom: 10%;
   display: none;
 }
 .container .progress-wrap div ul {
@@ -473,14 +545,13 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
 
 .line {
   height: 50px;
-  background-color: #060a13;
+  background-color: var(--bg-color);
   border-radius: 22px;
-  box-shadow: -3px -3px black, 1px 1px #ffffff1f, inset 1px 1px 4px black, inset -1px -1px 3px #547ce53b;
-  width: 270px;
+  box-shadow: -1px -1px 4px #000000a3, 1px 1px 10px #ffffff1f, inset 1px 1px 5px black, inset -1px -1px 3px #00000017;
+  width: 270px px;
   position: absolute;
   margin-top: -7px;
   margin-left: -11px;
-  filter: blur(3px);
 }
 
 .progressbar-dots {
@@ -496,7 +567,7 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   font-size: 20px;
   margin-left: 0px;
   color: #d4d4d4;
-  background: #080a13;
+  background: var(--bg-color);
   box-shadow: 2px 2px 2px 0px black, -1px -1px 2px #ffffff29;
   filter: blur(2px);
 }
@@ -596,19 +667,6 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   .container .section_adress .box_adress {
     width: 100%;
   }
-}
-
-h1 {
-  color: white;
-  font-size: 30px;
-  text-align: center;
-  font-family: "Circular pro";
-}
-
-.container-rentals {
-  display: flex;
-  justify-content: space-around;
-  background-color: blue;
 }
 
 /*# sourceMappingURL=app.css.map */

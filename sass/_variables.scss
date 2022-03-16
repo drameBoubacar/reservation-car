@@ -20,8 +20,8 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
 @import url(https://fonts.googleapis.com/css2?family=Orbitron&display=swap);
 $font: "Circular pro";
-$h1-size:30px;
-$shadow:8px 8px 20px rgba(0,
+$h1-size: 30px;
+$shadow: 8px 8px 20px rgba(0,
 0,
 0,
 0.5),
@@ -29,7 +29,7 @@ $shadow:8px 8px 20px rgba(0,
 255,
 255,
 0.2);
-$shadow-hover:8px 8px 20px rgba(0,
+$shadow-hover: 8px 8px 20px rgba(0,
 0,
 0,
 0.5),
@@ -45,9 +45,8 @@ inset -8px -8px 20px rgba(255,
 255,
 255,
 0.2);
-$background-color: #080a13;
-$primary-color:white;
-$secondary-color:linear-gradient(blue,
+$primary-color: white;
+$secondary-color: linear-gradient(blue,
 cyan);
 $fmenu-size: 3rem !default;
 $fmenu-bg: #505050 !default;
@@ -55,29 +54,43 @@ $fmenu-color-base: #283661 !default;
 $fmenu-color-hover: #ffd53e !default;
 $fmenu-item-space: 1rem !default;
 $fmenu-item-label-size: 1rem !default;
-$fmenu-item-expand-speed: .4s !default;
-$fmenu-item-color-speed: .3s !default;
+$fmenu-item-expand-speed: 0.4s !default;
+$fmenu-item-color-speed: 0.3s !default;
 $fmenu-list-max-width: 250px !default;
-$fmenu-list-font-size: .85rem !default;
+$fmenu-list-font-size: 0.85rem !default;
 $fmenu-list-border-sep: 1px solid rgba(0,
 0,
 0,
-.15) !default;
+0.15) !default;
 $fmenu-list-hover-color: #ffd53e !default;
-$fmenu-list-expand-speed: .6s !default;
-$fmenu-list-opacity-speed: .3s !default;
-
-$roboto: 'Roboto', sans-serif;
-//Responsive
-
-
-$breakpoints: (
-  'small':  ( min-width:  767px ),
-  'medium': ( min-width:  992px ),
-  'large':  ( min-width: 1200px )
-) !default;
-$roboto: 'Roboto',
+$fmenu-list-expand-speed: 0.6s !default;
+$fmenu-list-opacity-speed: 0.3s !default;
+$roboto: "Roboto",
 sans-serif;
-$orbitron: 'Orbitron';
-//$primary: blue; 
+//Responsive
+$breakpoints: ( "small": ( min-width: 767px,
+),
+"medium": ( min-width: 992px,
+),
+"large": ( min-width: 1200px,
+),
+) !default;
+$roboto: "Roboto",
+sans-serif;
+$orbitron: "Orbitron";
+//$primary: blue;
 // $secondary: white;
+:root[data-theme="theme-original"] {
+    --text-color: #e3f5fc;
+    --bg-color: #080a13;
+}
+
+:root[data-theme="theme-green"] {
+    --bg-color: #185427;
+    --text-color: #e3f5fc;
+}
+
+:root[data-theme="theme-red"] {
+    --text-color: #e3f5fc;
+    --bg-color: rgb(124, 0, 0);
+}
