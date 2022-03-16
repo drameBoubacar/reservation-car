@@ -37,19 +37,8 @@ session_start();
                 </ul>
             </li>
     </header>
-    <div class="submenu">
-        <div class="progress-wrap">
-            <input type="button" value="Retour">
-            <div class="line-progress-bar">
-                <div class="line"></div>
-                <ul class="checkout-bar">
-                    <li class="progressbar-dots active"><span>1</span></li>
-                    <li class="progressbar-dots"><span>2</span></li>
-                    <li class="progressbar-dots"><span>3</span></li>
-                </ul>
-            </div>
-        </div>
-        </div>
+       
+        
     <div class="container" id='s'>
         <div data-tilt class="circlepop" id="preloader">
             <div class="loading-box">
@@ -64,6 +53,19 @@ session_start();
             <div class="cir">
             </div>
         </div>
+
+        <div class="progress-wrap">
+            <div class="line-progress-bar">
+                <div class="line"></div>
+                <ul class="checkout-bar">
+                    <li class="progressbar-dots active"><span>1</span></li>
+                    <li class="progressbar-dots"><span>2</span></li>
+                    <li class="progressbar-dots"><span>3</span></li>
+                </ul>
+            </div>
+        </div>
+
+
         <div class="account">
             <a id="close" class="fa fa-times" aria-hidden="true"></a>
             <div class="navmenu">
@@ -122,12 +124,7 @@ session_start();
             </div>
         </div>
         
-             <!--------------- SELECT LOGO ----------------->
-             <div class="section_date">
-                <input type="button" id="next2"  value="Next">
-            </div>
-        </div>
-        
+      
 
     </div>
     <script type="text/javascript" src="/vanilla/vanilla-tilt.js"></script>
