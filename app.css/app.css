@@ -15,6 +15,26 @@
   src: url("/font/CircularStd-Light.otf");
   font-weight: 300;
 }
+:root {
+  --mouse-x: 0;
+  --mouse-y: 0;
+}
+
+:root[data-theme=theme-original] {
+  --text-color: #e3f5fc;
+  --bg-color: #080a13;
+}
+
+:root[data-theme=theme-green] {
+  --bg-color: #185427;
+  --text-color: #e3f5fc;
+}
+
+:root[data-theme=theme-red] {
+  --text-color: #e3f5fc;
+  --bg-color: rgb(124, 0, 0);
+}
+
 html,
 body {
   margin: 0;
@@ -22,13 +42,14 @@ body {
   box-sizing: border-box;
   width: 100%;
   height: 100%;
+  background-color: var(--bg-color);
   overflow: hidden;
-  background-color: #080a13;
+  transition: 1s ease-in;
 }
 
 span {
   font-family: "Circular pro";
-  font-weight: 300;
+  font-weight: 900;
 }
 
 header {
@@ -46,8 +67,9 @@ header h1 {
 }
 header .connect_status {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
+  width: 25%;
 }
 header .connect_status .light {
   margin-right: 10px;
@@ -70,13 +92,20 @@ header .connect_status .light {
   }
 }
 
+.logo {
+  width: 50%;
+  text-align: center;
+}
+
 ul.fmenu {
   color: #283661;
-  display: inline-block;
+  display: flex;
   list-style: none;
   padding: 0;
   margin: 0;
   white-space: nowrap;
+  width: 25%;
+  justify-content: flex-end;
 }
 ul.fmenu > li.fmenu-item {
   display: inline-block;
@@ -95,7 +124,7 @@ ul.fmenu .trigger-menu {
   border-radius: 3rem;
   overflow: hidden;
   text-align: center;
-  background-color: #080a13;
+  background-color: var(--bg-color);
   box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.5), -1px -1px 2px 0px rgba(88, 102, 181, 0.2);
   cursor: pointer;
   transition: max-width ease 0.4s;
@@ -174,7 +203,6 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background-image: url(/img/gradientback.png);
 }
 .container .circlepop {
   height: 150%;
@@ -251,21 +279,175 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
 }
 .container .section_date {
   display: none;
-  transition: 1s ease;
+  width: 100%;
+  height: 100%;
+  padding: 0px 200px 0px 200px;
+  justify-content: center;
+  align-items: center;
+  /* Style for theme switch btn */
+}
+.container .section_date .page-header {
+  font-size: 2rem;
+  color: var(--main-text-color);
+  padding: 2rem 0;
+  font-family: monospace;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  transition: all ease 0.2s;
 }
 .container .section_date .clock {
-  position: absolute;
-  top: 50%;
-  left: 25%;
-  transform: translateX(-50%) translateY(-50%);
-  color: #17D4FE;
-  font-size: 60px;
-  font-family: "Orbitron";
-  letter-spacing: 7px;
+  min-height: 18em;
+  min-width: 18em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-bg-color);
+  background-image: url("https://imvpn22.github.io/analog-clock/clock.png");
+  background-position: center center;
+  background-size: cover;
+  border-radius: 50%;
+  border: 4px solid var(--main-bg-color);
+  box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05), inset 0 -15px 15px rgba(255, 255, 255, 0.05), 0 15px 15px rgba(0, 0, 0, 0.3), inset 0 15px 15px rgba(0, 0, 0, 0.3);
+  transition: all ease 0.2s;
 }
-.container .section_date .form_date {
+.container .section_date .clock:before {
+  content: "";
+  height: 0.75rem;
+  width: 0.75rem;
+  background-color: var(--main-text-color);
+  border: 2px solid var(--main-bg-color);
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1000;
+  transition: all ease 0.2s;
+}
+.container .section_date .clock .hour,
+.container .section_date .clock .min,
+.container .section_date .clock .sec {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+}
+.container .section_date .clock .hour {
+  height: 10em;
+  width: 10em;
+}
+.container .section_date .clock .hour:before {
+  content: "";
+  position: absolute;
+  height: 50%;
+  width: 6px;
+  background-color: var(--main-text-color);
+  border-radius: 6px;
+}
+.container .section_date .clock .min {
+  height: 12em;
+  width: 12em;
+}
+.container .section_date .clock .min:before {
+  content: "";
+  height: 50%;
+  width: 4px;
+  background-color: var(--main-text-color);
+  border-radius: 4px;
+}
+.container .section_date .clock .sec {
+  height: 13em;
+  width: 13em;
+}
+.container .section_date .clock .sec:before {
+  content: "";
+  height: 60%;
+  width: 2px;
+  background-color: #f00;
+  border-radius: 2px;
+}
+.container .section_date .switch-cont {
+  margin: 2em auto;
+  /* position: absolute; */
+  bottom: 0;
+}
+.container .section_date .switch-cont .switch-btn {
+  font-family: monospace;
+  text-transform: uppercase;
+  outline: none;
+  padding: 0.5rem 1rem;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  border: 1px solid var(--main-text-color);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+.container .section_date .date {
   display: flex;
   flex-direction: column;
+  z-index: 99999;
+}
+.container .section_date .date .date_text {
+  margin-bottom: 70px;
+}
+.container .section_date .date .date_text h1 {
+  color: white;
+  font-family: "Circular pro";
+  font-size: 70px;
+  margin: 0;
+  line-height: 80px;
+}
+.container .section_date .date .date_text p {
+  margin: 0;
+  font-family: "Circular pro";
+  color: #8a8a8a;
+  font-size: 24px;
+  font-weight: 300;
+}
+.container .section_date .date .box_date {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  background-color: transparent;
+  border-radius: 20px;
+  box-shadow: 4px 4px 15px black, -1px -1px 10px #1f2339;
+}
+.container .section_date .date .box_date .box_text {
+  color: white;
+  padding: 30px 30px 10px 30px;
+}
+.container .section_date .date .box_date .box_text h1 {
+  color: white;
+  text-align: left;
+  font-family: "Circular pro";
+  font-size: 20px;
+  font-weight: 900;
+}
+.container .section_date .date .box_date .form_date .input_form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.container .section_date .date .box_date .form_date .input_form #rental_date {
+  width: 45%;
+  background-color: transparent;
+  color: white;
+  border: none;
+  outline: none;
+}
+.container .section_date .date .box_date .form_date .input_form #rental_date::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+.container .section_date .date .box_date .form_date .input_form #return_date {
+  width: 45%;
+  background-color: transparent;
+  color: white;
+  border: none;
+  outline: none;
+}
+.container .section_date .date .box_date .form_date .input_form #return_date::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+.container .section_date .date .box_date .form_date #date_ok {
   width: 100%;
 }
 .container .account {
@@ -315,7 +497,7 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   font-weight: 900;
   font-size: 60px;
 }
-.container .content .text_section .text_section h1 {
+.container .content .text_section h1 {
   font-size: 60px;
 }
 .container .content .text_section input[type=button] {
@@ -450,27 +632,60 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   box-shadow: 0px 40px 50px #e000454f, inset 2px 2px 9px 1px rgba(0, 0, 0, 0.473), inset -1px -1px 2px 0px #f26590;
   transform: scale(0.98);
 }
+.container .car_select {
+  display: none;
+  width: 100%;
+  margin-top: -170px;
+  transition: 1s ease-in-out;
+}
+.container .car_select .car_info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 0px 200px;
+}
+.container .car_select .car_info .car_name {
+  width: 15%;
+  margin: 50px px;
+}
+.container .car_select .car_info .car_name h1 {
+  color: white;
+  font-family: "Circular pro";
+  font-weight: 900;
+  font-size: 60px;
+  margin: 0;
+}
+.container .car_select .car_info .car_name p {
+  color: #a1a1a1;
+  font-family: "Circular pro";
+  font-size: 24px;
+  margin: 0;
+}
+.container .car_select .car_info .car_img {
+  width: 70%;
+  margin: 50px;
+}
+.container .car_select .car_info img {
+  width: 100%;
+}
+.container .car_select .car_stat {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  margin: 50px;
+}
+.container .car_select .car_stat .stat {
+  color: white;
+  font-size: 30px;
+  font-family: "Circular pro";
+  font-weight: 900;
+}
 .container .progress-wrap {
   margin: auto;
   position: fixed;
-  top: 15%;
+  bottom: 10%;
   display: none;
-}
-.container .line-progress-bar {
-  display: flex;
-  margin: auto;
-  width: 100%;
-}
-.container .line {
-  height: 50px;
-  background-color: #060a13;
-  border-radius: 22px;
-  box-shadow: -3px -3px black, 1px 1px #ffffff1f, inset 1px 1px 4px black, inset -1px -1px 3px #547ce53b;
-  width: 270px;
-  position: absolute;
-  margin-top: -7px;
-  margin-left: -11px;
-  filter: blur(3px);
 }
 .container .progress-wrap div ul {
   display: flex;
@@ -481,7 +696,25 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   justify-content: space-between;
   z-index: 1;
 }
-.container .progressbar-dots {
+
+.line-progress-bar {
+  display: flex;
+  margin: auto;
+  width: 100%;
+}
+
+.line {
+  height: 50px;
+  background-color: var(--bg-color);
+  border-radius: 22px;
+  box-shadow: -1px -1px 4px #000000a3, 1px 1px 10px #ffffff1f, inset 1px 1px 5px black, inset -1px -1px 3px #00000017;
+  width: 270px px;
+  position: absolute;
+  margin-top: -7px;
+  margin-left: -11px;
+}
+
+.progressbar-dots {
   display: inline-flex;
   height: 35px;
   width: 35px;
@@ -494,17 +727,18 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   font-size: 20px;
   margin-left: 0px;
   color: #d4d4d4;
-  background: #080a13;
+  background: var(--bg-color);
   box-shadow: 2px 2px 2px 0px black, -1px -1px 2px #ffffff29;
   filter: blur(2px);
 }
-.container .progressbar-dots span {
+.progressbar-dots span {
   font-size: 12px;
   line-height: 12px;
   position: absolute;
   display: none;
 }
-.container .progressbar-dots.active {
+
+.progressbar-dots.active {
   color: #fff;
   background: radial-gradient(#e00045, #e00045);
   border: none;
@@ -512,6 +746,15 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   box-shadow: 0px 0px 10px #e00045, 0px 0px 10px #e00045;
   animation: animdot 2s infinite ease-in-out;
 }
+.progressbar-dots.active span {
+  font-size: 21px;
+  position: absolute;
+  float: left;
+  font-family: "Circular pro";
+  font-weight: 900;
+  display: flex;
+}
+
 @keyframes animdot {
   0% {
     box-shadow: 0 0 10px #e00045, 0 0 10px #e00045;
@@ -523,80 +766,67 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
     box-shadow: 0 0 10px #e00045, 0 0 10px #e00045;
   }
 }
-.container .progressbar-dots.active span {
-  font-size: 21px;
-  position: absolute;
-  float: left;
-  font-family: "Circular pro";
-  font-weight: 900;
-  display: flex;
-}
-@media (max-width: 800px) {
-  .container header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 70px;
-    color: white;
-    padding: 20px 50px 0px 50px;
-    font-family: "Venti";
+@media (max-width: 599px) {
+  header {
+    padding: 10px 50px;
   }
-  .container .connect_status {
+}
+
+@media (max-width: 599px) {
+  .container {
+    margin-top: 0;
+    padding: 50px 50px 50px 50px;
+    width: auto;
+    height: 100%;
+  }
+}
+@media (max-width: 599px) {
+  .container .content {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    width: 100%;
+  }
+}
+@media (max-width: 599px) {
+  .container .content .text_section {
+    text-align: center;
+    width: 100%;
+    font-size: 15px;
+  }
+}
+@media (max-width: 599px) {
+  .container .content .img_car {
+    width: 100%;
+  }
+}
+@media (max-width: 599px) {
+  .container .content .img_car .img_car img {
+    width: 100%;
+  }
+}
+@media (max-width: 599px) {
+  .container .section_adress {
+    flex-direction: column;
+    padding: 0;
+  }
+}
+@media (max-width: 599px) and (max-width: 599px) {
+  .container .section_adress #output {
     display: flex;
     justify-content: center;
-    align-items: center;
-  }
-  .container .user {
-    transform: scale(0.9);
+    font-size: 40%;
   }
 }
-.container span.error {
-  font-size: 15px;
-  font-weight: 700;
-  font-family: "Circular pro";
-  color: #ff005e;
-  display: block;
-  margin-bottom: 10px;
-  text-align: left;
-  margin-left: 30px;
+@media (max-width: 599px) and (max-width: 599px) {
+  .container .section_adress .adress_text {
+    text-align: center;
+  }
 }
-.container canvas {
-  display: none;
-}
-.container .pac-container {
-  background-color: #090a13;
-  position: absolute !important;
-  z-index: 1000;
-  border-radius: 0px 0px 20px 20px;
-  border-top: none;
-  font-family: "Circular pro";
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  overflow: hidden;
-  z-index: 99999;
-  color: white;
-}
-.container .pac-container .pac-item {
-  cursor: default;
-  padding: 0 4px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  line-height: 30px;
-  text-align: left;
-  border-top: none;
-  font-size: 11px;
-  color: #959595;
-}
-.container .pac-container .pac-item .pac-item-query {
-  font-size: 13px;
-  padding-right: 3px;
-  color: #fff;
-}
-.container .pac-container .pac-item .pac-item:hover {
-  background-color: #0f1425;
+@media (max-width: 599px) and (max-width: 599px) {
+  .container .section_adress .box_adress {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */

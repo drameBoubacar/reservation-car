@@ -38,27 +38,27 @@ $(document).ready(function() {
     const map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: 50.064192, lng: -130.605469 },
         zoom: 3,
-      });
-  
-      
-    
-      const center = { lat: 50.064192, lng: -130.605469 };
-      // Create a bounding box with sides ~10km away from the center point
-      const defaultBounds = {
+    });
+
+
+
+    const center = { lat: 50.064192, lng: -130.605469 };
+    // Create a bounding box with sides ~10km away from the center point
+    const defaultBounds = {
         north: center.lat + 0.1,
         south: center.lat - 0.1,
         east: center.lng + 0.1,
         west: center.lng - 0.1,
-      };
-      const input = document.getElementById("search_input");
-      const options = {
+    };
+    const input = document.getElementById("search_input");
+    const options = {
         bounds: defaultBounds,
         componentRestrictions: { country: "fr" },
         fields: ["address_components", "geometry", "icon", "name"],
         strictBounds: false,
         types: ["establishment"],
-      };
-      const autocomplete = new google.maps.places.Autocomplete(input, options);
+    };
+    const autocomplete = new google.maps.places.Autocomplete(input, options);
 
 });
 
@@ -105,8 +105,18 @@ $("#next2").click(function() {
         $('.progressbar-dots:nth-child(2)').addClass('active');
         $('.section_date').css('display', 'flex');
         $('.section_date').fadeIn(1000);
-        $('#clock').fadeIn(1000);
-        $('#clock').css('display', 'flex');
+    }
+
+});
+
+$("#next3").click(function() {
+    if (v.form()) {
+        $("#slider3").hide();
+        $("#slider4").css('display', 'flex');
+        $('.progressbar-dots').removeClass('active');
+        $('.progressbar-dots:nth-child(3)').addClass('active');
+        html.dataset.theme = `theme-green`;
+
     }
 
 });
@@ -180,39 +190,49 @@ function saveDate() {
         type: "POST",
         url: "index.php?p=add_date",
         data: "rental_date=" + rentalDate + "return_date=" + returnDate,
-        success: function(msg) {
-            alert('ok');
-        }
 
     })
 }
 
-function showTime() {
-    var date = new Date();
-    var h = date.getHours(); // 0 - 23
-    var m = date.getMinutes(); // 0 - 59
-    var s = date.getSeconds(); // 0 - 59
-    var session = "AM";
 
-    if (h == 0) {
-        h = 12;
-    }
 
-    if (h > 12) {
-        h = h - 12;
-        session = "PM";
-    }
+const html = document.querySelector('html');
+html.dataset.theme = `theme-original`;
 
-    h = (h < 10) ? "0" + h : h;
-    m = (m < 10) ? "0" + m : m;
-    s = (s < 10) ? "0" + s : s;
-
-    var time = h + ":" + m + ":" + s + " " + session;
-    document.getElementById("MyClockDisplay").innerText = time;
-    document.getElementById("MyClockDisplay").textContent = time;
-
-    setTimeout(showTime, 1000);
-
+function switchTheme(theme) {
+    html.dataset.theme = `theme-${theme}`;
 }
 
-showTime();
+
+
+
+const deg = 6;
+const hour = document.querySelector(".hour");
+const min = document.querySelector(".min");
+const sec = document.querySelector(".sec");
+
+const setClock = () => {
+    let day = new Date();
+    let hh = day.getHours() * 30;
+    let mm = day.getMinutes() * deg;
+    let ss = day.getSeconds() * deg;
+
+    hour.style.transform = `rotateZ(${hh + mm / 12}deg)`;
+    min.style.transform = `rotateZ(${mm}deg)`;
+    sec.style.transform = `rotateZ(${ss}deg)`;
+};
+
+// first time
+setClock();
+// Update every 1000 ms
+setInterval(setClock, 1000);
+
+
+
+
+
+
+if (currentTheme) {
+    document.documentElement.setAttribute("data-theme", currentTheme);
+    switchModeBtn.textContent = currentTheme;
+}
