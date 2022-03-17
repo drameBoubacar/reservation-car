@@ -288,6 +288,7 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   padding: 0px 200px 0px 200px;
   justify-content: center;
   align-items: center;
+  transition: 0.5s ease-in;
   /* Style for theme switch btn */
 }
 .container .section_date .page-header {
@@ -299,9 +300,16 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   letter-spacing: 4px;
   transition: all ease 0.2s;
 }
-.container .section_date .clock {
-  min-height: 18em;
-  min-width: 18em;
+.container .section_date .section_clock {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.container .section_date .section_clock .clock {
+  width: 400px;
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -314,7 +322,7 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05), inset 0 -15px 15px rgba(255, 255, 255, 0.05), 0 15px 15px rgba(0, 0, 0, 0.3), inset 0 15px 15px rgba(0, 0, 0, 0.3);
   transition: all ease 0.2s;
 }
-.container .section_date .clock:before {
+.container .section_date .section_clock .clock:before {
   content: "";
   height: 0.75rem;
   width: 0.75rem;
@@ -325,19 +333,19 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   z-index: 1000;
   transition: all ease 0.2s;
 }
-.container .section_date .clock .hour,
-.container .section_date .clock .min,
-.container .section_date .clock .sec {
+.container .section_date .section_clock .clock .hour,
+.container .section_date .section_clock .clock .min,
+.container .section_date .section_clock .clock .sec {
   position: absolute;
   display: flex;
   justify-content: center;
   border-radius: 50%;
 }
-.container .section_date .clock .hour {
+.container .section_date .section_clock .clock .hour {
   height: 10em;
   width: 10em;
 }
-.container .section_date .clock .hour:before {
+.container .section_date .section_clock .clock .hour:before {
   content: "";
   position: absolute;
   height: 50%;
@@ -345,22 +353,22 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   background-color: var(--main-text-color);
   border-radius: 6px;
 }
-.container .section_date .clock .min {
+.container .section_date .section_clock .clock .min {
   height: 12em;
   width: 12em;
 }
-.container .section_date .clock .min:before {
+.container .section_date .section_clock .clock .min:before {
   content: "";
   height: 50%;
   width: 4px;
   background-color: var(--main-text-color);
   border-radius: 4px;
 }
-.container .section_date .clock .sec {
+.container .section_date .section_clock .clock .sec {
   height: 13em;
   width: 13em;
 }
-.container .section_date .clock .sec:before {
+.container .section_date .section_clock .clock .sec:before {
   content: "";
   height: 60%;
   width: 2px;
@@ -387,7 +395,7 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
 .container .section_date .date {
   display: flex;
   flex-direction: column;
-  z-index: 99999;
+  width: 60%;
 }
 .container .section_date .date .date_text {
   margin-bottom: 70px;
@@ -427,9 +435,10 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
 }
 .container .section_date .date .box_date .form_date .input_form {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   width: 100%;
+  margin-left: 30px;
 }
 .container .section_date .date .box_date .form_date .input_form #rental_date {
   width: 45%;
@@ -437,6 +446,10 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   color: white;
   border: none;
   outline: none;
+  border-radius: 8px;
+  border: 1px solid #7c7c7c;
+  margin-bottom: 20px;
+  padding: 10px 20px;
 }
 .container .section_date .date .box_date .form_date .input_form #rental_date::-webkit-calendar-picker-indicator {
   filter: invert(1);
@@ -447,12 +460,30 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   color: white;
   border: none;
   outline: none;
+  border-radius: 8px;
+  border: 1px solid #7c7c7c;
+  margin-bottom: 20px;
+  padding: 10px 20px;
 }
 .container .section_date .date .box_date .form_date .input_form #return_date::-webkit-calendar-picker-indicator {
   filter: invert(1);
 }
 .container .section_date .date .box_date .form_date #date_ok {
   width: 100%;
+}
+.container .section_date .date .box_date .form_date #next3 {
+  width: 100%;
+  background: #e00045;
+  border-radius: 10px;
+  padding: 10px 50px 10px 50px;
+  color: white;
+  font-family: "Circular pro";
+  font-size: 18px;
+  font-weight: 900;
+  border: none;
+  box-shadow: 0px 40px 50px #e000454f, inset 0px 0px 9px 4px #ffffff45;
+  transition: 0.3s ease-in;
+  cursor: pointer;
 }
 .container .account {
   position: fixed;
@@ -540,6 +571,7 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   align-items: center;
   padding: 0px 200px 0px 200px;
   display: none;
+  transition: 1s ease-in;
 }
 .container .section_adress #output {
   width: 50%;
@@ -564,7 +596,7 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
 .container .adress .adress_text h1 {
   color: white;
   font-family: "Circular pro";
-  font-size: 70px;
+  font-size: 50px;
   margin: 0;
   line-height: 80px;
 }
@@ -641,6 +673,20 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   width: 100%;
   margin-top: -170px;
   transition: 1s ease-in-out;
+}
+.container .car_select #left {
+  position: fixed;
+  top: 35%;
+  left: 15%;
+  font-size: 61px;
+  color: white;
+}
+.container .car_select #right {
+  position: fixed;
+  top: 35%;
+  right: 15%;
+  font-size: 61px;
+  color: white;
 }
 .container .car_select .car_info {
   display: flex;

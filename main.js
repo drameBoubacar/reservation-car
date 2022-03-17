@@ -83,26 +83,20 @@ var v = $("#reservation_form").validate({
 });
 
 
-// ----------PRELOADER----------------
 
 
-setTimeout(function() {
-    $('#preloader').fadeOut('4000');
-}, 4000);
+
 
 $(".next").click(function() {
     $(".content").hide();
-    $("#slider2").fadeIn(1000);
+    $("#slider2").fadeIn();
     $("#slider2").css('display', 'flex');
-    $(".progress-wrap").fadeIn(1000);
 
 });
 $("#next2").click(function() {
     if (v.form()) {
         $("#slider2").hide();
         $("#step3").fadeIn(1000);
-        $('.progressbar-dots').removeClass('active');
-        $('.progressbar-dots:nth-child(2)').addClass('active');
         $('.section_date').css('display', 'flex');
         $('.section_date').fadeIn(1000);
     }
@@ -113,13 +107,13 @@ $("#next3").click(function() {
     if (v.form()) {
         $("#slider3").hide();
         $("#slider4").css('display', 'flex');
-        $('.progressbar-dots').removeClass('active');
-        $('.progressbar-dots:nth-child(3)').addClass('active');
         html.dataset.theme = `theme-green`;
 
     }
 
 });
+
+
 
 $("#logo").on("click",
     function() {
@@ -153,7 +147,7 @@ tl.set(".cir", {
     })
 
 setTimeout(function() {
-    $('#preloader').fadeOut('4000');
+    $('#preloader').fadeOut('3000');
 }, 4000);
 
 
@@ -161,7 +155,7 @@ const loadingNumber = document.querySelector('#loadingNumber');
 const loadingCircle = document.querySelector('.loading-circle');
 let load = 0;
 
-setInterval(updateLoader, 40);
+setInterval(updateLoader, 20);
 
 
 function updateLoader() {
@@ -176,9 +170,7 @@ function save() {
         type: "POST",
         url: "index.php?p=add_adress",
         data: "adress=" + adress,
-        success: function(msg) {
-            alert('ok');
-        }
+
 
     })
 }
