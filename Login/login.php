@@ -24,7 +24,7 @@ session_start();
   </header>
   <div class="container">
     <div class="login-box">
-      <h2>Login</h2>
+      <h2>Connexion</h2>
       <form id="form" method="POST">
         <div class="user-box">
           <input type="text" id='username' name="username">
@@ -40,7 +40,7 @@ session_start();
             audio.play();
           }
         </script>
-        <input type="submit"  id="submit" name='submit' class="sub" onclick="play()">
+        <input type="submit"  id="submit" name='submit' value="se connecter" class="sub" onclick="play()">
         <span></span>
         <span></span>
         <span></span>

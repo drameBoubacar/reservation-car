@@ -1,12 +1,27 @@
 <?php
 include_once './Login/connect.php';
-$sqlRentals = $db->query('SELECT * FROM user');
-
-$rentals = $sqlRentals->fetchAll(PDO::FETCH_ASSOC);
-
-
-
 session_start();
+$sqlCar1 = $db->query('select cars.id_car, cars.color, cars.kilometer, cars.energy, cars.capacity, cars.price, cars.year_model, category.id_category, category.category_car, brand.brand_car id_brand, model.model_car id_model, model.model_img model_img from cars,category join brand on category.id_brand = brand.id_brand join model on category.id_model = model.id_model where cars.id_car = category.id_category AND  cars.id_car= 1');
+$sqlCar2 = $db->query('select cars.id_car, cars.color, cars.kilometer, cars.energy, cars.capacity, cars.price, cars.year_model, category.id_category, category.category_car, brand.brand_car id_brand, model.model_car id_model, model.model_img model_img from cars,category join brand on category.id_brand = brand.id_brand join model on category.id_model = model.id_model where cars.id_car = category.id_category AND  cars.id_car= 2');
+$sqlCar3 = $db->query('select cars.id_car, cars.color, cars.kilometer, cars.energy, cars.capacity, cars.price, cars.year_model, category.id_category, category.category_car, brand.brand_car id_brand, model.model_car id_model, model.model_img model_img from cars,category join brand on category.id_brand = brand.id_brand join model on category.id_model = model.id_model where cars.id_car = category.id_category AND  cars.id_car= 3');
+$sqlCar4 = $db->query('select cars.id_car, cars.color, cars.kilometer, cars.energy, cars.capacity, cars.price, cars.year_model, category.id_category, category.category_car, brand.brand_car id_brand, model.model_car id_model, model.model_img model_img from cars,category join brand on category.id_brand = brand.id_brand join model on category.id_model = model.id_model where cars.id_car = category.id_category AND  cars.id_car= 4');
+$sqlCar5 = $db->query('select cars.id_car, cars.color, cars.kilometer, cars.energy, cars.capacity, cars.price, cars.year_model, category.id_category, category.category_car, brand.brand_car id_brand, model.model_car id_model, model.model_img model_img from cars,category join brand on category.id_brand = brand.id_brand join model on category.id_model = model.id_model where cars.id_car = category.id_category AND  cars.id_car= 5');
+$sqlCar6 = $db->query('select cars.id_car, cars.color, cars.kilometer, cars.energy, cars.capacity, cars.price, cars.year_model, category.id_category, category.category_car, brand.brand_car id_brand, model.model_car id_model, model.model_img model_img from cars,category join brand on category.id_brand = brand.id_brand join model on category.id_model = model.id_model where cars.id_car = category.id_category AND  cars.id_car= 6');
+$sqlCar7 = $db->query('select cars.id_car, cars.color, cars.kilometer, cars.energy, cars.capacity, cars.price, cars.year_model, category.id_category, category.category_car, brand.brand_car id_brand, model.model_car id_model, model.model_img model_img from cars,category join brand on category.id_brand = brand.id_brand join model on category.id_model = model.id_model where cars.id_car = category.id_category AND  cars.id_car= 7');
+$sqlCar8 = $db->query('select cars.id_car, cars.color, cars.kilometer, cars.energy, cars.capacity, cars.price, cars.year_model, category.id_category, category.category_car, brand.brand_car id_brand, model.model_car id_model, model.model_img model_img from cars,category join brand on category.id_brand = brand.id_brand join model on category.id_model = model.id_model where cars.id_car = category.id_category AND  cars.id_car= 8');
+$sqlCar9 = $db->query('select cars.id_car, cars.color, cars.kilometer, cars.energy, cars.capacity, cars.price, cars.year_model, category.id_category, category.category_car, brand.brand_car id_brand, model.model_car id_model, model.model_img model_img from cars,category join brand on category.id_brand = brand.id_brand join model on category.id_model = model.id_model where cars.id_car = category.id_category AND  cars.id_car= 9');
+$rentals1 = $sqlCar1->fetchAll(PDO::FETCH_ASSOC);
+$rentals2 = $sqlCar2->fetchAll(PDO::FETCH_ASSOC);
+$rentals3 = $sqlCar3->fetchAll(PDO::FETCH_ASSOC);
+$rentals4 = $sqlCar4->fetchAll(PDO::FETCH_ASSOC);
+$rentals5 = $sqlCar5->fetchAll(PDO::FETCH_ASSOC);
+$rentals6 = $sqlCar6->fetchAll(PDO::FETCH_ASSOC);
+$rentals7 = $sqlCar7->fetchAll(PDO::FETCH_ASSOC);
+$rentals8 = $sqlCar8->fetchAll(PDO::FETCH_ASSOC);
+$rentals9 = $sqlCar9->fetchAll(PDO::FETCH_ASSOC);
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +54,7 @@ session_start();
                     <li><a href='#'><i class="fa fa-inbox" aria-hidden="true"></i>Profile</a></li>
                     <li class="reser"><a href='#'><i class="fa fa-car" aria-hidden="true"></i>Reservations</a></li>
                     <li><a href='#'><i class="fa fa-credit-card-alt" aria-hidden="true"></i>Transactions</a></li>
-                    <li><a href='./Disconnect/disconnect.php' name='logout'><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
+                    <li><a href='./Disconnect/disconnect.php' name='logout'><i class="fa fa-sign-out" aria-hidden="true"></i>Deconnection</a></li>
                 </ul>
             </li>
     </header>
@@ -66,15 +81,15 @@ session_start();
         <div class="account">
             <a id="close" class="fa fa-times" aria-hidden="true"></a>
             <div class="navmenu">
-                <div class="reservation">reservation</div>
-                <div class="info">information</div>
+                <div class="reservation">reservations</div>
+                <div class="info">informations</div>
             </div>
         </div>
 
         <!--------------- SECTION HOME ------------------->
         <div class="content" id="">
             <div class="text_section">
-                <h1><span class="heading">A new</span> <span>experience.</span><br>Reserve your car<br>Now.</h1>
+                <h1><span class="heading">Une nouvelle</span> <span>experience.</span><br>Reserver votre voiture<br>Maintenant.</h1>
                 <div class="errorTxt"></div>
                 <div class="btn">
                     <input class="next" type="button" id="btn1" value="Choisir mon véhicule">
@@ -92,12 +107,12 @@ session_start();
             <div id="output"></div>
             <div class="adress">
                 <div class="adress_text">
-                    <h1>Discover <br>our available car</h1>
-                    <p>Locate yourself to discover ours availables cars</p>
+                    <h1>Découvrez <br>toute nos voitures</h1>
+                    <p>Localiser vous pour reserver une voiture</p>
                 </div>
                 <div class="box_adress">
                     <div class="box_text">
-                        <h1>Enter an adress</h1>
+                        <h1>Entrer une adresse</h1>
                     </div>
                     <form id="reservation_form" action="" method="post">
                         <input name="adress" type="text" class="form-control" id="search_input" placeholder="" required>
@@ -119,66 +134,102 @@ session_start();
         <div class="section_date" id='slider3'>
             <div class="date">
                 <div class="date_text">
-                    <h1>Choose your<br> date reservation</h1>
-                    <p>Locate yourself to discover ours availables cars</p>
+                    <h1>Choisissez<br> une date de reservation</h1>
+                    <p>Selon votre disponibilité</p>
                 </div>
                 <div class="box_date">
                     <div class="box_text">
-                        <h1>Choose your date</h1>
+                        <h1>Choisir une date</h1>
                     </div>
                     <div class="form_date">
                         <div class="input_form">
-                            <input type="datetime-local" name="rental_date" id="rental_date">
-                            <input type="datetime-local" name='return_date' id="return_date" value="2017-06-01T08:30">
+                            <input type="datetime-local" name="rental_date" id="rental_date" value="2022-03-18T00:00">
+                            <input type="datetime-local" name='return_date' id="return_date" value="2022-03-25T00:00">
                         </div>
                         <input type="submit" id='next3' value="Suivant" onclick="saveDate()">
                     </div>
                 </div>
             </div>
             <div class="section_clock">
-            <div class="clock">
-                <div class="hour"></div>
-                <div class="min"></div>
-                <div class="sec"></div>
+                <div class="clock">
+                    <div class="hour"></div>
+                    <div class="min"></div>
+                    <div class="sec"></div>
 
-            </div>
+                </div>
             </div>
 
-         </div>
+        </div>
 
 
         <!------------- SLIDER SELECTION CAR-------------------->
         <div class="car_select" id="slider4">
 
-        <i class="fa fa-arrow-circle-left" id="left"aria-hidden="true"></i>
-        <i class="fa fa-arrow-circle-right" id="right"aria-hidden="true"></i>
+            <i class="fa fa-arrow-circle-left" id="left" name='left' aria-hidden="true"></i>
+            <i class="fa fa-arrow-circle-right" id="right" name='right'aria-hidden="true"></i>
 
             <div class="car_info">
                 <div class="car_name">
                     <h1>
-
-                        <?php
-                        foreach ($rentals as $rental) {
-                        ?>
-
-                            <h1><?= $rental['USERNAME']; ?></h1>
-
-
-                        <?php
-                        }
-                        ?>
+                    <?php
+                    foreach ($rentals1 as $rental) {
+                    ?>
+                        <h1> <?= $rental['id_brand']; ?></h1>
+                    <?php
+                    }
+                    ?>
                     </h1>
-                    <span class="inner_shadow">SLS AMG</span>
+                    <?php
+                    foreach ($rentals1 as $rental) {
+                    ?>
+                        <span class="inner_shadow"> <?= $rental['id_model']; ?></span>
+                    <?php
+                    }
+                    ?>
                 </div>
                 <div class="car_img">
-                    <img src="/img/merco.png" alt="" srcset="">
+                    <?php
+                    foreach ($rentals1 as $rental) {
+                    ?>
+                        <img src="<?= $rental['model_img'] ?>" alt="" srcset="">
+
+                    <?php
+                    }
+                    ?>
                 </div>
 
                 <div class="car_stat">
-                    <div class="stat">Stats1</div>
-                    <div class="stat">Stats2</div>
-                    <div class="stat">Stats3</div>
-                    <div class="stat">Stats4</div>
+                    <div class="stat"><?php
+                    foreach ($rentals1 as $rental) {
+                    ?>
+                        <?= $rental['color'] ?>
+
+                    <?php
+                    }
+                    ?></div>
+                    <div class="stat"><?php
+                    foreach ($rentals1 as $rental) {
+                    ?>
+                        <?= $rental['kilometer'] ?> km
+
+                    <?php
+                    }
+                    ?></div>
+                    <div class="stat"><?php
+                    foreach ($rentals1 as $rental) {
+                    ?>
+                        <?= $rental['energy'] ?>
+                    <?php
+                    }
+                    ?></div>
+                    <div class="stat"><?php
+                    foreach ($rentals1 as $rental) {
+                    ?>
+                        <?= $rental['price'] ?>€/jour
+
+                    <?php
+                    }
+                    ?></div>
                 </div>
 
 

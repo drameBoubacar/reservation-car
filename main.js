@@ -183,6 +183,7 @@ function saveDate() {
         url: "index.php?p=add_date",
         data: "rental_date=" + rentalDate + "return_date=" + returnDate,
 
+
     })
 }
 

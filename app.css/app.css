@@ -677,14 +677,14 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
 .container .car_select #left {
   position: fixed;
   top: 35%;
-  left: 15%;
+  left: 10%;
   font-size: 61px;
   color: white;
 }
 .container .car_select #right {
   position: fixed;
   top: 35%;
-  right: 15%;
+  right: 10%;
   font-size: 61px;
   color: white;
 }
@@ -737,6 +737,7 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   font-family: "Circular pro";
   font-weight: 300;
   margin: 0px 50px;
+  text-transform: uppercase;
 }
 .container .car_select .category_select {
   height: 60px;

@@ -1,6 +1,6 @@
 <?php
 
-$db = new PDO('mysql:host=127.0.0.1;dbname=cars_reservation;charset=utf8mb4', 'root', 'Raysayd23**');
+$db = new PDO('mysql:host=127.0.0.1;dbname=cars_reservation;charset=utf8mb4', 'root', '');
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 $page = isset($_GET['p']) ? $_GET['p'] : '';
@@ -43,4 +43,9 @@ if ($page == 'add_adress') {
   } else {
     echo ('failed');
   }
+}else if ($page == 'next_slider'){
+  $id = 1;
+  $sqlCar1 = $db->query('select cars.id_car, cars.color, cars.kilometer, cars.energy, cars.capacity, cars.price, cars.year_model, category.id_category, category.category_car, brand.brand_car id_brand, model.model_car id_model, model.model_img model_img from cars,category join brand on category.id_brand = brand.id_brand join model on category.id_model = model.id_model where cars.id_car = category.id_category AND  cars.id_car= ?');
+  $sqlCar1->bindParam(1, $id);
+
 }
