@@ -25,8 +25,8 @@
 }
 
 $font: "Circular pro";
-$h1-size:30px;
-$shadow:8px 8px 20px rgba(0,
+$h1-size: 30px;
+$shadow: 8px 8px 20px rgba(0,
 0,
 0,
 0.5),
@@ -34,7 +34,7 @@ $shadow:8px 8px 20px rgba(0,
 255,
 255,
 0.2);
-$shadow-hover:8px 8px 20px rgba(0,
+$shadow-hover: 8px 8px 20px rgba(0,
 0,
 0,
 0.5),
@@ -58,21 +58,6 @@ $easing-alt: cubic-bezier(0.4,
 0,
 0.1,
 1);
-:root {
-    --main-bg-color: #fff;
-    --main-text-color: #888888;
-}
-
-[data-theme="dark"] {
-    --main-bg-color: #1e1f26;
-    --main-text-color: #ccc;
-}
-
-* {
-    box-sizing: border-box;
-    /* 		transition: all ease 0.2s; */
-}
-
 $color-primary: #0BFDFD;
 $background-color: #080a13;
 $primary-color:white;
@@ -84,19 +69,43 @@ $fmenu-color-base: #283661 !default;
 $fmenu-color-hover: #ffd53e !default;
 $fmenu-item-space: 1rem !default;
 $fmenu-item-label-size: 1rem !default;
-$fmenu-item-expand-speed: .4s !default;
-$fmenu-item-color-speed: .3s !default;
+$fmenu-item-expand-speed: 0.4s !default;
+$fmenu-item-color-speed: 0.3s !default;
 $fmenu-list-max-width: 250px !default;
-$fmenu-list-font-size: .85rem !default;
+$fmenu-list-font-size: 0.85rem !default;
 $fmenu-list-border-sep: 1px solid rgba(0,
 0,
 0,
-.15) !default;
+0.15) !default;
 $fmenu-list-hover-color: #ffd53e !default;
-$fmenu-list-expand-speed: .6s !default;
-$fmenu-list-opacity-speed: .3s !default;
-$roboto: 'Roboto',
+$fmenu-list-expand-speed: 0.6s !default;
+$fmenu-list-opacity-speed: 0.3s !default;
+$roboto: "Roboto",
 sans-serif;
-$orbitron: 'Orbitron';
-//$primary: blue; 
+//Responsive
+$breakpoints: ( "small": ( min-width: 767px,
+),
+"medium": ( min-width: 992px,
+),
+"large": ( min-width: 1200px,
+),
+) !default;
+$roboto: "Roboto",
+sans-serif;
+$orbitron: "Orbitron";
+//$primary: blue;
 // $secondary: white;
+:root[data-theme="theme-original"] {
+    --text-color: #e3f5fc;
+    --bg-color: #080a13;
+}
+
+:root[data-theme="theme-green"] {
+    --bg-color: #185427;
+    --text-color: #e3f5fc;
+}
+
+:root[data-theme="theme-red"] {
+    --text-color: #e3f5fc;
+    --bg-color: rgb(124, 0, 0);
+}

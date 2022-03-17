@@ -1,5 +1,6 @@
 <?php
-$db = new PDO('mysql:host=localhost;dbname=cars_reservation;charset=utf8mb4', 'root', '');
+
+$db = new PDO('mysql:host=127.0.0.1;dbname=cars_reservation;charset=utf8mb4', 'root', 'Raysayd23**');
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 $page = isset($_GET['p']) ? $_GET['p'] : '';

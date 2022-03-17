@@ -105,8 +105,18 @@ $("#next2").click(function() {
         $('.progressbar-dots:nth-child(2)').addClass('active');
         $('.section_date').css('display', 'flex');
         $('.section_date').fadeIn(1000);
-        $('#clock').fadeIn(1000);
-        $('#clock').css('display', 'flex');
+    }
+
+});
+
+$("#next3").click(function() {
+    if (v.form()) {
+        $("#slider3").hide();
+        $("#slider4").css('display', 'flex');
+        $('.progressbar-dots').removeClass('active');
+        $('.progressbar-dots:nth-child(3)').addClass('active');
+        html.dataset.theme = `theme-green`;
+
     }
 
 });
@@ -180,12 +190,22 @@ function saveDate() {
         type: "POST",
         url: "index.php?p=add_date",
         data: "rental_date=" + rentalDate + "return_date=" + returnDate,
-        success: function(msg) {
-            alert('ok');
-        }
 
     })
 }
+
+
+
+const html = document.querySelector('html');
+html.dataset.theme = `theme-original`;
+
+function switchTheme(theme) {
+    html.dataset.theme = `theme-${theme}`;
+}
+
+
+
+
 const deg = 6;
 const hour = document.querySelector(".hour");
 const min = document.querySelector(".min");
@@ -207,26 +227,10 @@ setClock();
 // Update every 1000 ms
 setInterval(setClock, 1000);
 
-const switchTheme = (evt) => {
-    const switchBtn = evt.target;
-    if (switchBtn.textContent.toLowerCase() === "light") {
-        switchBtn.textContent = "dark";
-        // localStorage.setItem("theme", "dark");
-        document.documentElement.setAttribute("data-theme", "dark");
-    } else {
-        switchBtn.textContent = "light";
-        // localStorage.setItem("theme", "light"); //add this
-        document.documentElement.setAttribute("data-theme", "light");
-    }
-};
 
-const switchModeBtn = document.querySelector(".switch-btn");
-switchModeBtn.addEventListener("click", switchTheme, false);
 
-let currentTheme = "dark";
-// currentTheme = localStorage.getItem("theme")
-// 	? localStorage.getItem("theme")
-// 	: null;
+
+
 
 if (currentTheme) {
     document.documentElement.setAttribute("data-theme", currentTheme);
