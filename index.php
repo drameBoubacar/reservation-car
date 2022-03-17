@@ -1,12 +1,8 @@
 <?php
 include_once './Login/connect.php';
-$sqlRentals = $db->query('SELECT * FROM model');
+$sqlRentals = $db->query('select cars.id_car, cars.color, cars.kilometer, cars.energy, cars.capacity, cars.price, cars.year_model, category.id_category, category.category_car, brand.brand_car id_brand, model.model_car id_model from cars,category join brand on category.id_brand = brand.id_brand join model on category.id_model = model.id_model where cars.id_car = category.id_category');
 
 $rentals = $sqlRentals->fetchAll(PDO::FETCH_ASSOC);
-
-$sqlRentals_Brand = $db->query('SELECT * FROM brand');
-
-$rentals_brand = $sqlRentals_Brand->fetchAll(PDO::FETCH_ASSOC);
 
 
 session_start();
@@ -81,8 +77,6 @@ session_start();
                 <div class="errorTxt"></div>
                 <div class="btn">
                     <input class="next" type="button" id="btn1" value="Choisir mon véhicule">
-                    <input type="button" onclick="switchTheme('green')" value="Green theme">
-                    <input type="button" onclick="switchTheme('red')" value="red theme">
 
 
                 </div>
@@ -106,7 +100,7 @@ session_start();
                     </div>
                     <form id="reservation_form" action="" method="post">
                         <input name="adress" type="text" class="form-control" id="search_input" placeholder="" required>
-                        <input type="button" id="next2" onclick="save()" value="Next">
+                        <input type="button" id="next2" onclick="save()" value="Suivant">
                     </form>
                 </div>
             </div>
@@ -124,7 +118,7 @@ session_start();
         <div class="section_date" id='slider3'>
             <div class="date">
                 <div class="date_text">
-                    <h1>Choose <br>your date reservation</h1>
+                    <h1>Choose your<br> date reservation</h1>
                     <p>Locate yourself to discover ours availables cars</p>
                 </div>
                 <div class="box_date">
@@ -136,31 +130,35 @@ session_start();
                             <input type="datetime-local" name="rental_date" id="rental_date">
                             <input type="datetime-local" name='return_date' id="return_date" value="2017-06-01T08:30">
                         </div>
-                        <input type="submit" id='next3' value="Start" onclick="saveDate()">
+                        <input type="submit" id='next3' value="Suivant" onclick="saveDate()">
                     </div>
                 </div>
             </div>
+            <div class="section_clock">
             <div class="clock">
                 <div class="hour"></div>
                 <div class="min"></div>
                 <div class="sec"></div>
+
+            </div>
             </div>
 
-            <div class="car_tab"></div>
+         </div>
 
-            <div class="car_selection"></div>
-        </div>
 
-        <!-- slider selection car -->
+        <!------------- SLIDER SELECTION CAR-------------------->
         <div class="car_select" id="slider4">
+
+        <i class="fa fa-arrow-circle-left" id="left"aria-hidden="true"></i>
+        <i class="fa fa-arrow-circle-right" id="right"aria-hidden="true"></i>
 
             <div class="car_info">
                 <div class="car_name">
                     <h1>
                         <?php
-                        foreach ($rentals_brand as $rentalBrand) {
+                        foreach ($rentals as $rental) {
                         ?>
-                            <h1> <?= $rentalBrand['BRAND_CAR']; ?></h1>
+                            <h1> <?= $rental['BRAND_CAR']; ?></h1>
                         <?php
                         }
                         ?>
