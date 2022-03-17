@@ -531,7 +531,7 @@ ul.fmenu {
         font-weight: 900;
         display: flex;
     }
-    @media (max-width: 800px) {
+    @media ( min-width:460) and (max-width: 800px) {
         header {
             display: flex;
             justify-content: space-between;

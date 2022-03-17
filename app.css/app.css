@@ -599,17 +599,4 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   background-color: #0f1425;
 }
 
-h1 {
-  color: white;
-  font-size: 30px;
-  text-align: center;
-  font-family: "Circular pro";
-}
-
-.container-rentals {
-  display: flex;
-  justify-content: space-around;
-  background-color: blue;
-}
-
 /*# sourceMappingURL=app.css.map */
