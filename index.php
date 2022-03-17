@@ -175,7 +175,7 @@ session_start();
                 </div>
 
                 <div class="car_stat">
-                    <div class="stat">Stats1</div>
+                    <div class="fa fa-paint-brush" aria-hidden="true">Stats1</div>
                     <div class="stat">Stats2</div>
                     <div class="stat">Stats3</div>
                     <div class="stat">Stats4</div>

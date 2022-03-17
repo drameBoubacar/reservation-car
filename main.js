@@ -109,6 +109,7 @@ $("#next3").click(function() {
         $("#slider4").css('display', 'flex');
         html.dataset.theme = `theme-green`;
 
+
     }
 
 });
