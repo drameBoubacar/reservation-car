@@ -60,16 +60,7 @@ session_start();
             </div>
         </div>
 
-        <div class="progress-wrap">
-            <div class="line-progress-bar">
-                <div class="line"></div>
-                <ul class="checkout-bar">
-                    <li class="progressbar-dots active"><span>1</span></li>
-                    <li class="progressbar-dots"><span>2</span></li>
-                    <li class="progressbar-dots"><span>3</span></li>
-                </ul>
-            </div>
-        </div>
+
 
 
         <div class="account">
@@ -124,7 +115,7 @@ session_start();
         </div>
         <!--------------- SECTION A (step 2) -TIME----------------->
 
-     
+
 
 
         <div class="section_date" id='slider3'>
@@ -157,38 +148,54 @@ session_start();
             <div class="car_selection"></div>
         </div>
 
-<!-- slider selection car -->
+        <!-- slider selection car -->
         <div class="car_select" id="slider4">
 
-<div class="car_info">
-    <div class="car_name">
-        <h1>
+            <div class="car_info">
+                <div class="car_name">
+                    <h1>
 
-            <?php
-            foreach ($rentals as $rental) {
-            ?>
+                        <?php
+                        foreach ($rentals as $rental) {
+                        ?>
 
-                <h1><?= $rental['USERNAME']; ?></h1>
-
-
-            <?php
-            }
-            ?>
-        </h1>
-        <p>GT63s amg</p>
-    </div>
-    <div class="car_img">
-        <img src="/img/merco.png" alt="" srcset="">
-    </div>
-
-    <div class="car_stat">
-        <div class="stat">Stats1</div>
-        <div class="stat">Stats2</div>
-        <div class="stat">Stats3</div>
-        <div class="stat">Stats4</div>
-    </div>
+                            <h1><?= $rental['USERNAME']; ?></h1>
 
 
+                        <?php
+                        }
+                        ?>
+                    </h1>
+                    <span class="inner_shadow">SLS AMG</span>
+                </div>
+                <div class="car_img">
+                    <img src="/img/merco.png" alt="" srcset="">
+                </div>
+
+                <div class="car_stat">
+                    <div class="stat">Stats1</div>
+                    <div class="stat">Stats2</div>
+                    <div class="stat">Stats3</div>
+                    <div class="stat">Stats4</div>
+                </div>
+
+
+                <div class="category_select">
+                    <nav>
+                        <input type="radio" name="tab" id="home" checked>
+                        <input type="radio" name="tab" id="inbox">
+                        <input type="radio" name="tab" id="contact">
+                        <input type="radio" name="tab" id="heart">
+                        <input type="radio" name="tab" id="about">
+                        <label for="home" class="home"><a>Berline</a></label>
+                        <label for="inbox" class="inbox"><a>Citadine</a></label>
+                        <label for="contact" class="contact"><a>SUV</a></label>
+                        <label for="heart" class="heart"><a>Break</a></label>
+                        <label for="about" class="about"><a>Supercar</a></label>
+                        <div class="tab">
+                        </div>
+                    </nav>
+                </div>
 
 
 
@@ -200,23 +207,27 @@ session_start();
 
 
 
-    </div>
-    <script type="text/javascript" src="/vanilla/vanilla-tilt.js"></script>
-    <script src="https://use.fontawesome.com/3d02935bac.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCUx06rB4M0_aqmVTME0oShUjGX1VNi8uI"></script>  -->
-    <!-- <script async
+
+
+
+
+            </div>
+            <script type="text/javascript" src="/vanilla/vanilla-tilt.js"></script>
+            <script src="https://use.fontawesome.com/3d02935bac.js"></script>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCUx06rB4M0_aqmVTME0oShUjGX1VNi8uI"></script>  -->
+            <!-- <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDGsvz48NCZH1Dk_cq04rh0RfLbdfKE-sY&region=GB">
     </script> -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUx06rB4M0_aqmVTME0oShUjGX1VNi8uI&callback=initMap&libraries=places&v=weekly&channel=2" async></script>
-    <script src="./node_modules/jquery/dist/jquery.js"></script>
-    <script src="./node_modules/jquery-validation/dist/jquery.validate.js"></script>
-    <script src="/node_modules/gsap/dist/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
-    <script type="text/javascript" src="https://daks2k3a4ib2z.cloudfront.net/5317d67d660658b254000454/js/webflow.js?2f83b8326cc4c8f7327b5dba30444a37"></script>
-    <script src="./globe.js"></script>
-    <script src="./main.js"></script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUx06rB4M0_aqmVTME0oShUjGX1VNi8uI&callback=initMap&libraries=places&v=weekly&channel=2" async></script>
+            <script src="./node_modules/jquery/dist/jquery.js"></script>
+            <script src="./node_modules/jquery-validation/dist/jquery.validate.js"></script>
+            <script src="/node_modules/gsap/dist/gsap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
+            <script type="text/javascript" src="https://daks2k3a4ib2z.cloudfront.net/5317d67d660658b254000454/js/webflow.js?2f83b8326cc4c8f7327b5dba30444a37"></script>
+            <script src="./globe.js"></script>
+            <script src="./main.js"></script>
 
 
 

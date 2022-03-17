@@ -35,13 +35,17 @@
   --bg-color: rgb(124, 0, 0);
 }
 
-html,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  width: 100%;
   height: 100%;
+  max-height: 100%;
   background-color: var(--bg-color);
   overflow: hidden;
   transition: 1s ease-in;
@@ -196,13 +200,13 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
 }
 
 .container {
-  margin-top: -100px;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  margin-top: -100px;
 }
 .container .circlepop {
   height: 150%;
@@ -640,27 +644,33 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
 }
 .container .car_select .car_info {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   align-content: center;
   padding: 0px 200px;
 }
 .container .car_select .car_info .car_name {
-  width: 15%;
-  margin: 50px px;
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  margin-top: 131px;
 }
 .container .car_select .car_info .car_name h1 {
   color: white;
   font-family: "Circular pro";
   font-weight: 900;
-  font-size: 60px;
-  margin: 0;
+  font-size: 250px;
+  margin-bottom: -150px;
+  margin-top: 0;
 }
-.container .car_select .car_info .car_name p {
-  color: #a1a1a1;
+.container .car_select .car_info .car_name .inner_shadow {
+  color: transparent;
+  text-shadow: 0 0 20px #185427, 0 0 0 #000000a6;
   font-family: "Circular pro";
-  font-size: 24px;
-  margin: 0;
+  font-size: 60px;
 }
 .container .car_select .car_info .car_img {
   width: 70%;
@@ -671,109 +681,93 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
 }
 .container .car_select .car_stat {
   display: flex;
-  flex-direction: column;
-  width: 15%;
-  margin: 50px;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 100px;
 }
 .container .car_select .car_stat .stat {
-  color: white;
+  color: #727272;
   font-size: 30px;
   font-family: "Circular pro";
-  font-weight: 900;
+  font-weight: 300;
+  margin: 0px 50px;
 }
-.container .progress-wrap {
-  margin: auto;
-  position: fixed;
-  bottom: 10%;
-  display: none;
-}
-.container .progress-wrap div ul {
-  display: flex;
-  width: 250px;
-  list-style: none;
-  padding: 0px;
-  margin: initial;
-  justify-content: space-between;
-  z-index: 1;
-}
-
-.line-progress-bar {
-  display: flex;
-  margin: auto;
+.container .car_select .category_select {
+  height: 60px;
   width: 100%;
+  background: #1b1b1b;
+  line-height: 60px;
+  border-radius: 50px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
 }
-
-.line {
-  height: 50px;
-  background-color: var(--bg-color);
-  border-radius: 22px;
-  box-shadow: -1px -1px 4px #000000a3, 1px 1px 10px #ffffff1f, inset 1px 1px 5px black, inset -1px -1px 3px #00000017;
-  width: 270px px;
-  position: absolute;
-  margin-top: -7px;
-  margin-left: -11px;
+.container .car_select .category_select nav {
+  position: relative;
+  display: flex;
 }
-
-.progressbar-dots {
-  display: inline-flex;
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
-  text-align: center;
+.container .car_select .category_select nav label {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  z-index: 1;
+  cursor: pointer;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
-  color: #080a13;
-  font-size: 20px;
-  margin-left: 0px;
-  color: #d4d4d4;
-  background: var(--bg-color);
-  box-shadow: 2px 2px 2px 0px black, -1px -1px 2px #ffffff29;
-  filter: blur(2px);
+  align-content: center;
 }
-.progressbar-dots span {
-  font-size: 12px;
-  line-height: 12px;
+.container .car_select .category_select nav label a {
+  position: relative;
+  z-index: -1;
+  color: #ffffff;
+  font-family: "Circular pro";
+  font-size: 20px;
+  font-weight: 900;
+  text-decoration: none;
+  transition: color 0.6s ease;
+}
+.container .car_select .category_select nav #home:checked ~ label.home a,
+.container .car_select .category_select nav #inbox:checked ~ label.inbox a,
+.container .car_select .category_select nav #contact:checked ~ label.contact a,
+.container .car_select .category_select nav #heart:checked ~ label.heart a,
+.container .car_select .category_select nav #about:checked ~ label.about a {
+  color: var(--bg-color);
+}
+.container .car_select .category_select nav label a i {
+  font-size: 25px;
+  margin: 0 7px;
+}
+.container .car_select .category_select nav .tab {
   position: absolute;
+  height: 100%;
+  width: 20%;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+  border-radius: 50px;
+  background: white;
+  transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.container .car_select .category_select nav #inbox:checked ~ .tab {
+  left: 20%;
+}
+.container .car_select .category_select nav #contact:checked ~ .tab {
+  left: 40%;
+}
+.container .car_select .category_select nav #heart:checked ~ .tab {
+  left: 60%;
+}
+.container .car_select .category_select nav #about:checked ~ .tab {
+  left: 80%;
+}
+.container .car_select .category_select nav input {
   display: none;
 }
-
-.progressbar-dots.active {
-  color: #fff;
-  background: radial-gradient(#e00045, #e00045);
-  border: none;
-  filter: blur(0px);
-  box-shadow: 0px 0px 10px #e00045, 0px 0px 10px #e00045;
-  animation: animdot 2s infinite ease-in-out;
-}
-.progressbar-dots.active span {
-  font-size: 21px;
-  position: absolute;
-  float: left;
-  font-family: "Circular pro";
-  font-weight: 900;
-  display: flex;
-}
-
-@keyframes animdot {
-  0% {
-    box-shadow: 0 0 10px #e00045, 0 0 10px #e00045;
-  }
-  50% {
-    box-shadow: 0 0 5px #e00045, 0 0 5px #e00045;
-  }
-  100% {
-    box-shadow: 0 0 10px #e00045, 0 0 10px #e00045;
-  }
-}
 @media (max-width: 599px) {
-  header {
+  .container header {
     padding: 10px 50px;
   }
 }
-
 @media (max-width: 599px) {
-  .container {
+  .container .container {
     margin-top: 0;
     padding: 50px 50px 50px 50px;
     width: auto;
@@ -781,7 +775,7 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   }
 }
 @media (max-width: 599px) {
-  .container .content {
+  .container .container .content {
     display: flex;
     flex-direction: column;
     padding: 0px;
@@ -789,42 +783,42 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   }
 }
 @media (max-width: 599px) {
-  .container .content .text_section {
+  .container .container .content .text_section {
     text-align: center;
     width: 100%;
     font-size: 15px;
   }
 }
 @media (max-width: 599px) {
-  .container .content .img_car {
+  .container .container .content .img_car {
     width: 100%;
   }
 }
 @media (max-width: 599px) {
-  .container .content .img_car .img_car img {
+  .container .container .content .img_car .img_car img {
     width: 100%;
   }
 }
 @media (max-width: 599px) {
-  .container .section_adress {
+  .container .container .section_adress {
     flex-direction: column;
     padding: 0;
   }
 }
 @media (max-width: 599px) and (max-width: 599px) {
-  .container .section_adress #output {
+  .container .container .section_adress #output {
     display: flex;
     justify-content: center;
     font-size: 40%;
   }
 }
 @media (max-width: 599px) and (max-width: 599px) {
-  .container .section_adress .adress_text {
+  .container .container .section_adress .adress_text {
     text-align: center;
   }
 }
 @media (max-width: 599px) and (max-width: 599px) {
-  .container .section_adress .box_adress {
+  .container .container .section_adress .box_adress {
     width: 100%;
   }
 }
