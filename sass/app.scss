@@ -845,3 +845,43 @@ header {
         }
     }
 }
+
+
+//PAGE RENTALS
+
+.header-rentals {
+    background-color: $background-color;
+    justify-content: center;
+}
+.container-rentals {
+    background-color: $background-color;
+    color: $primary-color;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 100vh;
+    p:first-child {
+        margin: 0;
+    }
+    .content-rentals {
+        color: white;
+        font-family: "Circular pro";
+        font-weight: 900;
+        font-size: 20px;
+        box-shadow: 8px 8px 20px black, -2px -2px 7px 0px rgba(93, 147, 185, 0.2);
+        cursor: pointer;
+        height: 50vh;
+        border-radius: 12px;
+        margin-top: 30px;
+        width: 20%;
+        p{
+            color: $color-primary;
+            .reservation-date-time {
+                color: $primary-color;
+                display: block;
+            }
+        }
+    }
+}
+
+
