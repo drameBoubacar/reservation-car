@@ -652,20 +652,21 @@ ul.fmenu {
     // ------------SELECT CARS--------------
     .car_select {
         display: none;
+        justify-content: center;
         width: 100%;
         margin-top: -170px;
         transition: 1s ease-in-out;
         #left {
             position: fixed;
             top: 35%;
-            left: 15%;
+            left: 10%;
             font-size: 61px;
             color: white;
         }
         #right {
             position: fixed;
             top: 35%;
-            right: 15%;
+            right: 10%;
             font-size: 61px;
             color: white;
         }
@@ -717,6 +718,7 @@ ul.fmenu {
                 font-family: 'Circular pro';
                 font-weight: 300;
                 margin: 0px 50px;
+                text-transform: uppercase;
             }
         }
         .category_select {

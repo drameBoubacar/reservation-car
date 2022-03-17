@@ -3,7 +3,7 @@
 include_once '../Login/connect.php';
 
 
-$sqlRentals = $db->query('SELECT cars.BRAND, reservation.RENTAL_DATE_TIME, reservation.RETURN_DATE_TIME FROM reservation
+$sqlRentals = $db->query('SELECT cars.ID_CATEGORY, reservation.RENTAL_DATE_TIME, reservation.RETURN_DATE_TIME FROM reservation
                           LEFT JOIN cars ON reservation.ID_CAR = cars.ID_CAR 
                           LEFT JOIN user ON reservation.ID_USER = user.ID_USER 
                           LEFT JOIN payment ON reservation.ID_PAYMENT = payment.ID_PAYMENT
