@@ -124,35 +124,9 @@ session_start();
         </div>
         <!--------------- SECTION A (step 2) -TIME----------------->
 
-        <div class="car_select">
-
-            <div class="car_info">
-                <div class="car_name">
-                    <h1>
-
-                        <?php
-                        foreach ($rentals as $rental) {
-                        ?>
-
-                            <h1><?= $rental['USERNAME']; ?></h1>
+     
 
 
-                        <?php
-                        }
-                        ?>
-                    </h1>
-                    <p>GT63s amg</p>
-                </div>
-                <div class="car_img">
-                    <img src="/img/merco.png" alt="" srcset="">
-                </div>
-
-                <div class="car_stat">
-                    <div class="stat">Stats1</div>
-                    <div class="stat">Stats2</div>
-                    <div class="stat">Stats3</div>
-                    <div class="stat">Stats4</div>
-                </div>
         <div class="section_date" id='slider3'>
             <div class="date">
                 <div class="date_text">
@@ -168,7 +142,7 @@ session_start();
                             <input type="datetime-local" name="rental_date" id="rental_date">
                             <input type="datetime-local" name='return_date' id="return_date" value="2017-06-01T08:30">
                         </div>
-                        <input type="submit" id='date_ok' value="Start" onclick="saveDate()">
+                        <input type="submit" id='next3' value="Start" onclick="saveDate()">
                     </div>
                 </div>
             </div>
@@ -177,14 +151,43 @@ session_start();
                 <div class="min"></div>
                 <div class="sec"></div>
             </div>
-            <div class="switch-cont">
-                <button class="switch-btn"> Light </button>
-            </div>
 
             <div class="car_tab"></div>
 
             <div class="car_selection"></div>
         </div>
+
+<!-- slider selection car -->
+        <div class="car_select" id="slider4">
+
+<div class="car_info">
+    <div class="car_name">
+        <h1>
+
+            <?php
+            foreach ($rentals as $rental) {
+            ?>
+
+                <h1><?= $rental['USERNAME']; ?></h1>
+
+
+            <?php
+            }
+            ?>
+        </h1>
+        <p>GT63s amg</p>
+    </div>
+    <div class="car_img">
+        <img src="/img/merco.png" alt="" srcset="">
+    </div>
+
+    <div class="car_stat">
+        <div class="stat">Stats1</div>
+        <div class="stat">Stats2</div>
+        <div class="stat">Stats3</div>
+        <div class="stat">Stats4</div>
+    </div>
+
 
 
 
@@ -213,7 +216,7 @@ session_start();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
     <script type="text/javascript" src="https://daks2k3a4ib2z.cloudfront.net/5317d67d660658b254000454/js/webflow.js?2f83b8326cc4c8f7327b5dba30444a37"></script>
     <script src="./globe.js"></script>
-
+    <script src="./main.js"></script>
 
 
 

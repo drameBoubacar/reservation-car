@@ -50,31 +50,14 @@ inset -8px -8px 20px rgba(255,
 255,
 255,
 0.2);
-$primary-color: white;
-$secondary-color: linear-gradient(blue,
 $easing: cubic-bezier(0.5,
 0,
 0.5,
-1));
+1);
 $easing-alt: cubic-bezier(0.4,
 0,
 0.1,
 1);
-:root {
-    --main-bg-color: #fff;
-    --main-text-color: #888888;
-}
-
-[data-theme="dark"] {
-    --main-bg-color: #1e1f26;
-    --main-text-color: #ccc;
-}
-
-* {
-    box-sizing: border-box;
-    /* 		transition: all ease 0.2s; */
-}
-
 $color-primary: #0BFDFD;
 $background-color: #080a13;
 $primary-color:white;
