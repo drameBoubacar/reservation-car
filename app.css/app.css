@@ -823,4 +823,40 @@ ul.fmenu .floating-menu > li:not(:last-child) a {
   }
 }
 
+.header-rentals {
+  background-color: #080a13;
+  justify-content: center;
+}
+
+.container-rentals {
+  background-color: #080a13;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 100vh;
+}
+.container-rentals p:first-child {
+  margin: 0;
+}
+.container-rentals .content-rentals {
+  color: white;
+  font-family: "Circular pro";
+  font-weight: 900;
+  font-size: 20px;
+  box-shadow: 8px 8px 20px black, -2px -2px 7px 0px rgba(93, 147, 185, 0.2);
+  cursor: pointer;
+  height: 50vh;
+  border-radius: 12px;
+  margin-top: 30px;
+  width: 20%;
+}
+.container-rentals .content-rentals p {
+  color: #0BFDFD;
+}
+.container-rentals .content-rentals p .reservation-date-time {
+  color: white;
+  display: block;
+}
+
 /*# sourceMappingURL=app.css.map */
