@@ -4,6 +4,10 @@ $sqlRentals = $db->query('SELECT * FROM model');
 
 $rentals = $sqlRentals->fetchAll(PDO::FETCH_ASSOC);
 
+$sqlRentals_Brand = $db->query('SELECT * FROM brand');
+
+$rentals_brand = $sqlRentals_Brand->fetchAll(PDO::FETCH_ASSOC);
+
 
 session_start();
 ?>
@@ -59,16 +63,7 @@ session_start();
             </div>
         </div>
 
-        <div class="progress-wrap">
-            <div class="line-progress-bar">
-                <div class="line"></div>
-                <ul class="checkout-bar">
-                    <li class="progressbar-dots active"><span>1</span></li>
-                    <li class="progressbar-dots"><span>2</span></li>
-                    <li class="progressbar-dots"><span>3</span></li>
-                </ul>
-            </div>
-        </div>
+
 
 
         <div class="account">
@@ -163,31 +158,72 @@ session_start();
                 <div class="car_name">
                     <h1>
                         <?php
-                        foreach ($rentals as $rental) {
+                        foreach ($rentals_brand as $rentalBrand) {
                         ?>
-                            
+                            <h1> <?= $rentalBrand['BRAND_CAR']; ?></h1>
                         <?php
                         }
                         ?>
                     </h1>
-                    <p>GT63s amg</p>
+
+                    <?php
+                    foreach ($rentals as $rental) {
+                    ?>
+                        <span class="inner_shadow"> <?= $rental['MODEL_CAR']; ?></span>
+                    <?php
+                    }
+                    ?>
                 </div>
                 <div class="car_img">
-                <?php
-                        foreach ($rentals as $rental) {
-                        ?>
-                            <img src="<?= $rental['model_img'];?>" alt="" srcset="">
-                        <?php
-                        }
-                        ?>
-                    
+                    <?php
+                    foreach ($rentals as $rental) {
+                    ?>
+                        <img src="<?= $rental['model_img'] ?>" alt="" srcset="">
+
+                    <?php
+                    }
+                    ?>
                 </div>
+
                 <div class="car_stat">
                     <div class="stat">Stats1</div>
                     <div class="stat">Stats2</div>
                     <div class="stat">Stats3</div>
                     <div class="stat">Stats4</div>
                 </div>
+
+
+                <div class="category_select">
+                    <nav>
+                        <input type="radio" name="tab" id="home" checked>
+                        <input type="radio" name="tab" id="inbox">
+                        <input type="radio" name="tab" id="contact">
+                        <input type="radio" name="tab" id="heart">
+                        <input type="radio" name="tab" id="about">
+                        <label for="home" class="home"><a>Berline</a></label>
+                        <label for="inbox" class="inbox"><a>Citadine</a></label>
+                        <label for="contact" class="contact"><a>SUV</a></label>
+                        <label for="heart" class="heart"><a>Break</a></label>
+                        <label for="about" class="about"><a>Supercar</a></label>
+                        <div class="tab">
+                        </div>
+                    </nav>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
             <script type="text/javascript" src="/vanilla/vanilla-tilt.js"></script>
             <script src="https://use.fontawesome.com/3d02935bac.js"></script>
